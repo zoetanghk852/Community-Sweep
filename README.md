@@ -28,3 +28,12 @@ npm run dev
 ```
 
 瀏覽 [http://localhost:3000](http://localhost:3000)（若埠號被佔用，終端機會顯示實際埠號，例如 `3001`）。
+
+## 部署至 Vercel
+
+Next.js 應用位於 **`web/`** 子目錄，請擇一設定：
+
+1. **建議**：Vercel 專案 → **Settings** → **General** → **Root Directory** 設為 `web`，然後重新部署。
+2. **或**：維持 Root Directory 為 repo 根目錄；根目錄的 [`vercel.json`](vercel.json) 會透過 `@vercel/next` 建置 `web/package.json`。
+
+若出現 `404: NOT_FOUND`，通常是 Root Directory 未指向 `web` 且根目錄 `vercel.json` 未生效；請確認上述設定後 **Redeploy**。
