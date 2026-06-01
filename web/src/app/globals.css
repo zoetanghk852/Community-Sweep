@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffbf7;
+  --foreground: #2c2416;
+  --cream: #fffbf7;
+  --cream-dark: #f5ebe0;
+  --terracotta: #b85c38;
+  --terracotta-dark: #8f4528;
+  --wood: #c4a574;
+  --wood-light: #e8dcc8;
+  --sage: #5b8a72;
+  --sage-light: #e8f0ec;
+  --sage-dark: #3d6b56;
+  --ink-muted: #5c4f3a;
+  --border-warm: #e0d4c4;
+  --page: #f9f9f9;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-wood: var(--wood);
+  --color-wood-light: var(--wood-light);
+  --color-sage: var(--sage);
+  --color-sage-light: var(--sage-light);
+  --color-sage-dark: var(--sage-dark);
+  --color-ink-muted: var(--ink-muted);
+  --color-border-warm: var(--border-warm);
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border-light: var(--border-light);
+  --font-sans: var(--font-noto-sans-tc), "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+}
+
+/* Elderly-friendly focus rings */
+:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 2px;
+}
