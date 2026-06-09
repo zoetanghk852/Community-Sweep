@@ -15,7 +15,7 @@ export function SiteHeader({ title, subtitle }: SiteHeaderProps) {
         <Leaf className="h-7 w-7 text-sage-dark" strokeWidth={2.25} />
       </div>
       <div>
-        <p className="text-base font-medium text-sage-dark">社區交換與修繕平台</p>
+        <p className="text-base font-medium text-sage-dark">社區換物carousell</p>
         <h1 className="text-2xl font-bold leading-tight text-foreground sm:text-3xl">
           {title}
         </h1>

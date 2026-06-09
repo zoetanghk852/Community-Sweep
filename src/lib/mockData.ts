@@ -60,6 +60,16 @@ export interface RedeemOption {
   emoji: string
 }
 
+export interface RedeemedRecord {
+  id: string
+  optionId: string
+  title: string
+  emoji: string
+  pointsCost: number
+  category: RedeemOption['category']
+  redeemedAt: string
+}
+
 export interface PointsHistoryItem {
   id: string
   date: string
@@ -226,6 +236,18 @@ export const mockEarnMethods: EarnMethod[] = [
   },
 ]
 
+export const mockRedeemedRecords: RedeemedRecord[] = [
+  {
+    id: 'rx-1',
+    optionId: 'rd-4',
+    title: '環保袋套裝',
+    emoji: '♻️',
+    pointsCost: 30,
+    category: '實用品',
+    redeemedAt: '2026-05-20T14:30:00.000Z',
+  },
+]
+
 export const mockRedeemOptions: RedeemOption[] = [
   {
     id: 'rd-3',
@@ -349,7 +371,7 @@ export const mockExploreActivities: ExploreActivity[] = [
     id: 'ex-4',
     code: 'CE004',
     title: 'CE004 上門修繕配對日',
-    organization: '社區交換與修繕平台 | 義工隊',
+    organization: '社區換物carousell | 義工隊',
     location: '屯門各屋邨',
     venue: '上門服務（屯門區）',
     dateLabel: '2026年6月20日（六）',

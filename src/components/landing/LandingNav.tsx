@@ -16,8 +16,8 @@ export function LandingNav() {
             <Leaf className="h-6 w-6 text-sage-dark" strokeWidth={2.25} />
           </div>
           <div>
-            <p className="text-sm font-semibold text-sage-dark">社區循環經濟</p>
-            <p className="text-xs text-ink-muted">升級改造平台</p>
+            <p className="text-sm font-semibold text-sage-dark">社區換物carousell</p>
+            <p className="text-xs text-ink-muted">香港</p>
           </div>
         </Link>
 

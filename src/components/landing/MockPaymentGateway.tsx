@@ -188,7 +188,7 @@ export function MockPaymentGateway() {
           </div>
 
           <p className="mt-4 text-center text-sm text-muted">
-            此為 UI 示範，不連接真實支付系統。正式服務以現場或電話報名為主。
+            此為 UI 示範，不連接真實支付系統。
           </p>
         </div>
       </div>

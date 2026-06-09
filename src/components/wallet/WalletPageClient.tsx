@@ -17,7 +17,7 @@ import {
 
 export function WalletPageClient() {
   const searchParams = useSearchParams()
-  const { balance, adjustBalance } = usePoints()
+  const { balance, redeem, redeemedRecords } = usePoints()
   const [tab, setTab] = useState<WalletTab>('redeem')
   const [notice, setNotice] = useState<string | null>(null)
 
@@ -52,9 +52,9 @@ export function WalletPageClient() {
             <RedeemContent
               options={mockRedeemOptions}
               balance={balance}
+              redeemedRecords={redeemedRecords}
               onRedeem={(option) => {
-                if (balance >= option.pointsCost) {
-                  adjustBalance(-option.pointsCost)
+                if (redeem(option)) {
                   setNotice(`已兌換「${option.title}」，請到中心領取或預約。`)
                   setTimeout(() => setNotice(null), 5000)
                 }

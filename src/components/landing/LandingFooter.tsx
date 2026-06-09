@@ -9,7 +9,7 @@ export function LandingFooter() {
           <div>
             <div className="flex items-center gap-2">
               <Leaf className="h-6 w-6" strokeWidth={2} />
-              <span className="text-lg font-bold">社區循環經濟與升級改造平台</span>
+              <span className="text-lg font-bold">社區換物carousell</span>
             </div>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
               以換物市集、修繕工作坊與藝術重組，協助有囤積習慣的長者發掘舊物價值，
@@ -55,7 +55,7 @@ export function LandingFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/20 pt-6 text-center text-sm text-white/60">
-          <p>社區循環經濟與升級改造平台 · 香港 · 規劃示範</p>
+          <p>社區換物carousell · 香港 · 規劃示範</p>
           <p className="mt-1">資料符合《個人資料（私隱）條例》（PDPO）設計原則</p>
         </div>
       </div>

@@ -104,8 +104,8 @@ export const uxHighlights = [
 
 export const appPreviewHighlights = [
   {
-    title: '修繕先行、交換為後',
-    description: '尊重惜物心態，先修復再用，交換為後續選項。',
+    title: '先修後換',
+    description: '尊重惜物，優先維修延長使用，交換作為後續安排。',
   },
   {
     title: '線下為主、數碼為輔',

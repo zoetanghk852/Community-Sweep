@@ -13,7 +13,7 @@ export function AppPreviewSection() {
               長者友善的街坊端設計
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-              示範 App 採大字體、高對比、大按鈕設計，配合積分錢包、活動日程及社區廣播，
+              示範 App 採大字體、高對比、大按鈕設計，配合積分錢包及活動日程，
               讓長者（或義工代操作）輕鬆參與社區活動。
             </p>
 
@@ -42,15 +42,15 @@ export function AppPreviewSection() {
             <div className="rounded-[2rem] border-4 border-foreground/10 bg-page p-3 shadow-2xl">
               <div className="overflow-hidden rounded-[1.5rem] bg-white">
                 <div className="bg-sage px-4 py-3 text-center text-sm font-semibold text-white">
-                  社區交換與修繕平台
+                  社區換物carousell
                 </div>
                 <div className="space-y-3 p-4">
                   <div className="rounded-xl bg-sage-light p-4">
                     <p className="text-sm text-ink-muted">我的儲分</p>
                     <p className="text-3xl font-bold text-sage-dark">248</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {['換物市集', '修繕預約', '積分兌換', '社區廣播'].map((label) => (
+                  <div className="grid grid-cols-3 gap-2">
+                    {['換物市集', '修繕預約', '積分兌換'].map((label) => (
                       <div
                         key={label}
                         className="rounded-xl border border-border-warm py-3 text-center text-sm font-medium"

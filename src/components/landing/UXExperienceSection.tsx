@@ -42,7 +42,7 @@ export function UXExperienceSection() {
             <div className="rounded-[2rem] border-4 border-foreground/10 bg-page p-3 shadow-2xl">
               <div className="overflow-hidden rounded-[1.5rem] bg-white">
                 <div className="bg-sage px-4 py-3 text-center text-sm font-semibold text-white">
-                  社區交換與修繕平台
+                  社區換物carousell
                 </div>
                 <div className="space-y-3 p-4">
                   <div className="rounded-xl bg-sage-light p-4">

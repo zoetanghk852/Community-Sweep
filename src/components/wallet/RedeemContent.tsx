@@ -2,15 +2,17 @@
 
 import { SectionCard } from '@/components/ui/SectionCard'
 import { LargeButton } from '@/components/ui/LargeButton'
-import type { RedeemOption } from '@/lib/mockData'
+import { formatRegistrationTime } from '@/lib/format'
+import type { RedeemOption, RedeemedRecord } from '@/lib/mockData'
 
 interface RedeemContentProps {
   options: RedeemOption[]
   balance: number
+  redeemedRecords: RedeemedRecord[]
   onRedeem?: (option: RedeemOption) => void
 }
 
-export function RedeemContent({ options, balance, onRedeem }: RedeemContentProps) {
+export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: RedeemContentProps) {
   return (
     <div className="space-y-5">
       <p className="rounded-2xl bg-sage-light px-4 py-3 text-center text-lg font-semibold text-sage-dark">
@@ -63,6 +65,44 @@ export function RedeemContent({ options, balance, onRedeem }: RedeemContentProps
             )
           })}
         </ul>
+      </SectionCard>
+
+      <SectionCard title="已兌換紀錄" subtitle="你曾經兌換嘅服務同物品">
+        {redeemedRecords.length === 0 ? (
+          <p className="rounded-2xl border border-dashed border-border-warm bg-cream px-4 py-8 text-center text-base leading-relaxed text-ink-muted">
+            暫時沒有兌換紀錄。揀選上面嘅項目兌換後，紀錄會顯示喺呢度。
+          </p>
+        ) : (
+          <ul className="divide-y-2 divide-border-warm">
+            {redeemedRecords.map((record) => (
+              <li
+                key={record.id}
+                className="flex items-center gap-4 py-4 first:pt-0 last:pb-0"
+              >
+                <span
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cream text-2xl"
+                  aria-hidden
+                >
+                  {record.emoji}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-lg font-semibold text-foreground">{record.title}</p>
+                    <span className="rounded-full bg-wood-light px-2.5 py-0.5 text-sm font-semibold text-ink-muted">
+                      {record.category}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-base text-ink-muted">
+                    兌換時間：{formatRegistrationTime(record.redeemedAt)}
+                  </p>
+                </div>
+                <span className="shrink-0 text-xl font-bold text-terracotta-dark">
+                  -{record.pointsCost}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </SectionCard>
     </div>
   )

@@ -7,7 +7,7 @@ export function ServiceIntroSection() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-sage">01 · 服務簡介</p>
           <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">
-            社區循環經濟與升級改造平台
+            社區換物carousell
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-muted">
             本計畫致力於社區內舉辦換物市集，並提供物品維修與升級改造服務，讓閒置資源得以流轉，
