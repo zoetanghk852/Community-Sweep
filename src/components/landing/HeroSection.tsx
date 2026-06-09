@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import Link from 'next/link'
 
-import { ArrowRight, Heart, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles } from 'lucide-react'
 
 
 
@@ -83,28 +83,6 @@ export function HeroSection() {
                 體驗街坊端 App
 
               </Link>
-
-            </div>
-
-
-
-            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-ink-muted">
-
-              <span className="flex items-center gap-2">
-
-                <Heart className="h-4 w-4 text-terracotta" />
-
-                針對有囤積習慣的長者
-
-              </span>
-
-              <span>·</span>
-
-              <span>線下為主、數碼為輔</span>
-
-              <span>·</span>
-
-              <span>修繕先行、低壓力釋出</span>
 
             </div>
 
