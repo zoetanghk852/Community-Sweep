@@ -91,7 +91,7 @@ export default function AccountPage() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-lg font-semibold text-foreground">{label}</p>
-                  <p className="text-sm text-muted">{description}</p>
+                  <p className="text-base text-muted">{description}</p>
                 </div>
                 <ChevronRight className="h-5 w-5 shrink-0 text-slate-300" aria-hidden />
               </Link>

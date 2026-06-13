@@ -6,11 +6,16 @@ import { workshopOptions } from '@/lib/landingData'
 
 type PaymentStep = 'select' | 'details' | 'processing' | 'success'
 
+function sessionPrice(price: number) {
+  return price === 0 ? 30 : price
+}
+
 export function MockPaymentGateway() {
   const [step, setStep] = useState<PaymentStep>('select')
   const [selectedId, setSelectedId] = useState(workshopOptions[0].id)
   const [cardNumber, setCardNumber] = useState('')
   const [cardName, setCardName] = useState('')
+  const [paymentMethod, setPaymentMethod] = useState<'online' | 'onsite'>('online')
 
   const selected = workshopOptions.find((w) => w.id === selectedId)!
 
@@ -24,29 +29,36 @@ export function MockPaymentGateway() {
 
   function handlePay(e: React.FormEvent) {
     e.preventDefault()
+    setPaymentMethod('online')
     setStep('processing')
     setTimeout(() => setStep('success'), 1500)
+  }
+
+  function handleOnsitePay() {
+    setPaymentMethod('onsite')
+    setStep('success')
   }
 
   function reset() {
     setStep('select')
     setCardNumber('')
     setCardName('')
+    setPaymentMethod('online')
   }
 
   return (
-    <section id="payment-session" className="scroll-mt-20 bg-cream py-16 sm:py-20">
+    <section id="payment-session" className="section-padding scroll-mt-20 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-sage">模擬付款閘道</p>
-          <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">工作坊報名付款 Session</h2>
+          <p className="section-label">模擬付款閘道</p>
+          <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">工作坊報名付款</h2>
           <p className="mt-4 text-lg text-ink-muted">
             示範完整付款 session：選擇工作坊 → 填寫資料 → 處理中 → 成功（模擬，不會實際扣款）
           </p>
         </div>
 
         <div className="mx-auto mt-10 max-w-lg">
-          <div className="overflow-hidden rounded-2xl border-2 border-border-warm bg-white shadow-lg">
+          <div className="overflow-hidden rounded-2xl bg-white shadow-warm-lg">
             <div className="flex items-center justify-between bg-sage px-5 py-3 text-white">
               <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4" />
@@ -64,7 +76,7 @@ export function MockPaymentGateway() {
                       <label
                         key={workshop.id}
                         className={[
-                          'flex cursor-pointer items-start gap-3 rounded-xl border-2 p-4 transition-colors',
+                          'interactive flex cursor-pointer items-start gap-3 rounded-xl border-2 p-4',
                           selectedId === workshop.id
                             ? 'border-sage bg-sage-light/40'
                             : 'border-border-warm hover:border-sage/50',
@@ -85,19 +97,31 @@ export function MockPaymentGateway() {
                           <span className="font-semibold text-foreground">{workshop.title}</span>
                           <p className="mt-1 text-sm text-ink-muted">{workshop.description}</p>
                           <p className="mt-1 text-sm font-bold text-sage-dark">
-                            {workshop.price === 0 ? '免費' : `HK$ ${workshop.price}`}
+                            HK$ {sessionPrice(workshop.price)}
                           </p>
                         </div>
                       </label>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => setStep('details')}
-                    className="mt-6 w-full rounded-xl bg-sage py-3.5 text-base font-semibold text-white hover:bg-sage-dark"
-                  >
-                    繼續付款
-                  </button>
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPaymentMethod('online')
+                        setStep('details')
+                      }}
+                      className="interactive flex-1 rounded-xl bg-sage py-3.5 text-base font-semibold text-white hover:bg-sage-dark"
+                    >
+                      繼續付款
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleOnsitePay}
+                      className="interactive flex-1 rounded-xl border border-border-warm bg-card/90 py-3.5 text-base font-semibold text-foreground hover:border-sage hover:text-sage-dark"
+                    >
+                      現場付款
+                    </button>
+                  </div>
                 </>
               )}
 
@@ -115,7 +139,7 @@ export function MockPaymentGateway() {
                     <p className="text-sm text-muted">付款項目</p>
                     <p className="font-semibold text-foreground">{selected.title}</p>
                     <p className="mt-1 text-lg font-bold text-sage-dark">
-                      {selected.price === 0 ? '免費' : `HK$ ${selected.price}.00`}
+                      HK$ {sessionPrice(selected.price)}.00
                     </p>
                   </div>
 
@@ -153,9 +177,9 @@ export function MockPaymentGateway() {
                   <button
                     type="submit"
                     disabled={!cardName || cardNumber.replace(/\s/g, '').length < 16}
-                    className="mt-6 w-full rounded-xl bg-terracotta py-3.5 text-base font-semibold text-white hover:bg-terracotta-dark disabled:opacity-50"
+                    className="interactive mt-6 w-full rounded-xl bg-terracotta py-3.5 text-base font-semibold text-white hover:bg-terracotta-dark disabled:opacity-50 disabled:active:transform-none"
                   >
-                    {selected.price === 0 ? '確認報名' : `確認付款 HK$ ${selected.price}`}
+                    確認付款 HK$ {sessionPrice(selected.price)}
                   </button>
                 </form>
               )}
@@ -170,10 +194,12 @@ export function MockPaymentGateway() {
               {step === 'success' && (
                 <div className="py-8 text-center">
                   <CheckCircle2 className="mx-auto h-14 w-14 text-sage" />
-                  <h3 className="mt-4 text-xl font-bold text-foreground">報名成功！</h3>
+                  <h3 className="mt-4 text-xl font-bold text-foreground">報名成功</h3>
                   <p className="mt-2 text-base text-ink-muted">
                     已成功報名「{selected.title}」
-                    {selected.price > 0 && `，模擬付款 HK$ ${selected.price}.00`}
+                    {paymentMethod === 'online'
+                      ? `，模擬付款 HK$ ${sessionPrice(selected.price)}.00`
+                      : '，請於活動當日現場付款'}
                   </p>
                   <button
                     type="button"

@@ -1,63 +1,62 @@
 import Link from 'next/link'
 import { Leaf } from 'lucide-react'
 
+const footerLinks = [
+  { href: '#features', label: '核心功能' },
+  { href: '#app-preview', label: 'App 預覽' },
+  { href: '#marketplace', label: '物品篩選' },
+  { href: '#join', label: '加入我們' },
+  { href: '/hall', label: '示範 App', isRoute: true },
+] as const
+
 export function LandingFooter() {
   return (
-    <footer className="border-t border-border-warm bg-sage-dark py-12 text-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div>
-            <div className="flex items-center gap-2">
-              <Leaf className="h-6 w-6" strokeWidth={2} />
-              <span className="text-lg font-bold">社區換物carousell</span>
+    <footer className="border-t border-border-warm bg-cream-dark">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-sm">
+            <div className="flex items-center gap-2.5">
+              <Leaf className="h-6 w-6 text-sage-dark" strokeWidth={2} />
+              <span className="font-display text-lg font-bold">社區換物carousell</span>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-white/80">
-              以換物市集、修繕工作坊與藝術重組，協助有囤積習慣的長者發掘舊物價值，
-              重建社區連結。
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+              以換物市集、修繕工作坊與藝術重組，協助有囤積習慣的長者發掘舊物價值，重建社區連結。
             </p>
           </div>
 
-          <div>
-            <h3 className="font-semibold">快速連結</h3>
-            <ul className="mt-3 space-y-2 text-sm text-white/80">
-              <li>
-                <a href="#features" className="hover:text-white hover:underline">
-                  核心功能
-                </a>
-              </li>
-              <li>
-                <a href="#app-preview" className="hover:text-white hover:underline">
-                  App 預覽
-                </a>
-              </li>
-              <li>
-                <a href="#marketplace" className="hover:text-white hover:underline">
-                  社區物品篩選
-                </a>
-              </li>
-              <li>
-                <a href="#join" className="hover:text-white hover:underline">
-                  加入我們
-                </a>
-              </li>
-              <li>
-                <a href="#payment-session" className="hover:text-white hover:underline">
-                  模擬付款閘道
-                </a>
-              </li>
-              <li>
-                <Link href="/hall" className="hover:text-white hover:underline">
-                  體驗示範 App
-                </Link>
-              </li>
+          <nav aria-label="頁尾導覽">
+            <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-muted">
+              {footerLinks.map(({ href, label, ...rest }) => (
+                <li key={href}>
+                  {'isRoute' in rest && rest.isRoute ? (
+                    <Link href={href} className="interactive hover:text-sage-dark">
+                      {label}
+                    </Link>
+                  ) : (
+                    <a href={href} className="interactive hover:text-sage-dark">
+                      {label}
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
-        <div className="mt-10 border-t border-white/20 pt-6 text-center text-sm text-white/60">
+        <div className="mt-12 flex flex-col items-start gap-3 border-t border-border-warm pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>社區換物carousell · 香港 · 規劃示範</p>
-          <p className="mt-1">資料符合《個人資料（私隱）條例》（PDPO）設計原則</p>
+          <div className="flex gap-5">
+            <a href="#join" className="interactive hover:text-sage-dark">
+              私隱政策（示範）
+            </a>
+            <a href="#join" className="interactive hover:text-sage-dark">
+              使用條款（示範）
+            </a>
+          </div>
         </div>
+        <p className="mt-3 text-xs text-muted">
+          資料處理符合《個人資料（私隱）條例》（PDPO）設計原則
+        </p>
       </div>
     </footer>
   )

@@ -36,7 +36,7 @@ export function SchedulePageClient() {
         onDateSelect={(_date, events) => setSelectedEvents(events)}
       />
 
-      <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
+      <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-base text-muted">
         <span className="font-medium text-foreground">活動標記：</span>
         <span className="inline-flex items-center gap-1.5">
           <span className="h-2 w-2 rounded-full bg-terracotta" aria-hidden />
@@ -82,7 +82,7 @@ export function SchedulePageClient() {
                     <Calendar className="h-4 w-4 shrink-0" aria-hidden />
                     {event.date.replace(/-/g, '/')} · {event.time}
                   </p>
-                  <p className="mt-2 flex items-center gap-1 text-sm font-medium text-terracotta">
+                  <p className="mt-2 flex items-center gap-1 text-base font-medium text-terracotta">
                     查看活動詳情
                     <ChevronRight className="h-4 w-4" aria-hidden />
                   </p>

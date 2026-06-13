@@ -26,7 +26,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
             sizes="(max-width: 512px) 100vw, 512px"
           />
         </Link>
-        <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-blue-600 px-2.5 py-1 text-sm font-semibold text-white">
+        <span className="pointer-events-none absolute left-3 top-3 rounded-md bg-blue-600 px-2.5 py-1 text-base font-semibold text-white">
           {activity.monthBadge}
         </span>
         <button
@@ -44,7 +44,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
             className={`h-5 w-5 ${saved ? 'fill-red-500 text-red-500' : 'text-slate-600'}`}
           />
         </button>
-        <span className="pointer-events-none absolute bottom-3 left-3 flex max-w-[85%] items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-sm font-medium text-foreground shadow-sm">
+        <span className="pointer-events-none absolute bottom-3 left-3 flex max-w-[85%] items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-base font-medium text-foreground shadow-sm">
           <Users className="h-4 w-4 shrink-0" aria-hidden />
           <span className="truncate">{activity.registrationLabel}</span>
         </span>
@@ -54,7 +54,7 @@ export function ActivityCard({ activity }: ActivityCardProps) {
         href={detailHref}
         className="block space-y-2 px-4 py-4 transition-colors hover:bg-slate-50/80"
       >
-        <p className="text-sm leading-snug text-muted">{activity.organization}</p>
+        <p className="text-base leading-snug text-muted">{activity.organization}</p>
         <h3 className="text-lg font-bold leading-snug text-foreground">{activity.title}</h3>
         <p className="flex items-center gap-2 text-base text-muted">
           <MapPin className="h-4 w-4 shrink-0" aria-hidden />

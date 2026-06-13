@@ -117,7 +117,7 @@ export function MonthCalendar({ events, onDateSelect }: MonthCalendarProps) {
         {WEEKDAYS.map((label) => (
           <div
             key={label}
-            className="border-b border-border-light py-3 text-center text-sm font-medium text-muted"
+            className="border-b border-border-light py-3 text-center text-base font-medium text-muted"
           >
             {label}
           </div>

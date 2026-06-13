@@ -24,7 +24,7 @@ export function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-light glass-panel"
       aria-label="主要導覽"
     >
       <div className="mx-auto flex max-w-lg items-stretch justify-around px-1 py-2">
@@ -35,8 +35,8 @@ export function BottomNav() {
               key={href}
               href={href}
               className={[
-                'flex min-h-[3.25rem] min-w-[4rem] flex-1 flex-col items-center justify-center gap-0.5 px-1 py-1.5 text-sm font-medium transition-colors',
-                active ? 'text-terracotta' : 'text-slate-500 hover:text-slate-700',
+                'interactive flex min-h-[3.25rem] min-w-[4rem] flex-1 flex-col items-center justify-center gap-0.5 px-1 py-1.5 text-sm font-medium',
+                active ? 'text-sage-dark' : 'text-muted hover:text-ink-muted',
               ].join(' ')}
               {...(active ? { 'aria-current': 'page' as const } : {})}
             >

@@ -41,7 +41,7 @@ export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: R
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <h3 className="text-lg font-bold text-foreground">{option.title}</h3>
-                      <span className="rounded-full bg-wood-light px-3 py-0.5 text-sm font-semibold text-ink-muted">
+                      <span className="rounded-full bg-wood-light px-3 py-0.5 text-base font-semibold text-ink-muted">
                         {option.category}
                       </span>
                     </div>
@@ -88,7 +88,7 @@ export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: R
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <p className="text-lg font-semibold text-foreground">{record.title}</p>
-                    <span className="rounded-full bg-wood-light px-2.5 py-0.5 text-sm font-semibold text-ink-muted">
+                    <span className="rounded-full bg-wood-light px-2.5 py-0.5 text-base font-semibold text-ink-muted">
                       {record.category}
                     </span>
                   </div>

@@ -15,7 +15,7 @@ function PreferenceRow({ label, enabled }: { label: string; enabled: boolean }) 
       <span className="text-base font-medium text-foreground">{label}</span>
       <span
         className={[
-          'rounded-full px-3 py-1 text-sm font-semibold',
+          'rounded-full px-3 py-1 text-base font-semibold',
           enabled ? 'bg-sage-light text-sage-dark' : 'bg-slate-100 text-slate-600',
         ].join(' ')}
       >
@@ -56,7 +56,7 @@ export function AccountSettings() {
         </div>
       </section>
 
-      <p className="text-center text-sm text-muted">
+      <p className="text-center text-base text-muted">
         以上為示範帳戶資料，實際服務將由社區中心協助登記及更新。
       </p>
     </div>

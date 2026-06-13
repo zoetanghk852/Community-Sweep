@@ -56,7 +56,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
             sizes="(max-width: 512px) 100vw, 512px"
             priority
           />
-          <span className="absolute left-3 top-3 rounded-md bg-blue-600 px-2.5 py-1 text-sm font-semibold text-white">
+          <span className="absolute left-3 top-3 rounded-md bg-blue-600 px-2.5 py-1 text-base font-semibold text-white">
             {activity.monthBadge}
           </span>
           <button
@@ -74,7 +74,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
 
         <div className="space-y-4 px-4 py-5">
           <div>
-            <p className="text-sm text-muted">{activity.code}</p>
+            <p className="text-base text-muted">{activity.code}</p>
             <h2 className="mt-1 text-2xl font-bold text-foreground">{activity.title}</h2>
             <p className="mt-2 text-base text-muted">{activity.organization}</p>
           </div>
@@ -105,7 +105,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
           </ul>
 
           <div className="rounded-xl bg-cream p-4">
-            <p className="flex items-center gap-2 text-sm font-semibold text-foreground">
+            <p className="flex items-center gap-2 text-base font-semibold text-foreground">
               <Info className="h-4 w-4 text-sage" aria-hidden />
               活動簡介
             </p>
@@ -114,7 +114,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
             </p>
           </div>
 
-          <p className="text-sm text-muted">
+          <p className="text-base text-muted">
             <span className="font-medium text-foreground">參加對象：</span>
             {activity.eligibility}
           </p>

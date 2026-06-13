@@ -10,9 +10,13 @@ export const metadata: Metadata = {
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-svh bg-cream">
+    <div className="relative min-h-svh bg-cream">
+      <div className="grain-overlay" aria-hidden />
+      <a href="#main-content" className="skip-link">
+        跳至主要內容
+      </a>
       <LandingNav />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <LandingFooter />
     </div>
   )

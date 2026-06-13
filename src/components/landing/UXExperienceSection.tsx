@@ -8,7 +8,7 @@ export function UXExperienceSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-sage">07 · UX 使用體驗</p>
+            <p className="text-base font-semibold uppercase tracking-wider text-sage">07 · UX 使用體驗</p>
             <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">
               長者友善的街坊端設計
             </h2>
@@ -41,30 +41,30 @@ export function UXExperienceSection() {
           <div className="relative mx-auto w-full max-w-sm">
             <div className="rounded-[2rem] border-4 border-foreground/10 bg-page p-3 shadow-2xl">
               <div className="overflow-hidden rounded-[1.5rem] bg-white">
-                <div className="bg-sage px-4 py-3 text-center text-sm font-semibold text-white">
+                <div className="bg-sage px-4 py-3 text-center text-base font-semibold text-white">
                   社區換物carousell
                 </div>
                 <div className="space-y-3 p-4">
                   <div className="rounded-xl bg-sage-light p-4">
-                    <p className="text-sm text-ink-muted">我的儲分</p>
+                    <p className="text-base text-ink-muted">我的儲分</p>
                     <p className="text-3xl font-bold text-sage-dark">248</p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     {['換物市集', '修繕預約', '積分兌換', '社區廣播'].map((label) => (
                       <div
                         key={label}
-                        className="rounded-xl border border-border-warm py-3 text-center text-sm font-medium"
+                        className="rounded-xl border border-border-warm py-3 text-center text-base font-medium"
                       >
                         {label}
                       </div>
                     ))}
                   </div>
                   <div className="rounded-xl border border-border-warm p-3">
-                    <p className="text-xs text-muted">即將舉行</p>
-                    <p className="mt-1 text-sm font-semibold">4月童玩與衣物交換市集</p>
+                    <p className="text-base text-muted">即將舉行</p>
+                    <p className="mt-1 text-base font-semibold">4月童玩與衣物交換市集</p>
                   </div>
                 </div>
-                <div className="flex justify-around border-t border-border-light py-2 text-xs text-muted">
+                <div className="flex justify-around border-t border-border-light py-2 text-base text-muted">
                   <span className="font-semibold text-terracotta">主頁</span>
                   <span>物品篩選</span>
                   <span>日程</span>
@@ -75,15 +75,15 @@ export function UXExperienceSection() {
 
             <div className="absolute -bottom-4 -left-4 rounded-xl bg-white p-3 shadow-lg">
               <Phone className="h-6 w-6 text-sage" />
-              <p className="mt-1 text-xs font-medium">電話代辦</p>
+              <p className="mt-1 text-base font-medium">電話代辦</p>
             </div>
             <div className="absolute -right-4 -top-4 rounded-xl bg-white p-3 shadow-lg">
               <HandHeart className="h-6 w-6 text-terracotta" />
-              <p className="mt-1 text-xs font-medium">義工協助</p>
+              <p className="mt-1 text-base font-medium">義工協助</p>
             </div>
             <div className="absolute -right-8 bottom-12 rounded-xl bg-white p-3 shadow-lg">
               <Smartphone className="h-6 w-6 text-sage-dark" />
-              <p className="mt-1 text-xs font-medium">PWA 示範</p>
+              <p className="mt-1 text-base font-medium">PWA 示範</p>
             </div>
           </div>
         </div>

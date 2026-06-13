@@ -42,7 +42,7 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
               </span>
               <div className="min-w-0 flex-1">
                 {index === 0 && (
-                  <span className="mb-1 inline-block rounded-full bg-terracotta px-3 py-0.5 text-sm font-semibold text-white">
+                  <span className="mb-1 inline-block rounded-full bg-terracotta px-3 py-0.5 text-base font-semibold text-white">
                     最近活動
                   </span>
                 )}
@@ -64,7 +64,7 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
                     <span>尚餘 {event.spotsLeft} 個名額</span>
                   </li>
                 </ul>
-                <p className="mt-2 flex items-center gap-1 text-sm font-medium text-terracotta">
+                <p className="mt-2 flex items-center gap-1 text-base font-medium text-terracotta">
                   查看活動詳情
                   <ChevronRight className="h-4 w-4" aria-hidden />
                 </p>

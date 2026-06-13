@@ -41,10 +41,10 @@ export function RegistrationRecords() {
               <MapPin className="h-4 w-4 shrink-0 text-terracotta" aria-hidden />
               {record.venue}
             </p>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-base text-muted">
               報名時間：{formatRegistrationTime(record.registeredAt)}
             </p>
-            <p className="mt-2 flex items-center gap-1 text-sm font-medium text-terracotta">
+            <p className="mt-2 flex items-center gap-1 text-base font-medium text-terracotta">
               查看活動詳情
               <ChevronRight className="h-4 w-4" aria-hidden />
             </p>

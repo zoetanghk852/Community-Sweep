@@ -24,7 +24,7 @@ export default function HomePage() {
         {hasMore && (
           <Link
             href="/explore"
-            className="mt-4 flex min-h-[3.25rem] w-full items-center justify-center gap-1 rounded-2xl border-2 border-border-warm bg-white text-lg font-semibold text-terracotta transition-colors hover:border-terracotta/40 hover:bg-cream"
+            className="interactive mt-4 flex min-h-[3.25rem] w-full items-center justify-center gap-1 rounded-2xl border-2 border-border-warm bg-white text-lg font-semibold text-terracotta hover:border-terracotta/40 hover:bg-cream hover:shadow-warm"
           >
             顯示更多活動
             <ChevronRight className="h-5 w-5" aria-hidden />
