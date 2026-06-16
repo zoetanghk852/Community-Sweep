@@ -14,8 +14,12 @@ function formatEventDate(date: string) {
 export function UpcomingEvents({ events }: UpcomingEventsProps) {
   if (events.length === 0) {
     return (
-      <p className="rounded-2xl border border-dashed border-border-warm bg-card px-4 py-8 text-center text-base text-muted">
-        暫時沒有即將舉行的活動，可前往探索活動查看更多。
+      <p className="empty-state text-base leading-relaxed text-muted">
+        暫時沒有即將舉行的活動，可前往
+        <Link href="/explore" className="font-semibold text-terracotta hover:underline">
+          探索活動
+        </Link>
+        查看更多。
       </p>
     )
   }
@@ -27,7 +31,7 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
           <Link
             href={`/explore/${event.exploreActivityId}`}
             className={[
-              'block rounded-2xl border p-4 shadow-sm transition-colors hover:bg-slate-50/80',
+              'block rounded-2xl border p-4 shadow-warm transition-colors hover:bg-cream/70',
               index === 0
                 ? 'border-terracotta/30 bg-card'
                 : 'border-border-light bg-card',

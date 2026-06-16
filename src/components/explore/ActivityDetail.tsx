@@ -38,7 +38,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
       <header className="flex items-center gap-2">
         <Link
           href="/explore"
-          className="rounded-lg p-1.5 text-foreground hover:bg-slate-100"
+          className="icon-btn"
           aria-label="返回探索活動"
         >
           <ArrowLeft className="h-6 w-6" strokeWidth={2.25} />
@@ -47,27 +47,27 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
       </header>
 
       <article className="overflow-hidden rounded-2xl bg-card shadow-sm ring-1 ring-border-light">
-        <div className="relative aspect-[16/10] w-full bg-slate-200">
+        <div className="relative aspect-[16/10] w-full bg-cream-dark">
           <Image
             src={activity.imageUrl}
-            alt=""
+            alt={`${activity.title}活動封面`}
             fill
             className="object-cover"
             sizes="(max-width: 512px) 100vw, 512px"
             priority
           />
-          <span className="absolute left-3 top-3 rounded-md bg-blue-600 px-2.5 py-1 text-base font-semibold text-white">
+          <span className="badge-month absolute left-3 top-3">
             {activity.monthBadge}
           </span>
           <button
             type="button"
             onClick={() => setSaved((v) => !v)}
-            className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md"
+            className="interactive absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-warm"
             aria-label={saved ? '取消收藏' : '收藏活動'}
             {...(saved ? { 'aria-pressed': true as const } : {})}
           >
             <Heart
-              className={`h-5 w-5 ${saved ? 'fill-red-500 text-red-500' : 'text-slate-600'}`}
+              className={`h-5 w-5 ${saved ? 'fill-terracotta text-terracotta' : 'text-muted'}`}
             />
           </button>
         </div>
@@ -125,10 +125,10 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
         type="button"
         onClick={handleRegister}
         className={[
-          'w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white transition-colors',
+          'interactive w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white',
           registered
             ? 'bg-sage hover:bg-sage-dark'
-            : 'bg-terracotta hover:bg-terracotta/90',
+            : 'bg-terracotta hover:bg-terracotta-dark shadow-md shadow-terracotta/20',
         ].join(' ')}
       >
         {registered ? '已報名（示範）' : '立即報名（示範）'}
@@ -136,12 +136,12 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
 
       {dialog && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4"
+          className="fixed inset-0 z-modal flex items-center justify-center bg-foreground/40 p-4 backdrop-blur-[2px]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="signup-dialog-title"
         >
-          <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl">
+          <div className="w-full max-w-sm rounded-2xl bg-card p-6 shadow-lift">
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-8 w-8 shrink-0 text-sage" aria-hidden />
@@ -159,7 +159,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
               <button
                 type="button"
                 onClick={() => setDialog(null)}
-                className="rounded-lg p-1.5 text-muted hover:bg-slate-100"
+                className="icon-btn text-muted"
                 aria-label="關閉"
               >
                 <X className="h-5 w-5" />

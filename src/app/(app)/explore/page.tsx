@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { ArrowLeft, SlidersHorizontal } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { ActivityCard } from '@/components/explore/ActivityCard'
+import { ExploreFilterButton } from '@/components/explore/ExploreFilterButton'
 import { EXPLORE_ACTIVITY_TOTAL, mockExploreActivities } from '@/lib/mockData'
 
 export default function ExplorePage() {
@@ -10,7 +11,7 @@ export default function ExplorePage() {
         <div className="flex items-start gap-2">
           <Link
             href="/hall"
-            className="mt-0.5 rounded-lg p-1.5 text-foreground hover:bg-slate-100"
+            className="icon-btn mt-0.5"
             aria-label="返回主頁"
           >
             <ArrowLeft className="h-6 w-6" strokeWidth={2.25} />
@@ -22,13 +23,7 @@ export default function ExplorePage() {
             </p>
           </div>
         </div>
-        <button
-          type="button"
-          className="rounded-lg border border-border-light bg-card p-2.5 text-foreground shadow-sm hover:bg-slate-50"
-          aria-label="篩選活動"
-        >
-          <SlidersHorizontal className="h-5 w-5" />
-        </button>
+        <ExploreFilterButton />
       </header>
 
       <ul className="space-y-6">

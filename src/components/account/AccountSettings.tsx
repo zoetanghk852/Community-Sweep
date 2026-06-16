@@ -16,7 +16,7 @@ function PreferenceRow({ label, enabled }: { label: string; enabled: boolean }) 
       <span
         className={[
           'rounded-full px-3 py-1 text-base font-semibold',
-          enabled ? 'bg-sage-light text-sage-dark' : 'bg-slate-100 text-slate-600',
+          enabled ? 'bg-sage-light text-sage-dark' : 'bg-cream-dark text-muted',
         ].join(' ')}
       >
         {enabled ? '已開啟' : '已關閉'}

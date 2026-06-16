@@ -24,8 +24,7 @@ export function ServiceIntroSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="section-label">服務簡介</p>
-            <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">社區換物carousell</h2>
+            <h2 className="section-title text-3xl text-foreground sm:text-4xl">社區換物carousell</h2>
           </div>
           <p className="text-lg leading-relaxed text-ink-muted lg:text-right">
             本計畫致力於社區內舉辦換物市集，並提供物品維修與升級改造服務，讓閒置資源得以流轉，
@@ -61,8 +60,7 @@ export function TargetAudienceSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="section-label">主要服務對象</p>
-            <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">
+            <h2 className="section-title text-3xl text-foreground sm:text-4xl">
               長者人士
             </h2>
             <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink-muted">

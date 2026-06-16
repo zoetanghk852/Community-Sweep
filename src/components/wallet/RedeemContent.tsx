@@ -33,7 +33,7 @@ export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: R
               >
                 <div className="flex gap-4">
                   <span
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-3xl shadow-sm"
+                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-card text-3xl shadow-sm"
                     aria-hidden
                   >
                     {option.emoji}
@@ -69,7 +69,7 @@ export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: R
 
       <SectionCard title="已兌換紀錄" subtitle="你曾經兌換嘅服務同物品">
         {redeemedRecords.length === 0 ? (
-          <p className="rounded-2xl border border-dashed border-border-warm bg-cream px-4 py-8 text-center text-base leading-relaxed text-ink-muted">
+          <p className="empty-state text-base leading-relaxed text-ink-muted">
             暫時沒有兌換紀錄。揀選上面嘅項目兌換後，紀錄會顯示喺呢度。
           </p>
         ) : (

@@ -8,19 +8,19 @@ export const landingNavLinks = [
 
 export const coreFeatures = [
   {
-    emoji: '🔄',
+    icon: 'repeat' as const,
     title: '主題換物日',
     description:
       '每月定期舉辦換物市集，設於屋邨社區會堂，無障礙動線，長者無需遠行即可參與。',
   },
   {
-    emoji: '📖',
+    icon: 'book' as const,
     title: '數碼義診',
     description:
       '協助長者或對資訊科技感到陌生的市民，解決日常使用智慧型手機、平板電腦或相關電子設備時遇到的困難',
   },
   {
-    emoji: '🔧',
+    icon: 'wrench' as const,
     title: '維修技能工作坊與藝術重組',
     description:
       '聯繫社區維修達人傳授舊物翻新技巧，修復殘缺舊物並以藝術美學重新組合，發掘閒置資源的隱藏價值。',

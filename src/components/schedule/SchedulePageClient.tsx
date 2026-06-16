@@ -71,7 +71,7 @@ export function SchedulePageClient() {
               <li key={event.id}>
                 <Link
                   href={`/explore/${event.exploreActivityId}`}
-                  className="block rounded-2xl border border-border-light bg-card p-4 shadow-sm transition-colors hover:bg-slate-50/80"
+                  className="interactive block rounded-2xl border border-border-light bg-card p-4 shadow-warm hover:bg-cream/70"
                 >
                   <p className="text-lg font-bold text-foreground">{event.title}</p>
                   <p className="mt-2 flex items-center gap-2 text-base text-muted">

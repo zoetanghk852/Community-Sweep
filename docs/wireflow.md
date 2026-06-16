@@ -9,7 +9,8 @@
 > **Wireflow 是什麼？**  
 > 結合 **Sitemap（資訊架構）**、**畫面線框（Wireframe）** 與 **導覽流程（User Flow）** 的單一文件。  
 > 本文件依**目前程式碼實作**繪製，標示已建頁面、區塊與跳轉關係；規劃中但未實作的功能以虛線標記。  
-> **高保真線框（Figma 規格）**：[wireflow-hifi.md](wireflow-hifi.md) · [瀏覽器預覽](wireframes/preview.html)
+> **高保真線框（Figma 規格）**：[wireflow-hifi.md](wireflow-hifi.md) · [瀏覽器預覽](wireframes/preview.html)  
+> **UI 改進紀錄**：[ui-improvements.md](ui-improvements.md)
 
 ---
 

@@ -38,8 +38,7 @@ export function CommentBoard() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="section-label">街坊心聲</p>
-            <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">真實的社區回饋</h2>
+            <h2 className="section-title text-3xl text-foreground sm:text-4xl">真實的社區回饋</h2>
             <p className="mt-5 max-w-prose text-lg text-ink-muted">
               分享你對社區換物與修繕服務的想法，或閱讀其他街坊的經驗。
             </p>

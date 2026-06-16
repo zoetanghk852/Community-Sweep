@@ -14,12 +14,11 @@ export function JoinSection() {
 
             <div className="mt-10 space-y-4">
               {[
-                { step: '01', text: '填寫基本資料與感興趣的活動' },
-                { step: '02', text: '義工或職員以電話跟進' },
-                { step: '03', text: '安排上門協助或社區會堂見面' },
-              ].map(({ step, text }) => (
-                <div key={step} className="flex items-start gap-4">
-                  <span className="tabular-nums text-sm font-bold text-sage-dark">{step}</span>
+                '填寫基本資料與感興趣的活動',
+                '義工或職員以電話跟進',
+                '安排上門協助或社區會堂見面',
+              ].map((text) => (
+                <div key={text} className="flex items-start gap-3 border-l-2 border-sage/40 pl-4">
                   <p className="text-base text-ink-muted">{text}</p>
                 </div>
               ))}

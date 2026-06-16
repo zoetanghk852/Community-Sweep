@@ -8,8 +8,7 @@ export function ComparisonSection() {
     <section id="compare" className="section-padding scroll-mt-20 bg-page">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <p className="section-label">與現有服務對比</p>
-          <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">互補而非重複的定位</h2>
+          <h2 className="section-title text-3xl text-foreground sm:text-4xl">互補而非重複的定位</h2>
           <p className="mt-4 text-lg text-ink-muted">
             香港已有相類服務，本計畫採互補策略，專注長者囤積議題與社區藝術改造。
           </p>

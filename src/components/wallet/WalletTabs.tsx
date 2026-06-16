@@ -27,9 +27,9 @@ export function WalletTabs({ active, onChange }: WalletTabsProps) {
           {...(active === id ? { 'aria-selected': true as const } : {})}
           onClick={() => onChange(id)}
           className={[
-            'min-h-[3.25rem] flex-1 rounded-xl px-3 py-3 text-lg font-bold transition-colors',
+            'interactive min-h-[3.25rem] flex-1 rounded-xl px-3 py-3 text-lg font-bold',
             active === id
-              ? 'bg-white text-terracotta-dark shadow-sm'
+              ? 'bg-card text-terracotta-dark shadow-sm'
               : 'text-ink-muted hover:text-foreground',
           ].join(' ')}
         >

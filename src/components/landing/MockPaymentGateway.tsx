@@ -50,15 +50,14 @@ export function MockPaymentGateway() {
     <section id="payment-session" className="section-padding scroll-mt-20 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="section-label">模擬付款閘道</p>
-          <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">工作坊報名付款</h2>
+          <h2 className="section-title text-3xl text-foreground sm:text-4xl">工作坊報名付款（示範）</h2>
           <p className="mt-4 text-lg text-ink-muted">
-            示範完整付款 session：登入→ 選擇工作坊 →  處理中 → 成功（模擬，不會實際扣款）登入
+            示範選擇工作坊、填寫付款資料與完成確認的流程。此為模擬介面，不會實際扣款。
           </p>
         </div>
 
         <div className="mx-auto mt-10 max-w-lg">
-          <div className="overflow-hidden rounded-2xl bg-white shadow-warm-lg">
+          <div className="overflow-hidden rounded-2xl bg-card shadow-warm-lg">
             <div className="flex items-center justify-between bg-sage px-5 py-3 text-white">
               <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4" />

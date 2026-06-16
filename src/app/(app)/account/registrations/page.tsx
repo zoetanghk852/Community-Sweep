@@ -8,7 +8,7 @@ export default function RegistrationRecordsPage() {
       <header className="flex items-center gap-2">
         <Link
           href="/account"
-          className="rounded-lg p-1.5 text-foreground hover:bg-slate-100"
+          className="icon-btn"
           aria-label="返回帳戶"
         >
           <ArrowLeft className="h-6 w-6" strokeWidth={2.25} />

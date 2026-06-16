@@ -21,7 +21,7 @@ const notoSerifTc = Noto_Serif_TC({
 
 export const metadata: Metadata = {
   title: "社區換物carousell",
-  description: "社區換物carousell — 鼓勵長者交換閒置物品、預約修繕",
+  description: "社區換物carousell，鼓勵長者交換閒置物品、預約修繕",
   openGraph: {
     title: "社區換物carousell",
     description: "在社區舉辦換物市集、修繕工作坊與藝術重組，發掘舊物價值，重建街坊連結。",

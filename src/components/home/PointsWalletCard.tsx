@@ -35,7 +35,7 @@ export function PointsWalletCard({ wallet }: PointsWalletCardProps) {
 
       <Link
         href="/wallet"
-        className="relative mt-4 flex min-h-[3rem] items-center justify-center rounded-xl bg-white/20 text-lg font-semibold text-white transition-colors hover:bg-white/30"
+        className="interactive relative mt-4 flex min-h-[3rem] items-center justify-center rounded-xl bg-white/20 text-lg font-semibold text-white hover:bg-white/30"
       >
         查看儲分與兌換
       </Link>

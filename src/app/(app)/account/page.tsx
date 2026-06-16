@@ -84,7 +84,7 @@ export default function AccountPage() {
             <li key={label}>
               <Link
                 href={href}
-                className="flex items-center gap-4 px-4 py-4 transition-colors hover:bg-slate-50"
+                className="interactive flex items-center gap-4 px-4 py-4 hover:bg-cream/70"
               >
                 <div className="rounded-xl bg-cream-dark p-2.5">
                   <Icon className="h-6 w-6 text-terracotta" strokeWidth={2} aria-hidden />
@@ -93,7 +93,7 @@ export default function AccountPage() {
                   <p className="text-lg font-semibold text-foreground">{label}</p>
                   <p className="text-base text-muted">{description}</p>
                 </div>
-                <ChevronRight className="h-5 w-5 shrink-0 text-slate-300" aria-hidden />
+                <ChevronRight className="h-5 w-5 shrink-0 text-border-warm" aria-hidden />
               </Link>
             </li>
           ))}

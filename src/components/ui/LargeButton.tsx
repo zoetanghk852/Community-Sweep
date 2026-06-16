@@ -11,7 +11,7 @@ const variants: Record<Variant, string> = {
     'bg-wood-light text-foreground hover:bg-wood/40 border-2 border-border-warm',
   sage: 'bg-sage text-white hover:bg-sage-dark active:bg-sage-dark shadow-md shadow-sage/20',
   outline:
-    'bg-white text-foreground border-2 border-border-warm hover:border-terracotta hover:text-terracotta-dark',
+    'bg-card text-foreground border-2 border-border-warm hover:border-terracotta hover:text-terracotta-dark',
 }
 
 interface LargeButtonProps {
@@ -38,7 +38,7 @@ export function LargeButton({
   ariaLabel,
 }: LargeButtonProps) {
   const base =
-    'inline-flex min-h-[3.25rem] w-full items-center justify-center gap-3 rounded-2xl px-5 py-4 text-lg font-semibold transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-sage disabled:cursor-not-allowed disabled:opacity-50'
+    'interactive inline-flex min-h-[3.25rem] w-full items-center justify-center gap-3 rounded-2xl px-5 py-4 text-lg font-semibold focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-sage disabled:cursor-not-allowed disabled:opacity-50'
 
   const classes = `${base} ${variants[variant]} ${className}`
 

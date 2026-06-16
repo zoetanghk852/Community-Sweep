@@ -87,7 +87,7 @@ export function MonthCalendar({ events, onDateSelect }: MonthCalendarProps) {
           <button
             type="button"
             onClick={() => setViewDate(new Date(year, month - 1, 1))}
-            className="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
+            className="icon-btn text-muted"
             aria-label="上一個月"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -98,7 +98,7 @@ export function MonthCalendar({ events, onDateSelect }: MonthCalendarProps) {
           <button
             type="button"
             onClick={() => setViewDate(new Date(year, month + 1, 1))}
-            className="rounded-lg p-2 text-slate-600 hover:bg-slate-100"
+            className="icon-btn text-muted"
             aria-label="下一個月"
           >
             <ChevronRight className="h-5 w-5" />
@@ -107,7 +107,7 @@ export function MonthCalendar({ events, onDateSelect }: MonthCalendarProps) {
         <button
           type="button"
           onClick={goToday}
-          className="shrink-0 rounded-lg border border-slate-300 bg-white px-4 py-2 text-base font-medium text-foreground hover:bg-slate-50"
+          className="interactive shrink-0 rounded-lg border border-border-warm bg-card px-4 py-2 text-base font-medium text-foreground hover:bg-cream"
         >
           今日
         </button>
@@ -142,8 +142,8 @@ export function MonthCalendar({ events, onDateSelect }: MonthCalendarProps) {
               onClick={() => selectDate(date)}
               className={[
                 'flex aspect-square flex-col items-center justify-center gap-0.5 border-b border-r border-border-light text-base',
-                inMonth ? 'text-foreground' : 'text-slate-300',
-                !isSelected && inMonth && 'hover:bg-slate-50',
+                inMonth ? 'text-foreground' : 'text-muted/40',
+                !isSelected && inMonth && 'hover:bg-cream',
               ].join(' ')}
               aria-label={ariaLabel}
               {...(isSelected ? { 'aria-pressed': true as const } : {})}

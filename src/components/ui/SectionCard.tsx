@@ -12,7 +12,7 @@ export function SectionCard({ title, subtitle, children, className = '', id }: S
   return (
     <section
       id={id}
-      className={`rounded-2xl border-2 border-border-warm bg-white p-5 shadow-sm ${className}`}
+      className={`rounded-2xl border border-border-warm bg-card p-5 shadow-warm ${className}`}
     >
       {(title || subtitle) && (
         <header className="mb-4">

@@ -1,22 +1,30 @@
 'use client'
 
 import Link from 'next/link'
-import { Calendar, ChevronRight, Clock, MapPin } from 'lucide-react'
+import { Calendar, ChevronRight, Clock, MapPin, Search } from 'lucide-react'
 import { useActivityRegistrations } from '@/context/ActivityRegistrationsContext'
 import { formatRegistrationTime } from '@/lib/format'
+import { LargeButton } from '@/components/ui/LargeButton'
 
 export function RegistrationRecords() {
   const { registrations } = useActivityRegistrations()
 
   if (registrations.length === 0) {
     return (
-      <p className="rounded-2xl border border-dashed border-border-warm bg-card px-4 py-10 text-center text-base leading-relaxed text-muted">
-        暫時沒有報名紀錄。前往
-        <Link href="/explore" className="font-semibold text-terracotta hover:underline">
-          探索活動
-        </Link>
-        報名後，紀錄會顯示喺呢度。
-      </p>
+      <div className="empty-state">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-sage-light">
+          <Calendar className="h-7 w-7 text-sage-dark" strokeWidth={2} aria-hidden />
+        </div>
+        <p className="mt-4 text-lg font-semibold text-foreground">尚未報名任何活動</p>
+        <p className="mx-auto mt-2 max-w-xs text-base leading-relaxed text-muted">
+          瀏覽本月換物日或修繕工作坊，選擇適合的場次後即可在此查看紀錄。
+        </p>
+        <div className="mx-auto mt-6 max-w-xs">
+          <LargeButton href="/explore" variant="primary" icon={Search} ariaLabel="探索活動">
+            探索活動
+          </LargeButton>
+        </div>
+      </div>
     )
   }
 
@@ -26,7 +34,7 @@ export function RegistrationRecords() {
         <li key={record.id}>
           <Link
             href={`/explore/${record.activityId}`}
-            className="block rounded-2xl border border-border-light bg-card p-4 shadow-sm transition-colors hover:bg-slate-50/80"
+            className="interactive block rounded-2xl border border-border-light bg-card p-4 shadow-warm hover:bg-cream/70"
           >
             <p className="text-lg font-bold text-foreground">{record.title}</p>
             <p className="mt-2 flex items-center gap-2 text-base text-muted">
