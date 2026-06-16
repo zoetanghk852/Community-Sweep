@@ -63,7 +63,7 @@ export function TargetAudienceSection() {
           <div>
             <p className="section-label">主要服務對象</p>
             <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">
-              有囤積物品傾向的長者
+              長者人士
             </h2>
             <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink-muted">
               不少長者抱持惜物心態，都有儲存舊物的習慣，常保留「修理好還能用」或

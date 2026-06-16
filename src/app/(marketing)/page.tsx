@@ -1,6 +1,5 @@
 import { ServiceIntroSection, TargetAudienceSection } from '@/components/landing/IntroSections'
 import { IdeaSection, CoreFeaturesSection } from '@/components/landing/IdeaAndFeatures'
-import { HoardingSection } from '@/components/landing/HoardingSection'
 import { ComparisonSection } from '@/components/landing/ComparisonSection'
 import { AppPreviewSection } from '@/components/landing/AppPreviewSection'
 import { ItemMarketplace } from '@/components/landing/ItemMarketplace'
@@ -15,7 +14,6 @@ export default function LandingPage() {
       <HeroSection />
       <ServiceIntroSection />
       <TargetAudienceSection />
-      <HoardingSection />
       <IdeaSection />
       <CoreFeaturesSection />
       <AppPreviewSection />

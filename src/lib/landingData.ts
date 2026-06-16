@@ -11,13 +11,13 @@ export const coreFeatures = [
     emoji: '🔄',
     title: '主題換物日',
     description:
-      '每月定期舉辦特定主題（衣物、玩具、餐具等）的換物市集，設於屋邨社區會堂，無障礙動線，長者無需遠行即可參與。',
+      '每月定期舉辦換物市集，設於屋邨社區會堂，無障礙動線，長者無需遠行即可參與。',
   },
   {
     emoji: '📖',
-    title: '分享舊物故事展覽',
+    title: '數碼義診',
     description:
-      '鼓勵參與者訴說物品背後的回憶，藉由故事連結彼此，賦予舊物新的情感價值，將「物品」轉化為人際交流的介入點。',
+      '協助長者或對資訊科技感到陌生的市民，解決日常使用智慧型手機、平板電腦或相關電子設備時遇到的困難',
   },
   {
     emoji: '🔧',
@@ -47,9 +47,9 @@ export const ideaPillars = [
 
 export const comparisonRows = [
   {
-    name: '您的服務（升級改造平台）',
+    name: '社區換物carousell',
     audience: '長者為主，輻射至同區街坊',
-    mode: '主題換物、工具圖書館、維修工作坊及藝術重組',
+    mode: '主題換物日、數碼義診、維修技能工作坊',
     focus: '解決長者囤積與出行不便，將舊物轉化為社區公共藝術',
     highlight: true,
   },
@@ -205,24 +205,6 @@ export const marketplaceItems: MarketplaceItem[] = [
     owner: '鄭婆婆',
     emoji: '📮',
   },
-  {
-    id: 'm11',
-    title: '真空吸塵機',
-    category: '家電',
-    condition: '待修繕',
-    story: '吸力減弱，外殼完好，零件應該仲搵到。',
-    owner: '梁叔',
-    emoji: '🧹',
-  },
-  {
-    id: 'm12',
-    title: '竹製曬衣架',
-    category: '其他',
-    condition: '良好',
-    story: '搬屋多咗一套，結實耐用，想送俾有需要嘅街坊。',
-    owner: '蘇姨',
-    emoji: '🎋',
-  },
 ]
 
 export interface WorkshopOption {
@@ -238,7 +220,7 @@ export const workshopOptions: WorkshopOption[] = [
     id: 'w1',
     title: '舊物藝術重組工作坊',
     price: 0,
-    description: '免費參加，材料由社區提供',
+    description: '材料由社區提供',
     emoji: '🎨',
   },
   {
@@ -252,7 +234,7 @@ export const workshopOptions: WorkshopOption[] = [
     id: 'w3',
     title: '舊物故事分享會',
     price: 0,
-    description: '免費，附茶點',
+    description: '附茶點',
     emoji: '☕',
   },
 ]

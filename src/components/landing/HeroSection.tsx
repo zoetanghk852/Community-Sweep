@@ -27,8 +27,8 @@ export function HeroSection() {
       <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-terracotta/6 blur-3xl" aria-hidden />
 
       <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-20 lg:min-h-[88dvh] lg:pb-32 lg:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <div className="max-w-xl lg:max-w-none">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="order-2 max-w-xl lg:order-1 lg:max-w-none">
             <p className="section-label">香港社區換物計劃</p>
 
             <h1 className="section-title mt-4 text-4xl text-foreground sm:text-5xl lg:text-[3.25rem]">
@@ -71,7 +71,7 @@ export function HeroSection() {
             </dl>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none lg:-mr-6">
+          <div className="relative order-1 mx-auto w-full max-w-lg lg:order-2 lg:mx-0 lg:max-w-none lg:-mr-6">
             <div className="absolute -left-6 top-8 z-10 hidden max-w-[11rem] rounded-2xl glass-panel p-4 lg:block">
               <p className="text-xs font-medium text-muted">本月換物日</p>
               <p className="mt-1 font-display text-base font-semibold text-foreground">屯門東邨社區會堂</p>

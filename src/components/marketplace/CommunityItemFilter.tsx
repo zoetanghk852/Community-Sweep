@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Filter, Search } from 'lucide-react'
 import {
   itemCategories,
@@ -9,9 +9,16 @@ import {
   type MarketplaceItem,
 } from '@/lib/landingData'
 
-function ItemCard({ item }: { item: MarketplaceItem }) {
+function ItemCard({ item, className }: { item: MarketplaceItem; className?: string }) {
   return (
-    <article className="group flex h-full flex-col rounded-2xl bg-page p-5 transition-all hover:-translate-y-0.5 hover:shadow-warm-lg">
+    <article
+      className={[
+        'group flex h-full flex-col rounded-2xl bg-page p-5 transition-all hover:-translate-y-0.5 hover:shadow-warm-lg',
+        className,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <div className="flex items-start gap-4">
         <span
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-sage-light text-2xl transition-colors group-hover:bg-sage/15"
@@ -42,6 +49,13 @@ export function CommunityItemFilter() {
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('全部')
   const [condition, setCondition] = useState<string>('全部')
+  const [showAllMobile, setShowAllMobile] = useState(false)
+
+  const MOBILE_INITIAL_COUNT = 3
+
+  useEffect(() => {
+    setShowAllMobile(false)
+  }, [search, category, condition])
 
   const filtered = useMemo(() => {
     return marketplaceItems.filter((item) => {
@@ -55,6 +69,8 @@ export function CommunityItemFilter() {
       return matchSearch && matchCategory && matchCondition
     })
   }, [search, category, condition])
+
+  const hasMoreOnMobile = filtered.length > MOBILE_INITIAL_COUNT
 
   return (
     <div className="space-y-5">
@@ -126,7 +142,15 @@ export function CommunityItemFilter() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.length > 0 ? (
-          filtered.map((item) => <ItemCard key={item.id} item={item} />)
+          filtered.map((item, index) => (
+            <ItemCard
+              key={item.id}
+              item={item}
+              className={
+                index >= MOBILE_INITIAL_COUNT && !showAllMobile ? 'hidden sm:flex' : undefined
+              }
+            />
+          ))
         ) : (
           <div className="col-span-full rounded-2xl border border-dashed border-border-warm bg-page py-16 text-center">
             <p className="text-lg font-medium text-foreground">沒有符合條件的物品</p>
@@ -134,6 +158,16 @@ export function CommunityItemFilter() {
           </div>
         )}
       </div>
+
+      {hasMoreOnMobile && !showAllMobile && (
+        <button
+          type="button"
+          onClick={() => setShowAllMobile(true)}
+          className="interactive w-full rounded-xl border border-border-warm bg-page py-3.5 text-base font-semibold text-sage-dark hover:border-sage hover:bg-sage-light sm:hidden"
+        >
+          顯示更多…
+        </button>
+      )}
     </div>
   )
 }

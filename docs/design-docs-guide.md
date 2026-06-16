@@ -34,6 +34,8 @@ flowchart TB
 | P0／P1 係咩、文件點睇 | **本文件** |
 | 陳婆婆第一次嚟交換日逐步做咩 | [user-journeys.md](user-journeys.md) |
 | 人物誌、同理心、旅程圖、洞察、優先排序 | [ux-design-kit.md](ux-design-kit.md) → [user-personas.md](user-personas.md) 等 |
+| 畫面結構、導覽流程、Sitemap | [wireflow.md](wireflow.md) |
+| 高保真線框、Figma 規格、Design Tokens | [wireflow-hifi.md](wireflow-hifi.md) · [預覽](wireframes/preview.html) |
 | 積分點計、修繕單有咩狀態 | [data-model.md](data-model.md) §4 |
 | 申請資助、KPI、預算 | [service-proposal.md](service-proposal.md) |
 | 全部功能清單、權限、API | [PRD.md](PRD.md) |

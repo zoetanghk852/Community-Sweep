@@ -1,0 +1,1693 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Community-Sweep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --page: #f5f1ea;
+        --cream: #faf8f4;
+        --cream-dark: #f0e8dc;
+        --card: #fffcf8;
+        --foreground: #2a2318;
+        --ink-muted: #5a4e3c;
+        --muted: #736456;
+        --terracotta: #a85538;
+        --terracotta-dark: #874428;
+        --sage: #4d7a64;
+        --sage-light: #e4ede8;
+        --sage-dark: #355a47;
+        --border-warm: #ddd2c2;
+        --border-light: #ebe3d6;
+        --wood-light: #e5d9c6;
+        --shadow-warm: 0 4px 24px -4px rgba(53, 90, 71, 0.1);
+        --shadow-warm-lg: 0 16px 48px -12px rgba(53, 90, 71, 0.14);
+        --sidebar-w: 280px;
+        --device-w: 390px;
+        --device-h: 844px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--foreground);
+        background: #1a1814;
+        min-height: 100vh;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: var(--sidebar-w) 1fr;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        background: #242018;
+        border-right: 1px solid #3d3528;
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      .sidebar-header {
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #3d3528;
+        margin-bottom: 12px;
+      }
+
+      .sidebar-header h1 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #e8e0d4;
+        letter-spacing: 0.02em;
+      }
+
+      .sidebar-header p {
+        font-size: 11px;
+        color: #8a7d6e;
+        margin-top: 4px;
+      }
+
+      .nav-group {
+        padding: 8px 12px;
+      }
+
+      .nav-group-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #6b5f50;
+        padding: 8px 8px 6px;
+      }
+
+      .nav-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 8px;
+        background: transparent;
+        color: #c4b8a8;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .nav-btn:hover {
+        background: #2e2820;
+        color: #f0e8dc;
+      }
+      .nav-btn.active {
+        background: var(--sage-dark);
+        color: #fff;
+      }
+
+      .canvas {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        overflow-y: auto;
+      }
+
+      .frame-meta {
+        color: #8a7d6e;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .frame-meta strong {
+        color: #c4b8a8;
+      }
+
+      .device {
+        width: var(--device-w);
+        height: var(--device-h);
+        background: var(--page);
+        border-radius: 40px;
+        box-shadow:
+          0 0 0 12px #2a2318,
+          0 0 0 14px #3d3528,
+          var(--shadow-warm-lg);
+        overflow: hidden;
+        position: relative;
+        display: none;
+        flex-direction: column;
+      }
+
+      .device.active {
+        display: flex;
+      }
+      .device.desktop {
+        width: 1100px;
+        height: auto;
+        min-height: 640px;
+        border-radius: 16px;
+      }
+
+      .status-bar {
+        height: 44px;
+        background: var(--page);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--foreground);
+        flex-shrink: 0;
+      }
+
+      .screen {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px 16px 88px;
+        scrollbar-width: thin;
+      }
+
+      .screen.desktop-screen {
+        padding: 0;
+        overflow: visible;
+      }
+
+      /* ── Typography ── */
+      .greeting {
+        font-size: 16px;
+        color: var(--muted);
+      }
+      .h1 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .section {
+        margin-bottom: 24px;
+      }
+      .label-upper {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--sage-dark);
+      }
+
+      /* ── Bottom Nav ── */
+      .bottom-nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 72px;
+        background: rgba(255, 252, 248, 0.92);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid var(--border-light);
+        display: flex;
+        justify-content: space-around;
+        align-items: stretch;
+        padding: 8px 4px;
+      }
+
+      .nav-tab {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        min-height: 52px;
+        border-radius: 8px;
+      }
+
+      .nav-tab.active {
+        color: var(--sage-dark);
+        font-weight: 600;
+      }
+      .nav-tab svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      /* ── Cards ── */
+      .event-card {
+        display: flex;
+        gap: 16px;
+        padding: 16px;
+        background: var(--card);
+        border-radius: 16px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-warm);
+        margin-bottom: 12px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .event-card.featured {
+        border-color: rgba(168, 85, 56, 0.3);
+      }
+      .event-emoji {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: var(--cream-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+
+      .badge-recent {
+        display: inline-block;
+        background: var(--terracotta);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 12px;
+        border-radius: 999px;
+        margin-bottom: 4px;
+      }
+
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: var(--foreground);
+        margin-top: 6px;
+      }
+
+      .meta-row svg {
+        width: 16px;
+        height: 16px;
+        color: var(--terracotta);
+        flex-shrink: 0;
+      }
+
+      .btn-outline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        min-height: 52px;
+        border: 2px solid var(--border-warm);
+        border-radius: 16px;
+        background: #fff;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--terracotta);
+        margin-top: 16px;
+        cursor: pointer;
+      }
+
+      .btn-lg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        min-height: 52px;
+        border-radius: 16px;
+        font-size: 17px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 12px;
+        font-family: inherit;
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: #fff;
+      }
+      .btn-sage {
+        background: var(--sage);
+        color: #fff;
+      }
+      .btn-secondary {
+        background: var(--card);
+        color: var(--foreground);
+        border: 2px solid var(--border-warm);
+      }
+
+      /* ── Wallet Card ── */
+      .wallet-card {
+        background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+        border-radius: 24px;
+        padding: 24px;
+        color: #fff;
+        border: 2px solid rgba(168, 85, 56, 0.3);
+        box-shadow: var(--shadow-warm-lg);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .wallet-card::before {
+        content: "";
+        position: absolute;
+        top: -32px;
+        right: -32px;
+        width: 144px;
+        height: 144px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .wallet-balance {
+        font-size: 52px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 8px 0;
+      }
+      .wallet-info {
+        margin-top: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ── Activity detail ── */
+      .hero-img {
+        aspect-ratio: 16/10;
+        background: linear-gradient(135deg, #c4b8a8, #8a7d6e);
+        border-radius: 16px 16px 0 0;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 12px;
+      }
+
+      .hero-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #2563eb;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      .hero-heart {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-warm);
+      }
+
+      .detail-card {
+        background: var(--card);
+        border-radius: 0 0 16px 16px;
+        border: 1px solid var(--border-light);
+        border-top: none;
+        padding: 20px 16px;
+        margin-bottom: 16px;
+      }
+
+      .info-box {
+        background: var(--cream);
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 16px;
+      }
+
+      /* ── Tabs ── */
+      .tabs {
+        display: flex;
+        gap: 8px;
+        background: var(--cream-dark);
+        border-radius: 16px;
+        padding: 8px;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        flex: 1;
+        min-height: 52px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: inherit;
+        cursor: pointer;
+        background: transparent;
+        color: var(--ink-muted);
+      }
+
+      .tab.active {
+        background: #fff;
+        color: var(--terracotta-dark);
+        box-shadow: var(--shadow-warm);
+      }
+
+      /* ── Account ── */
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--cream-dark);
+        border: 2px solid var(--border-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+      }
+
+      .menu-list {
+        background: var(--card);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .menu-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        border-bottom: 1px solid var(--border-light);
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+      .menu-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--cream-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terracotta);
+      }
+
+      /* ── Marketplace ── */
+      .search-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--card);
+        border: 1px solid var(--border-light);
+        border-radius: 12px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+      }
+
+      .filters {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .filter-chip {
+        flex: 1;
+        padding: 10px 12px;
+        background: var(--card);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        font-size: 13px;
+        color: var(--ink-muted);
+        text-align: center;
+      }
+
+      .item-card {
+        background: var(--page);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 12px;
+        box-shadow: var(--shadow-warm);
+      }
+
+      .pill {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 6px;
+        margin-right: 6px;
+      }
+
+      .pill-sage {
+        background: var(--sage-light);
+        color: var(--sage-dark);
+      }
+      .pill-wood {
+        background: var(--wood-light);
+        color: var(--foreground);
+      }
+
+      /* ── Calendar ── */
+      .calendar {
+        background: var(--card);
+        border: 1px solid var(--border-light);
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+
+      .cal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .cal-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .cal-day {
+        padding: 8px 4px;
+        border-radius: 8px;
+      }
+      .cal-day.today {
+        background: var(--sage-light);
+        color: var(--sage-dark);
+        font-weight: 700;
+      }
+      .cal-day.has-event::after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--terracotta);
+        margin: 2px auto 0;
+      }
+
+      /* ── Modal ── */
+      .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        z-index: 50;
+      }
+
+      .modal {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        width: 100%;
+        max-width: 340px;
+        box-shadow: var(--shadow-warm-lg);
+      }
+
+      /* ── Desktop Landing ── */
+      .landing-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 32px;
+        background: rgba(255, 252, 248, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(221, 210, 194, 0.5);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--sage-light);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--sage-dark);
+      }
+
+      .landing-hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+        padding: 48px 32px 64px;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .landing-h1 {
+        font-family: "Noto Serif TC", serif;
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-top: 16px;
+      }
+
+      .landing-h1 span {
+        color: var(--sage-dark);
+      }
+
+      .landing-body {
+        font-size: 18px;
+        color: var(--ink-muted);
+        line-height: 1.75;
+        margin-top: 24px;
+        max-width: 36em;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border-warm);
+      }
+
+      .stat-val {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--sage-dark);
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      .hero-visual {
+        aspect-ratio: 4/3;
+        background: linear-gradient(145deg, var(--sage-light), var(--cream-dark));
+        border-radius: 24px;
+        box-shadow: var(--shadow-warm-lg);
+        position: relative;
+      }
+
+      .float-card {
+        position: absolute;
+        left: -24px;
+        top: 32px;
+        background: rgba(255, 252, 248, 0.92);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border-warm);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: var(--shadow-warm);
+        max-width: 180px;
+      }
+
+      .page-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .back-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--foreground);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .redeem-card {
+        background: var(--cream);
+        border: 2px solid var(--border-warm);
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 12px;
+        display: flex;
+        gap: 16px;
+      }
+
+      .balance-bar {
+        background: var(--sage-light);
+        color: var(--sage-dark);
+        text-align: center;
+        padding: 12px 16px;
+        border-radius: 16px;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .balance-bar span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: relative;
+          height: auto;
+          border-right: none;
+          border-bottom: 1px solid #3d3528;
+        }
+        .nav-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+        .nav-btn {
+          width: auto;
+        }
+        .device.desktop {
+          width: 100%;
+          border-radius: 12px;
+        }
+        .landing-hero {
+          grid-template-columns: 1fr;
+          padding: 24px 16px;
+        }
+        .landing-h1 {
+          font-size: 28px;
+        }
+        .float-card {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>Community-Sweep Wireframes</h1>
+          <p>高保真線框 · Figma 規格對照</p>
+        </div>
+        <nav class="nav-group">
+          <div class="nav-group-label">Mobile App · 390×844</div>
+          <button class="nav-btn active" data-frame="hall">01 Hall / 社區大廳</button>
+          <button class="nav-btn" data-frame="explore">02 Explore / 探索活動</button>
+          <button class="nav-btn" data-frame="detail">03 Detail / 活動詳情</button>
+          <button class="nav-btn" data-frame="detail-modal">03 Detail / 報名成功</button>
+          <button class="nav-btn" data-frame="schedule">04 Schedule / 日程</button>
+          <button class="nav-btn" data-frame="marketplace">05 Marketplace / 物品篩選</button>
+          <button class="nav-btn" data-frame="wallet">06 Wallet / 兌換</button>
+          <button class="nav-btn" data-frame="wallet-earn">06 Wallet / 賺分</button>
+          <button class="nav-btn" data-frame="account">07 Account / 帳戶</button>
+        </nav>
+        <nav class="nav-group">
+          <div class="nav-group-label">Desktop · 1440</div>
+          <button class="nav-btn" data-frame="landing">Landing / Hero</button>
+        </nav>
+      </aside>
+
+      <main class="canvas">
+        <p class="frame-meta" id="frame-meta">
+          <strong>01 Hall / Default</strong> · 390×844 · /hall
+        </p>
+
+        <!-- 01 Hall -->
+        <div class="device active" id="frame-hall">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <header class="section">
+              <p class="greeting">你好，陳婆婆</p>
+              <h1 class="h1">社區大廳</h1>
+            </header>
+            <section class="section">
+              <h2 class="h2">即將舉行的活動</h2>
+              <a class="event-card featured" href="#">
+                <div class="event-emoji">👕</div>
+                <div>
+                  <span class="badge-recent">最近活動</span>
+                  <p style="font-size: 17px; font-weight: 700">四月衣物換物日</p>
+                  <p style="font-size: 15px; color: var(--muted)">主題交換</p>
+                  <div class="meta-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >2026年5月18日 · 14:00
+                  </div>
+                  <div class="meta-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" /></svg
+                    >屯門東邨社區會堂
+                  </div>
+                </div>
+              </a>
+              <a class="event-card" href="#">
+                <div class="event-emoji">🔧</div>
+                <div>
+                  <p style="font-size: 17px; font-weight: 700">家居小修繕工作坊</p>
+                  <p style="font-size: 15px; color: var(--muted)">修繕技能</p>
+                  <div class="meta-row">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" /></svg
+                    >2026年5月25日 · 10:00
+                  </div>
+                </div>
+              </a>
+              <button class="btn-outline">顯示更多活動 →</button>
+            </section>
+            <section class="section">
+              <h2 class="h2">快捷功能</h2>
+              <button class="btn-lg btn-primary">📱 掃碼賺分</button>
+              <button class="btn-lg btn-sage">🔧 尋找修繕師傅</button>
+              <button class="btn-lg btn-secondary">📤 上傳閒置物品</button>
+            </section>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab active" href="#"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg
+              >主頁</a
+            >
+            <a class="nav-tab" href="#"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg
+              >物品篩選</a
+            >
+            <a class="nav-tab" href="#"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" /></svg
+              >日程</a
+            >
+            <a class="nav-tab" href="#"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" /></svg
+              >帳戶</a
+            >
+          </nav>
+        </div>
+
+        <!-- 02 Explore -->
+        <div class="device" id="frame-explore">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <div class="page-header">
+              <div class="back-btn">←</div>
+              <div>
+                <h1 class="h1" style="font-size: 26px">探索活動</h1>
+                <p style="font-size: 15px; color: var(--muted); margin-top: 4px">
+                  探索全部 12 個活動
+                </p>
+              </div>
+              <div
+                style="
+                  margin-left: auto;
+                  width: 40px;
+                  height: 40px;
+                  border: 1px solid var(--border-light);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                ☰
+              </div>
+            </div>
+            <div
+              style="
+                border-radius: 16px;
+                overflow: hidden;
+                border: 1px solid var(--border-light);
+                margin-bottom: 24px;
+              "
+            >
+              <div class="hero-img">
+                <span class="hero-badge">四月主題</span><span class="hero-heart">♡</span>
+              </div>
+              <div style="padding: 16px; background: var(--card)">
+                <p style="font-size: 14px; color: var(--muted)">ACT-2026-04</p>
+                <p style="font-size: 20px; font-weight: 700; margin-top: 4px">四月衣物換物日</p>
+                <p style="font-size: 15px; color: var(--muted); margin-top: 8px">
+                  屯門東邨社區會堂 · 5月18日
+                </p>
+                <p
+                  style="
+                    font-size: 15px;
+                    color: var(--terracotta);
+                    font-weight: 600;
+                    margin-top: 8px;
+                  "
+                >
+                  查看活動詳情 →
+                </p>
+              </div>
+            </div>
+            <div
+              style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border-light)"
+            >
+              <div class="hero-img" style="background: linear-gradient(135deg, #b8d4c4, #7a9e88)">
+                <span class="hero-badge">修繕</span>
+              </div>
+              <div style="padding: 16px; background: var(--card)">
+                <p style="font-size: 20px; font-weight: 700">家居小修繕工作坊</p>
+                <p style="font-size: 15px; color: var(--muted); margin-top: 8px">尚餘 8 個名額</p>
+              </div>
+            </div>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 03 Detail -->
+        <div class="device" id="frame-detail">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <div class="page-header">
+              <div class="back-btn">←</div>
+              <h1 style="font-size: 20px; font-weight: 700">活動詳情</h1>
+            </div>
+            <div
+              class="detail-card"
+              style="
+                border-radius: 16px;
+                border: 1px solid var(--border-light);
+                padding: 0;
+                overflow: hidden;
+              "
+            >
+              <div class="hero-img">
+                <span class="hero-badge">四月主題</span><span class="hero-heart">♡</span>
+              </div>
+              <div style="padding: 20px 16px">
+                <p style="font-size: 15px; color: var(--muted)">ACT-2026-04</p>
+                <h2 style="font-size: 24px; font-weight: 700; margin-top: 4px">四月衣物換物日</h2>
+                <p style="font-size: 15px; color: var(--muted); margin-top: 4px">
+                  屯門區社區換物計劃
+                </p>
+                <div class="meta-row" style="margin-top: 16px">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: var(--terracotta)"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" /></svg
+                  >2026年5月18日（六）
+                </div>
+                <div class="meta-row">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: var(--terracotta)"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" /></svg
+                  >14:00 – 17:00
+                </div>
+                <div class="meta-row">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: var(--terracotta)"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /></svg
+                  >屯門東邨 · 社區會堂
+                </div>
+                <div class="meta-row">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    style="color: var(--sage)"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" /></svg
+                  >尚餘 15 個名額
+                </div>
+                <div class="info-box">
+                  <p style="font-size: 15px; font-weight: 600">ℹ️ 活動簡介</p>
+                  <p
+                    style="
+                      font-size: 15px;
+                      color: var(--ink-muted);
+                      margin-top: 8px;
+                      line-height: 1.65;
+                    "
+                  >
+                    每月主題換物日，歡迎帶一件衣物參加。無需估價，義工協助登記，試水溫參觀亦可獲積分。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button class="btn-lg btn-primary" style="margin-top: 8px">立即報名（示範）</button>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 03 Detail Modal -->
+        <div class="device" id="frame-detail-modal">
+          <div class="status-bar">9:41</div>
+          <div class="screen" style="filter: blur(1px); opacity: 0.6">
+            <h1 class="h1">活動詳情</h1>
+          </div>
+          <div class="modal-overlay">
+            <div class="modal">
+              <p
+                style="
+                  font-size: 20px;
+                  font-weight: 700;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                ✓ 報名成功
+              </p>
+              <p
+                style="
+                  font-size: 15px;
+                  color: var(--ink-muted);
+                  margin-top: 12px;
+                  line-height: 1.65;
+                "
+              >
+                您已成功報名此活動。可於「帳戶」→「活動報名紀錄」查看詳情。
+              </p>
+              <button class="btn-lg btn-primary" style="margin-top: 20px; margin-bottom: 0">
+                查看報名紀錄
+              </button>
+              <button class="btn-lg btn-secondary" style="margin-top: 12px; margin-bottom: 0">
+                關閉
+              </button>
+            </div>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 04 Schedule -->
+        <div class="device" id="frame-schedule">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <h1 class="h1 section">我的日程</h1>
+            <div class="calendar">
+              <div class="cal-header"><span>‹</span><span>2026年 5月</span><span>›</span></div>
+              <div class="cal-grid" style="color: var(--muted); margin-bottom: 8px">
+                <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span
+                ><span>五</span><span>六</span>
+              </div>
+              <div class="cal-grid">
+                <span class="cal-day"></span><span class="cal-day"></span
+                ><span class="cal-day"></span><span class="cal-day"></span>
+                <span class="cal-day">1</span><span class="cal-day">2</span
+                ><span class="cal-day">3</span> <span class="cal-day">4</span
+                ><span class="cal-day">5</span><span class="cal-day">6</span
+                ><span class="cal-day">7</span> <span class="cal-day">8</span
+                ><span class="cal-day">9</span><span class="cal-day">10</span>
+                <span class="cal-day has-event">11</span><span class="cal-day">12</span
+                ><span class="cal-day">13</span><span class="cal-day">14</span>
+                <span class="cal-day">15</span><span class="cal-day">16</span
+                ><span class="cal-day">17</span> <span class="cal-day has-event">18</span
+                ><span class="cal-day">19</span><span class="cal-day">20</span>
+                <span class="cal-day">21</span><span class="cal-day">22</span
+                ><span class="cal-day">23</span> <span class="cal-day">24</span
+                ><span class="cal-day has-event">25</span><span class="cal-day">26</span
+                ><span class="cal-day">27</span> <span class="cal-day">28</span
+                ><span class="cal-day">29</span><span class="cal-day">30</span>
+                <span class="cal-day today">31</span>
+              </div>
+            </div>
+            <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px">
+              <span style="color: var(--terracotta)">●</span> 交換 &nbsp;
+              <span style="color: var(--sage)">●</span> 修繕 &nbsp;
+              <span style="color: #f59e0b">●</span> 工作坊
+            </p>
+            <h2 class="h2">即將舉行</h2>
+            <a class="event-card" href="#" style="display: block; text-decoration: none">
+              <div>
+                <p style="font-size: 17px; font-weight: 700">四月衣物換物日</p>
+                <div class="meta-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /></svg
+                  >屯門東邨社區會堂
+                </div>
+                <div class="meta-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" /></svg
+                  >2026/05/18 · 14:00
+                </div>
+                <p
+                  style="
+                    font-size: 15px;
+                    color: var(--terracotta);
+                    font-weight: 600;
+                    margin-top: 8px;
+                  "
+                >
+                  查看活動詳情 →
+                </p>
+              </div>
+            </a>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab active" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 05 Marketplace -->
+        <div class="device" id="frame-marketplace">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <header class="section">
+              <h1 class="h1">社區物品篩選</h1>
+              <p style="font-size: 15px; color: var(--muted); margin-top: 4px">
+                試用分類與搜尋，瀏覽街坊分享的舊物故事
+              </p>
+            </header>
+            <div class="search-bar">
+              🔍 <span style="color: var(--muted)">搜尋物品或故事…</span>
+            </div>
+            <div class="filters">
+              <div class="filter-chip">分類：全部 ▾</div>
+              <div class="filter-chip">狀況：全部 ▾</div>
+            </div>
+            <div class="item-card">
+              <div style="display: flex; gap: 16px">
+                <div class="event-emoji">🫖</div>
+                <div>
+                  <p
+                    style="
+                      font-size: 18px;
+                      font-weight: 700;
+                      font-family: &quot;Noto Serif TC&quot;, serif;
+                    "
+                  >
+                    老式熱水壺
+                  </p>
+                  <span class="pill pill-sage">廚房用品</span
+                  ><span class="pill pill-wood">八成新</span>
+                </div>
+              </div>
+              <p
+                style="
+                  font-size: 14px;
+                  color: var(--ink-muted);
+                  margin-top: 12px;
+                  line-height: 1.65;
+                "
+              >
+                陪了婆婆三十年的熱水壺，修好後水仍然滾得快。希望送給有需要的人。
+              </p>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--muted);
+                  margin-top: 12px;
+                  padding-top: 12px;
+                  border-top: 1px solid var(--border-warm);
+                "
+              >
+                提供者：陳婆婆
+              </p>
+            </div>
+            <div class="item-card">
+              <div style="display: flex; gap: 16px">
+                <div class="event-emoji">📚</div>
+                <div>
+                  <p
+                    style="
+                      font-size: 18px;
+                      font-weight: 700;
+                      font-family: &quot;Noto Serif TC&quot;, serif;
+                    "
+                  >
+                    兒童繪本一套
+                  </p>
+                  <span class="pill pill-sage">書籍</span><span class="pill pill-wood">良好</span>
+                </div>
+              </div>
+              <p style="font-size: 14px; color: var(--ink-muted); margin-top: 12px">
+                孫仔長大了，繪本留俾有需要嘅細路。
+              </p>
+            </div>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab active" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 06 Wallet Redeem -->
+        <div class="device" id="frame-wallet">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <p class="greeting">儲分與兌換</p>
+            <p class="greeting" style="margin-bottom: 16px">你好，陳婆婆</p>
+            <div class="wallet-card">
+              <p style="font-size: 17px; opacity: 0.9">我的儲分</p>
+              <p class="wallet-balance">237</p>
+              <p style="font-size: 15px; opacity: 0.85">社區感謝積分 · 不可兌現金</p>
+              <div class="wallet-info">ℹ️ 紙本卡號：CS-2024-0088</div>
+            </div>
+            <div class="tabs">
+              <button class="tab">如何賺分</button>
+              <button class="tab active">兌換服務／物品</button>
+            </div>
+            <div class="balance-bar">可用積分：<span>237</span></div>
+            <div class="redeem-card">
+              <div class="event-emoji" style="width: 56px; height: 56px; font-size: 28px">☕</div>
+              <div style="flex: 1">
+                <p style="font-size: 17px; font-weight: 700">社區茶敘券</p>
+                <span class="pill pill-wood">服務</span>
+                <p style="font-size: 14px; color: var(--ink-muted); margin-top: 6px">
+                  與街坊共飲一杯，中心茶敘時段使用
+                </p>
+                <p
+                  style="
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: var(--terracotta-dark);
+                    margin-top: 8px;
+                  "
+                >
+                  20 積分
+                </p>
+                <button
+                  class="btn-lg btn-sage"
+                  style="margin-top: 10px; margin-bottom: 0; min-height: 44px; font-size: 15px"
+                >
+                  兌換
+                </button>
+              </div>
+            </div>
+            <div class="redeem-card">
+              <div class="event-emoji" style="font-size: 28px">🛍️</div>
+              <div style="flex: 1">
+                <p style="font-size: 17px; font-weight: 700">環保袋套裝</p>
+                <p
+                  style="
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: var(--terracotta-dark);
+                    margin-top: 8px;
+                  "
+                >
+                  30 積分
+                </p>
+              </div>
+            </div>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 06 Wallet Earn -->
+        <div class="device" id="frame-wallet-earn">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <div class="wallet-card">
+              <p style="font-size: 17px; opacity: 0.9">我的儲分</p>
+              <p class="wallet-balance">237</p>
+            </div>
+            <div class="tabs">
+              <button class="tab active">如何賺分</button>
+              <button class="tab">兌換服務／物品</button>
+            </div>
+            <h2 class="h2">點樣賺積分？</h2>
+            <p style="font-size: 14px; color: var(--muted); margin-bottom: 12px">
+              積分係社區感謝，唔可以兌現金
+            </p>
+            <div class="redeem-card">
+              <div class="event-emoji" style="background: var(--sage-light); font-size: 24px">
+                📱
+              </div>
+              <div>
+                <p style="font-weight: 700">現場掃碼</p>
+                <p style="font-size: 14px; color: var(--ink-muted)">交換日報到後掃描</p>
+                <p style="font-weight: 700; color: var(--sage-dark); margin-top: 4px">+10</p>
+              </div>
+            </div>
+            <div class="redeem-card">
+              <div class="event-emoji" style="background: var(--sage-light)">🎁</div>
+              <div>
+                <p style="font-weight: 700">釋出物品交換</p>
+                <p style="font-weight: 700; color: var(--sage-dark); margin-top: 4px">+20</p>
+              </div>
+            </div>
+            <h2 class="h2" style="margin-top: 20px">最近流水</h2>
+            <div
+              style="
+                background: var(--card);
+                border: 1px solid var(--border-light);
+                border-radius: 12px;
+                padding: 14px;
+                font-size: 14px;
+              "
+            >
+              <div style="display: flex; justify-content: space-between">
+                <span>參加換物日</span
+                ><span style="color: var(--sage-dark); font-weight: 600">+10</span>
+              </div>
+              <p style="color: var(--muted); font-size: 12px; margin-top: 4px">2026/04/18</p>
+            </div>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- 07 Account -->
+        <div class="device" id="frame-account">
+          <div class="status-bar">9:41</div>
+          <div class="screen">
+            <div class="profile">
+              <div class="avatar">😊</div>
+              <div>
+                <h1 style="font-size: 24px; font-weight: 700">陳婆婆</h1>
+                <p style="font-size: 15px; color: var(--muted)">社區編號 CS-2024-0088</p>
+                <p style="font-size: 15px; color: var(--muted)">9123 4567</p>
+              </div>
+            </div>
+            <div class="wallet-card" style="margin-bottom: 24px">
+              <p style="font-size: 17px; opacity: 0.9">我的儲分</p>
+              <p class="wallet-balance">237</p>
+              <div class="wallet-info">ℹ️ 紙本卡號：CS-2024-0088</div>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+              "
+            >
+              <h2 class="h2" style="margin: 0">活動報名紀錄</h2>
+              <span style="color: var(--terracotta); font-weight: 600; font-size: 15px"
+                >全部 →</span
+              >
+            </div>
+            <div class="event-card" style="margin-bottom: 24px">
+              <div>
+                <p style="font-weight: 700">四月衣物換物日</p>
+                <p style="font-size: 14px; color: var(--muted)">2026/05/18 · 已報名</p>
+              </div>
+            </div>
+            <nav class="menu-list">
+              <a class="menu-item" href="#"
+                ><div class="menu-icon">🪙</div>
+                <div>
+                  <p style="font-weight: 600; font-size: 17px">儲分與兌換</p>
+                  <p style="font-size: 14px; color: var(--muted)">賺分、換領禮物同修繕</p>
+                </div>
+                <span>›</span></a
+              >
+              <a class="menu-item" href="#"
+                ><div class="menu-icon">📋</div>
+                <div>
+                  <p style="font-weight: 600; font-size: 17px">積分紀錄</p>
+                  <p style="font-size: 14px; color: var(--muted)">查看最近流水</p>
+                </div>
+                <span>›</span></a
+              >
+              <a class="menu-item" href="#"
+                ><div class="menu-icon">📝</div>
+                <div><p style="font-weight: 600; font-size: 17px">活動報名紀錄</p></div>
+                <span>›</span></a
+              >
+              <a class="menu-item" href="#"
+                ><div class="menu-icon">⚙️</div>
+                <div><p style="font-weight: 600; font-size: 17px">設定</p></div>
+                <span>›</span></a
+              >
+              <a class="menu-item" href="#"
+                ><div class="menu-icon">🌐</div>
+                <div><p style="font-weight: 600; font-size: 17px">返回平台首頁</p></div>
+                <span>›</span></a
+              >
+            </nav>
+          </div>
+          <nav class="bottom-nav">
+            <a class="nav-tab" href="#">主頁</a>
+            <a class="nav-tab" href="#">物品篩選</a>
+            <a class="nav-tab" href="#">日程</a>
+            <a class="nav-tab active" href="#">帳戶</a>
+          </nav>
+        </div>
+
+        <!-- Landing Desktop -->
+        <div class="device desktop" id="frame-landing">
+          <div class="screen desktop-screen" style="background: var(--page)">
+            <header class="landing-nav">
+              <div class="logo">
+                <div class="logo-icon">🌿</div>
+                <div>
+                  <p style="font-weight: 600; color: var(--sage-dark); font-size: 14px">
+                    社區換物carousell
+                  </p>
+                  <p style="font-size: 11px; color: var(--muted)">香港</p>
+                </div>
+              </div>
+              <nav style="display: flex; gap: 4px; align-items: center">
+                <a
+                  href="#"
+                  style="
+                    padding: 8px 12px;
+                    font-size: 13px;
+                    color: var(--ink-muted);
+                    text-decoration: none;
+                  "
+                  >核心功能</a
+                >
+                <a
+                  href="#"
+                  style="
+                    padding: 8px 12px;
+                    font-size: 13px;
+                    color: var(--ink-muted);
+                    text-decoration: none;
+                  "
+                  >App 預覽</a
+                >
+                <a
+                  href="#"
+                  style="
+                    padding: 8px 12px;
+                    font-size: 13px;
+                    color: var(--ink-muted);
+                    text-decoration: none;
+                  "
+                  >加入我們</a
+                >
+                <a
+                  href="#"
+                  style="
+                    margin-left: 12px;
+                    padding: 10px 16px;
+                    background: var(--sage);
+                    color: #fff;
+                    border-radius: 12px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    text-decoration: none;
+                  "
+                  >體驗示範 App</a
+                >
+              </nav>
+            </header>
+            <section class="landing-hero">
+              <div>
+                <p class="label-upper">香港社區換物計劃</p>
+                <h1 class="landing-h1">從囤積到交流，<span>發掘舊物的隱藏價值</span></h1>
+                <p class="landing-body">
+                  不少長者抱持惜物心態，保留「修好還能用」或「總有一天會用到」的物品。我們在社區內舉辦換物市集，提供維修與升級改造服務。
+                </p>
+                <div class="cta-row">
+                  <a
+                    href="#"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                      padding: 16px 28px;
+                      background: var(--terracotta);
+                      color: #fff;
+                      border-radius: 16px;
+                      font-weight: 600;
+                      text-decoration: none;
+                      box-shadow: var(--shadow-warm-lg);
+                    "
+                    >立即登記參加 →</a
+                  >
+                  <a
+                    href="#"
+                    style="
+                      display: inline-flex;
+                      padding: 16px 28px;
+                      border: 1px solid var(--border-warm);
+                      background: var(--card);
+                      border-radius: 12px;
+                      font-weight: 600;
+                      text-decoration: none;
+                      color: var(--foreground);
+                    "
+                    >體驗街坊端 App</a
+                  >
+                </div>
+                <dl class="stats">
+                  <div>
+                    <dd class="stat-val">237</dd>
+                    <dd class="stat-label">示範積分餘額</dd>
+                  </div>
+                  <div>
+                    <dd class="stat-val">12</dd>
+                    <dd class="stat-label">本月換物活動</dd>
+                  </div>
+                  <div>
+                    <dd class="stat-val">47</dd>
+                    <dd class="stat-label">已登記街坊</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="hero-visual">
+                <div class="float-card">
+                  <p style="font-size: 11px; color: var(--muted)">本月換物日</p>
+                  <p
+                    style="
+                      font-weight: 600;
+                      margin-top: 4px;
+                      font-family: &quot;Noto Serif TC&quot;, serif;
+                    "
+                  >
+                    屯門東邨社區會堂
+                  </p>
+                  <p style="font-size: 13px; color: var(--sage-dark)">5月18日 · 下午2時</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const meta = {
+        hall: ["01 Hall / Default", "390×844", "/hall"],
+        explore: ["02 Explore / Default", "390×844", "/explore"],
+        detail: ["03 Explore Detail / Default", "390×844", "/explore/[id]"],
+        "detail-modal": ["03 Explore Detail / Modal Success", "390×844", "/explore/[id]"],
+        schedule: ["04 Schedule / Default", "390×844", "/schedule"],
+        marketplace: ["05 Marketplace / Default", "390×844", "/marketplace"],
+        wallet: ["06 Wallet / Tab Redeem", "390×844", "/wallet"],
+        "wallet-earn": ["06 Wallet / Tab Earn", "390×844", "/wallet?tab=earn"],
+        account: ["07 Account / Default", "390×844", "/account"],
+        landing: ["Landing / Hero", "1440×900", "/ #hero"],
+      };
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.frame;
+          document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          document.querySelectorAll(".device").forEach((d) => d.classList.remove("active"));
+          document.getElementById("frame-" + id).classList.add("active");
+          const m = meta[id];
+          document.getElementById("frame-meta").innerHTML =
+            "<strong>" + m[0] + "</strong> · " + m[1] + " · " + m[2];
+        });
+      });
+    </script>
+  </body>
+</html>

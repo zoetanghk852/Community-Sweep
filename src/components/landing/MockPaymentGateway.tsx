@@ -53,7 +53,7 @@ export function MockPaymentGateway() {
           <p className="section-label">模擬付款閘道</p>
           <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">工作坊報名付款</h2>
           <p className="mt-4 text-lg text-ink-muted">
-            示範完整付款 session：選擇工作坊 → 填寫資料 → 處理中 → 成功（模擬，不會實際扣款）
+            示範完整付款 session：登入→ 選擇工作坊 →  處理中 → 成功（模擬，不會實際扣款）登入
           </p>
         </div>
 
