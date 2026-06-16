@@ -30,8 +30,8 @@ export const coreFeatures = [
 export const ideaPillars = [
   {
     icon: 'gem' as const,
-    title: '發掘囤積物的價值',
-    description: '每件舊物都承載回憶與故事，透過修繕與升級改造，讓「總有一天會用到」變成「現在就能造福他人」。',
+    title: '賦予舊物第二次生命',
+    description: '透過「舊物變寶」的過程，讓長者重新審視物品的價值——將看似廢棄的資源，轉化為具備實用性或紀念意義的資源',
   },
   {
     icon: 'users' as const,
@@ -40,17 +40,17 @@ export const ideaPillars = [
   },
   {
     icon: 'palette' as const,
-    title: '藝術美學',
-    description: '引入社區公共藝術與美學視角，填補心理上的空虛，以創意方式改變囤積物品的生活習慣。',
+    title: '工作坊：以創意重塑生活習慣',
+    description: '透過「創意改造」與「舊物升級」活動，讓長者在動手實作中體驗創作的樂趣，將處理雜物的過程轉化為一種療癒的儀式',
   },
 ] as const
 
 export const comparisonRows = [
   {
     name: '社區換物carousell',
-    audience: '長者為主，輻射至同區街坊',
+    audience: '以長者優先，並照顧同區廣大街坊',
     mode: '主題換物日、數碼義診、維修技能工作坊',
-    focus: '解決長者囤積與出行不便，將舊物轉化為社區公共藝術',
+    focus: '結合線下社交與舊物翻新',
     highlight: true,
   },
   {
@@ -103,10 +103,6 @@ export const uxHighlights = [
 ] as const
 
 export const appPreviewHighlights = [
-  {
-    title: '先修後換',
-    description: '尊重惜物，優先維修延長使用，交換作為後續安排。',
-  },
   {
     title: '線下為主、數碼為輔',
     description: '義工代登記為預設',

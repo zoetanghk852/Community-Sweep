@@ -53,6 +53,21 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .interactive:hover,
+  .interactive:active:not(:disabled) {
+    transform: none;
+  }
+
+  .animate-spin {
+    animation: none;
+  }
+}
+
 body {
   background: var(--page);
   color: var(--foreground);
@@ -137,9 +152,14 @@ body {
 .section-title {
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
   text-wrap: balance;
+}
+
+.prose-width {
+  max-width: 38ch;
+  text-wrap: pretty;
 }
 
 .section-padding {
@@ -152,10 +172,6 @@ body {
     padding-top: 5.5rem;
     padding-bottom: 6rem;
   }
-}
-
-.prose-width {
-  max-width: 38ch;
 }
 
 .surface-card {

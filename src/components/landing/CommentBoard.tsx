@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { MessageSquare, Send } from 'lucide-react'
+import { Reveal } from '@/components/motion/Reveal'
 import { initialComments } from '@/lib/landingData'
 
 interface Comment {
@@ -37,7 +38,7 @@ export function CommentBoard() {
     <section id="comments" className="section-padding scroll-mt-20 bg-card">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
+          <Reveal>
             <h2 className="section-title text-3xl text-foreground sm:text-4xl">真實的社區回饋</h2>
             <p className="mt-5 max-w-prose text-lg text-ink-muted">
               分享你對社區換物與修繕服務的想法，或閱讀其他街坊的經驗。
@@ -75,12 +76,15 @@ export function CommentBoard() {
                 發表留言
               </button>
             </form>
-          </div>
+          </Reveal>
 
           <ul className="columns-1 gap-4 space-y-4 sm:columns-2">
             {comments.map((comment, index) => (
-              <li
+              <Reveal
                 key={comment.id}
+                as="li"
+                delay={Math.min(index * 0.06, 0.36)}
+                amount={0.15}
                 className={[
                   'break-inside-avoid rounded-2xl bg-page p-5 shadow-warm transition-shadow hover:shadow-warm-lg',
                   index === 0 ? 'bg-sage-light/50' : '',
@@ -91,7 +95,7 @@ export function CommentBoard() {
                   <span className="text-sm text-muted">{comment.time}</span>
                 </div>
                 <p className="mt-2 text-base leading-relaxed text-ink-muted">{comment.message}</p>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>

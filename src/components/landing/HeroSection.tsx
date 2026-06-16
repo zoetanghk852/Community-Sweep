@@ -1,77 +1,27 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-
-export function HeroSection() {
-  return (
-    <section className="relative overflow-hidden bg-page">
-      <div
-        className="absolute inset-0 bg-[url('https://picsum.photos/seed/community-hall/1920/1080')] bg-cover bg-center opacity-[0.07]"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_0%,rgba(77,122,100,0.14),transparent_55%)]"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-page"
-        aria-hidden
-      />
-      <div className="absolute -right-32 top-20 h-96 w-96 rounded-full bg-sage/8 blur-3xl" aria-hidden />
-      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-terracotta/6 blur-3xl" aria-hidden />
-
-      <div className="relative mx-auto flex min-h-[min(100dvh,52rem)] max-w-6xl flex-col justify-center px-4 pb-14 pt-14 sm:px-6 sm:pb-16 sm:pt-16 lg:pt-20">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <div className="order-2 max-w-xl lg:order-1 lg:max-w-none">
-            <h1 className="section-title text-4xl text-foreground sm:text-5xl lg:text-[3rem]">
-              社區換物carousell
-            </h1>
-
-            <p className="prose-width mt-6 text-lg leading-relaxed text-ink-muted sm:text-xl">
-              換物市集 × 舊物維修 × 數碼義診
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#join"
-                className="interactive inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-2xl bg-terracotta px-7 py-4 text-lg font-semibold text-white shadow-warm-lg hover:bg-terracotta-dark hover:shadow-lift"
-              >
-                立即登記參加
-                <ArrowRight className="h-5 w-5" aria-hidden />
-              </a>
-              <Link
-                href="/hall"
-                className="interactive inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-xl border border-border-warm bg-card/90 px-7 py-4 text-lg font-semibold text-foreground hover:border-sage hover:text-sage-dark"
-              >
-                體驗街坊端 App
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative order-1 mx-auto w-full max-w-lg lg:order-2 lg:mx-0 lg:max-w-none lg:-mr-6">
-            <div className="absolute -left-6 top-8 z-10 hidden max-w-[11rem] rounded-2xl glass-panel p-4 lg:block">
-              <p className="text-xs font-medium text-muted">本月換物日</p>
-              <p className="mt-1 font-display text-base font-semibold text-foreground">屯門東邨社區會堂</p>
-              <p className="mt-0.5 text-sm text-sage-dark">5月18日 下午2時</p>
-            </div>
-
-            <Image
-              src="/images/hero-community-barter.png"
-              alt="社區換物市場的 3D 插圖，展示多位市民在陽光明媚的公園裡友好地交換植物、吉他和家電等物品"
-              width={1024}
-              height={572}
-              priority
-              className="relative z-[1] w-full rounded-[1.75rem] shadow-lift ring-1 ring-border-warm/50"
-              sizes="(max-width: 1024px) 100vw, 48vw"
-            />
-
-            <div className="absolute -bottom-5 -right-4 z-10 rounded-2xl bg-sage px-5 py-4 text-white shadow-warm-lg sm:-right-8">
-              <p className="text-xs font-medium text-white/80">已促成交換</p>
-              <p className="tabular-nums font-display text-2xl font-bold">1,284 件</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+import { HeroSectionContent } from '@/components/landing/HeroSectionContent'
+
+export function HeroSection() {
+  return (
+    <section className="relative overflow-hidden bg-page">
+      <div
+        className="absolute inset-0 bg-[url('https://picsum.photos/seed/community-hall/1920/1080')] bg-cover bg-center opacity-[0.07]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_0%,rgba(77,122,100,0.14),transparent_55%)]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-cream/40 via-transparent to-page"
+        aria-hidden
+      />
+      <div className="absolute -right-32 top-20 h-96 w-96 rounded-full bg-sage/8 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-terracotta/6 blur-3xl" aria-hidden />
+
+      <div className="relative mx-auto flex min-h-[min(100dvh,52rem)] max-w-6xl flex-col justify-center px-4 pb-14 pt-14 sm:px-6 sm:pb-16 sm:pt-16 lg:pt-20">
+        <HeroSectionContent />
+      </div>
+    </section>
+  )
+}
+

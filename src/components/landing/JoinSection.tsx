@@ -1,13 +1,13 @@
 import { RegistrationForm } from '@/components/landing/RegistrationForm'
+import { Reveal } from '@/components/motion/Reveal'
 
 export function JoinSection() {
   return (
     <section id="join" className="section-padding scroll-mt-20 bg-page">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
-          <div className="lg:sticky lg:top-28">
-            <p className="section-label">加入我們</p>
-            <h2 className="section-title mt-3 text-3xl text-foreground sm:text-4xl">登記參加社區活動</h2>
+          <Reveal className="lg:sticky lg:top-28">
+            <h2 className="section-title text-3xl text-foreground sm:text-4xl">登記參加社區活動</h2>
             <p className="mt-5 max-w-prose text-lg leading-relaxed text-ink-muted">
               填寫表格後，我們會在 3 個工作天內以電話聯絡你，介紹最近的換物日或修繕工作坊。
             </p>
@@ -23,9 +23,11 @@ export function JoinSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <RegistrationForm />
+          <Reveal delay={0.12}>
+            <RegistrationForm />
+          </Reveal>
         </div>
       </div>
     </section>
