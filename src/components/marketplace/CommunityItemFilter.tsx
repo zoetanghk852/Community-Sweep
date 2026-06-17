@@ -124,61 +124,77 @@ export function CommunityItemFilter() {
       )}
       <div className="rounded-2xl bg-page p-5 sm:p-6">
         <div className="flex items-center gap-2 text-foreground">
-          <Filter className="h-5 w-5 text-sage" />
+          <Filter className="h-5 w-5 text-sage" aria-hidden />
           <span className="font-semibold">篩選條件</span>
         </div>
 
         <div className="mt-5 space-y-5">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted" />
+            <label htmlFor="marketplace-search" className="sr-only">
+              搜尋物品
+            </label>
+            <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted" aria-hidden />
             <input
+              id="marketplace-search"
               type="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="搜尋物品名稱、故事或提供者..."
-              className="interactive w-full rounded-xl border border-border-warm bg-card py-3 pl-10 pr-4 text-base focus:border-sage focus:outline-none"
+              className="interactive w-full rounded-xl border border-border-warm bg-card py-3 pl-10 pr-4 text-base focus-visible:border-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
             />
           </div>
 
-          <div>
-            <p className="mb-2 text-sm font-medium text-ink-muted">類別</p>
+          <div role="group" aria-labelledby="marketplace-category-label">
+            <p id="marketplace-category-label" className="mb-2 text-sm font-medium text-ink-muted">
+              類別
+            </p>
             <div className="flex flex-wrap gap-2">
-              {itemCategories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setCategory(cat)}
-                  className={[
-                    'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
-                    category === cat
-                      ? 'bg-sage text-white shadow-warm'
-                      : 'bg-card text-ink-muted hover:bg-sage-light',
-                  ].join(' ')}
-                >
-                  {cat}
-                </button>
-              ))}
+              {itemCategories.map((cat) => {
+                const selected = category === cat
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setCategory(cat)}
+                    aria-pressed={selected}
+                    className={[
+                      'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
+                      selected
+                        ? 'bg-sage font-bold text-white shadow-warm ring-2 ring-sage-dark ring-offset-1'
+                        : 'bg-card text-ink-muted hover:bg-sage-light',
+                    ].join(' ')}
+                  >
+                    {cat}
+                  </button>
+                )
+              })}
             </div>
           </div>
 
-          <div>
-            <p className="mb-2 text-sm font-medium text-ink-muted">狀態</p>
+          <div role="group" aria-labelledby="marketplace-condition-label">
+            <p id="marketplace-condition-label" className="mb-2 text-sm font-medium text-ink-muted">
+              狀態
+            </p>
             <div className="flex flex-wrap gap-2">
-              {itemConditions.map((cond) => (
-                <button
-                  key={cond}
-                  type="button"
-                  onClick={() => setCondition(cond)}
-                  className={[
-                    'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
-                    condition === cond
-                      ? 'bg-sage-dark text-white shadow-warm'
-                      : 'bg-card text-ink-muted hover:bg-sage-light',
-                  ].join(' ')}
-                >
-                  {cond}
-                </button>
-              ))}
+              {itemConditions.map((cond) => {
+                const selected = condition === cond
+                return (
+                  <button
+                    key={cond}
+                    type="button"
+                    onClick={() => setCondition(cond)}
+                    aria-pressed={selected}
+                    className={[
+                      'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
+                      selected
+                        ? 'bg-sage-dark font-bold text-white shadow-warm ring-2 ring-foreground/20 ring-offset-1'
+                        : 'bg-card text-ink-muted hover:bg-sage-light',
+                    ].join(' ')}
+                  >
+                    {cond}
+                  </button>
+                )
+              })}
             </div>
           </div>
         </div>

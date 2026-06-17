@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -27,11 +28,65 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
   const [dialog, setDialog] = useState<'success' | 'already' | null>(null)
   const { isRegistered, register } = useActivityRegistrations()
   const registered = isRegistered(activity.id)
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const [portalReady, setPortalReady] = useState(false)
+
+  useEffect(() => {
+    setPortalReady(true)
+  }, [])
 
   const handleRegister = () => {
     const added = register(activity)
     setDialog(added ? 'success' : 'already')
   }
+
+  const closeDialog = () => setDialog(null)
+
+  useEffect(() => {
+    if (!dialog) return
+
+    const main = document.getElementById('main-content')
+    const nav = document.querySelector<HTMLElement>('nav[aria-label="主要導覽"]')
+    main?.setAttribute('inert', '')
+    nav?.setAttribute('inert', '')
+
+    closeButtonRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        closeDialog()
+        return
+      }
+
+      if (event.key !== 'Tab' || !dialogRef.current) return
+
+      const focusables = dialogRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      )
+      const list = Array.from(focusables)
+      if (list.length === 0) return
+
+      const first = list[0]
+      const last = list[list.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      main?.removeAttribute('inert')
+      nav?.removeAttribute('inert')
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [dialog])
 
   return (
     <div className="space-y-6">
@@ -64,10 +119,11 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
             onClick={() => setSaved((v) => !v)}
             className="interactive absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-card shadow-warm"
             aria-label={saved ? '取消收藏' : '收藏活動'}
-            {...(saved ? { 'aria-pressed': true as const } : {})}
+            aria-pressed={saved}
           >
             <Heart
               className={`h-5 w-5 ${saved ? 'fill-terracotta text-terracotta' : 'text-muted'}`}
+              aria-hidden
             />
           </button>
         </div>
@@ -125,7 +181,7 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
         type="button"
         onClick={handleRegister}
         className={[
-          'interactive w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white',
+          'interactive mb-2 w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white',
           registered
             ? 'bg-sage hover:bg-sage-dark'
             : 'bg-terracotta hover:bg-terracotta-dark shadow-md shadow-terracotta/20',
@@ -134,56 +190,66 @@ export function ActivityDetail({ activity }: ActivityDetailProps) {
         {registered ? '已報名（示範）' : '立即報名（示範）'}
       </button>
 
-      {dialog && (
-        <div
-          className="fixed inset-0 z-modal flex items-center justify-center bg-foreground/40 p-4 backdrop-blur-[2px]"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="signup-dialog-title"
-        >
-          <div className="w-full max-w-sm rounded-2xl bg-card p-6 shadow-lift">
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="h-8 w-8 shrink-0 text-sage" aria-hidden />
-                <div>
-                  <h2 id="signup-dialog-title" className="text-xl font-bold text-foreground">
-                    {dialog === 'success' ? '報名成功' : '已報名此活動'}
-                  </h2>
-                  <p className="mt-2 text-base leading-relaxed text-ink-muted">
-                    {dialog === 'success'
-                      ? '您已成功報名此活動。可於「帳戶」→「活動報名紀錄」查看詳情。'
-                      : '您先前已報名此活動，可於「帳戶」→「活動報名紀錄」查看。'}
-                  </p>
+      {dialog &&
+        portalReady &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-modal flex items-center justify-center bg-foreground/40 p-4 backdrop-blur-[2px]"
+            role="presentation"
+            onClick={closeDialog}
+          >
+            <div
+              ref={dialogRef}
+              className="w-full max-w-sm rounded-2xl bg-card p-6 shadow-lift"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="signup-dialog-title"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-8 w-8 shrink-0 text-sage" aria-hidden />
+                  <div>
+                    <h2 id="signup-dialog-title" className="text-xl font-bold text-foreground">
+                      {dialog === 'success' ? '報名成功' : '已報名此活動'}
+                    </h2>
+                    <p className="mt-2 text-base leading-relaxed text-ink-muted">
+                      {dialog === 'success'
+                        ? '您已成功報名此活動。可於「帳戶」→「活動報名紀錄」查看詳情。'
+                        : '您先前已報名此活動，可於「帳戶」→「活動報名紀錄」查看。'}
+                    </p>
+                  </div>
                 </div>
+                <button
+                  ref={closeButtonRef}
+                  type="button"
+                  onClick={closeDialog}
+                  className="icon-btn text-muted"
+                  aria-label="關閉"
+                >
+                  <X className="h-5 w-5" aria-hidden />
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => setDialog(null)}
-                className="icon-btn text-muted"
-                aria-label="關閉"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              <div className="mt-6 flex flex-col gap-3">
+                <Link
+                  href="/account/registrations"
+                  onClick={closeDialog}
+                  className="flex min-h-[3rem] items-center justify-center rounded-xl bg-terracotta text-lg font-semibold text-white hover:bg-terracotta/90"
+                >
+                  查看報名紀錄
+                </Link>
+                <button
+                  type="button"
+                  onClick={closeDialog}
+                  className="min-h-[3rem] rounded-xl border-2 border-border-warm text-lg font-semibold text-foreground hover:bg-cream"
+                >
+                  關閉
+                </button>
+              </div>
             </div>
-            <div className="mt-6 flex flex-col gap-3">
-              <Link
-                href="/account/registrations"
-                onClick={() => setDialog(null)}
-                className="flex min-h-[3rem] items-center justify-center rounded-xl bg-terracotta text-lg font-semibold text-white hover:bg-terracotta/90"
-              >
-                查看報名紀錄
-              </Link>
-              <button
-                type="button"
-                onClick={() => setDialog(null)}
-                className="min-h-[3rem] rounded-xl border-2 border-border-warm text-lg font-semibold text-foreground hover:bg-cream"
-              >
-                關閉
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </div>
   )
 }

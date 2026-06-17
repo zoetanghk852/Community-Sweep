@@ -1,6 +1,11 @@
-import { CommunityItemFilter } from '@/components/marketplace/CommunityItemFilter'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Upload } from 'lucide-react'
+import { CommunityItemFilter } from '@/components/marketplace/CommunityItemFilter'
+
+export const metadata: Metadata = {
+  title: '線上換物｜社區換物carousell',
+}
 
 export default function MarketplacePage() {
   return (

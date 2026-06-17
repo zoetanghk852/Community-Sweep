@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   ChevronRight,
@@ -10,6 +11,10 @@ import {
 import { RegistrationRecords } from '@/components/account/RegistrationRecords'
 import { HomeBalance } from '@/components/home/HomeBalance'
 import { mockMemberProfile, mockWallet } from '@/lib/mockData'
+
+export const metadata: Metadata = {
+  title: '帳戶｜社區換物carousell',
+}
 
 const menuItems = [
   {
@@ -70,6 +75,7 @@ export default function AccountPage() {
           <Link
             href="/account/registrations"
             className="flex items-center gap-0.5 text-base font-medium text-terracotta"
+            aria-label="查看全部活動報名紀錄"
           >
             全部
             <ChevronRight className="h-4 w-4" />

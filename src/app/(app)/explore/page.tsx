@@ -1,8 +1,13 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { ActivityCard } from '@/components/explore/ActivityCard'
 import { ExploreFilterButton } from '@/components/explore/ExploreFilterButton'
 import { EXPLORE_ACTIVITY_TOTAL, mockExploreActivities } from '@/lib/mockData'
+
+export const metadata: Metadata = {
+  title: '探索活動｜社區換物carousell',
+}
 
 export default function ExplorePage() {
   return (

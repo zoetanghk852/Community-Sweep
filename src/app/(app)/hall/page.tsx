@@ -1,8 +1,13 @@
-import { QuickActions } from '@/components/home/QuickActions'
-import { UpcomingEvents } from '@/components/home/UpcomingEvents'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
+import { QuickActions } from '@/components/home/QuickActions'
+import { UpcomingEvents } from '@/components/home/UpcomingEvents'
 import { getUpcomingHallEvents, mockWallet } from '@/lib/mockData'
+
+export const metadata: Metadata = {
+  title: '社區大廳｜社區換物carousell',
+}
 
 const HALL_ACTIVITY_PREVIEW_COUNT = 3
 

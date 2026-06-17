@@ -119,7 +119,7 @@ export function UploadItemForm() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="例如：藍色棉質外套"
-            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus:border-sage focus:outline-none"
+            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus-visible:border-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
           />
         </div>
 
@@ -131,7 +131,7 @@ export function UploadItemForm() {
             id="upload-category"
             value={category}
             onChange={(e) => setCategory(e.target.value as MarketplaceItem['category'])}
-            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus:border-sage focus:outline-none"
+            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus-visible:border-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
           >
             {uploadCategories.map((cat) => (
               <option key={cat} value={cat}>
@@ -141,24 +141,30 @@ export function UploadItemForm() {
           </select>
         </div>
 
-        <div>
-          <p className="mb-2 text-sm font-medium text-foreground">狀況</p>
+        <div role="group" aria-labelledby="upload-condition-label">
+          <p id="upload-condition-label" className="mb-2 text-sm font-medium text-foreground">
+            狀況
+          </p>
           <div className="flex flex-wrap gap-2">
-            {uploadConditions.map((cond) => (
-              <button
-                key={cond}
-                type="button"
-                onClick={() => setCondition(cond)}
-                className={[
-                  'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
-                  condition === cond
-                    ? 'bg-sage text-white shadow-warm'
-                    : 'bg-card text-ink-muted hover:bg-sage-light',
-                ].join(' ')}
-              >
-                {cond}
-              </button>
-            ))}
+            {uploadConditions.map((cond) => {
+              const selected = condition === cond
+              return (
+                <button
+                  key={cond}
+                  type="button"
+                  onClick={() => setCondition(cond)}
+                  aria-pressed={selected}
+                  className={[
+                    'interactive rounded-lg px-3.5 py-2 text-sm font-medium',
+                    selected
+                      ? 'bg-sage font-bold text-white shadow-warm ring-2 ring-sage-dark ring-offset-1'
+                      : 'bg-card text-ink-muted hover:bg-sage-light',
+                  ].join(' ')}
+                >
+                  {cond}
+                </button>
+              )
+            })}
           </div>
         </div>
 
@@ -172,7 +178,7 @@ export function UploadItemForm() {
             onChange={(e) => setStory(e.target.value)}
             rows={4}
             placeholder="簡單講下件物品嘅來歷，方便街坊了解…"
-            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus:border-sage focus:outline-none"
+            className="interactive w-full rounded-xl border border-border-warm bg-card px-4 py-3 text-base focus-visible:border-sage focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
           />
         </div>
       </div>

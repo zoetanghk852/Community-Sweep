@@ -11,14 +11,19 @@ export function PointsWalletCard({ wallet }: PointsWalletCardProps) {
   return (
     <section
       className="relative overflow-hidden rounded-3xl border-2 border-terracotta/30 bg-gradient-to-br from-terracotta to-terracotta-dark p-6 text-white shadow-lg"
-      aria-labelledby="wallet-balance"
+      aria-labelledby="wallet-balance-label"
     >
       <div className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/10" />
 
       <div className="relative flex items-start justify-between gap-4">
         <div>
-          <p className="text-lg font-medium text-white/90">我的儲分</p>
-          <p id="wallet-balance" className="mt-2 text-5xl font-bold tracking-tight sm:text-6xl">
+          <p id="wallet-balance-label" className="text-lg font-medium text-white/90">
+            我的儲分
+          </p>
+          <p
+            className="mt-2 text-5xl font-bold tracking-tight sm:text-6xl"
+            aria-label={`餘額 ${formatPoints(wallet.balance)} 積分`}
+          >
             {formatPoints(wallet.balance)}
           </p>
           <p className="mt-2 text-base text-white/85">社區感謝積分 · 不可兌現金</p>

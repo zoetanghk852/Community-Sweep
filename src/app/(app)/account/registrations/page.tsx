@@ -1,6 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { RegistrationRecords } from '@/components/account/RegistrationRecords'
+
+export const metadata: Metadata = {
+  title: '活動報名紀錄｜社區換物carousell',
+}
 
 export default function RegistrationRecordsPage() {
   return (

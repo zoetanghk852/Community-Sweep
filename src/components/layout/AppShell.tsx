@@ -7,7 +7,9 @@ interface AppShellProps {
 export function AppShell({ children }: AppShellProps) {
   return (
     <div className="mx-auto min-h-svh max-w-lg bg-page">
-      <div className="px-4 pb-24 pt-5 sm:px-5">{children}</div>
+      <main id="main-content" className="px-4 pb-32 pt-5 sm:px-5">
+        {children}
+      </main>
       <BottomNav />
     </div>
   )

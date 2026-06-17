@@ -54,6 +54,7 @@ export function RedeemContent({ options, balance, redeemedRecords, onRedeem }: R
                         variant={canAfford ? 'primary' : 'outline'}
                         disabled={!canAfford}
                         onClick={() => onRedeem?.(option)}
+                        ariaLabel={`以 ${option.pointsCost} 積分兌換${option.title}`}
                         className="!min-h-[3rem] !text-base"
                       >
                         {canAfford ? '立即兌換' : '積分不足'}

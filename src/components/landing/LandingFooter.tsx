@@ -5,6 +5,7 @@ const footerLinks = [
   { href: '#features', label: '核心功能' },
   { href: '#app-preview', label: 'App 預覽' },
   { href: '#marketplace', label: '線上換物' },
+  { href: '#faq', label: '常見問題' },
   { href: '#join', label: '加入我們' },
   { href: '/hall', label: '示範 App', isRoute: true },
 ] as const
