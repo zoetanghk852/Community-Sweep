@@ -15,9 +15,9 @@ export default function LandingPage() {
       <ServiceIntroSection />
       <IdeaSection />
       <CoreFeaturesSection />
+      <ComparisonSection />
       <AppPreviewSection />
       <ItemMarketplace />
-      <ComparisonSection />
       <CommentBoard />
       <JoinSection />
       <MockPaymentGateway />
