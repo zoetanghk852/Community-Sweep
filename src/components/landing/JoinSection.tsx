@@ -9,7 +9,7 @@ export function JoinSection() {
           <Reveal className="lg:sticky lg:top-28">
             <h2 className="section-title text-3xl text-foreground sm:text-4xl">登記參加社區活動</h2>
             <p className="mt-5 max-w-prose text-lg leading-relaxed text-ink-muted">
-              填寫表格後，我們會在 3 個工作天內以電話聯絡你，介紹最近的換物日或修繕工作坊。
+              填寫表格後，我們會在 3 個工作天內以電話聯絡你，介紹最近的換物市集。
             </p>
 
             <div className="mt-10 space-y-4">

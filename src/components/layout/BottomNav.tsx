@@ -7,7 +7,7 @@ import { Calendar, Filter, Home, User } from 'lucide-react'
 
 const links = [
   { href: '/hall', label: '主頁', icon: Home },
-  { href: '/marketplace', label: '物品篩選', icon: Filter },
+  { href: '/marketplace', label: '線上換物', icon: Filter },
   { href: '/schedule', label: '日程', icon: Calendar },
   { href: '/account', label: '帳戶', icon: User },
 ] as const

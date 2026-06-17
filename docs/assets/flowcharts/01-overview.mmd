@@ -1,0 +1,21 @@
+flowchart LR
+    subgraph online [線上 App]
+        A1[上傳物品]
+        A2[義工審核定分]
+        A3[瀏覽・積分預約]
+        A4[報名換物市集]
+        A5[積分錢包]
+    end
+
+    subgraph offline [線下換物市集]
+        B1[換物攤交收]
+        B2[維修攤]
+        B3[數碼義診攤]
+    end
+
+    A1 --> A2 --> A3
+    A3 --> B1
+    A4 --> B1
+    A4 --> B2
+    A4 --> B3
+    B1 --> A5

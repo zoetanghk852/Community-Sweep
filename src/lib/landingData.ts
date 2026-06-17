@@ -1,7 +1,7 @@
 export const landingNavLinks = [
   { href: '#features', label: '核心功能' },
   { href: '#app-preview', label: 'App 預覽' },
-  { href: '#marketplace', label: '社區物品篩選' },
+  { href: '#marketplace', label: '線上換物' },
   { href: '#join', label: '加入我們' },
   { href: '#payment-session', label: '模擬付款' },
 ] as const
@@ -9,21 +9,21 @@ export const landingNavLinks = [
 export const coreFeatures = [
   {
     icon: 'repeat' as const,
-    title: '主題換物日',
+    title: '換物市集',
     description:
-      '每月定期舉辦換物市集，設於屋邨社區會堂，無障礙動線，長者無需遠行即可參與。',
+      '每月定期舉辦，同場設換物攤、維修攤、數碼義診攤；設於屋邨社區會堂，無障礙動線，長者無需遠行即可參與。',
   },
   {
     icon: 'book' as const,
-    title: '數碼義診',
+    title: '數碼義診攤',
     description:
-      '協助長者或對資訊科技感到陌生的市民，解決日常使用智慧型手機、平板電腦或相關電子設備時遇到的困難',
+      '協助長者或對資訊科技感到陌生的街坊，解決日常使用智慧型手機、平板電腦或相關電子設備時遇到的困難。',
   },
   {
     icon: 'wrench' as const,
-    title: '維修技能工作坊與藝術重組',
+    title: '維修攤',
     description:
-      '聯繫社區維修達人傳授舊物翻新技巧，修復殘缺舊物並以藝術美學重新組合，發掘閒置資源的隱藏價值。',
+      '社區師傅或義工即場修繕長者帶來的舊物；當場修不好可留件追蹤，待下次換物市集完成修繕。',
   },
 ] as const
 
@@ -40,8 +40,8 @@ export const ideaPillars = [
   },
   {
     icon: 'palette' as const,
-    title: '工作坊：以創意重塑生活習慣',
-    description: '透過「創意改造」與「舊物升級」活動，讓長者在動手實作中體驗創作的樂趣，將處理雜物的過程轉化為一種療癒的儀式',
+    title: '換物市集互動',
+    description: '透過每月換物市集的交換與修繕體驗，讓長者在社區場合中逐步處理閒置物品，將整理過程轉化為可預期的社區儀式。',
   },
 ] as const
 
@@ -49,7 +49,7 @@ export const comparisonRows = [
   {
     name: '社區換物carousell',
     audience: '以長者優先，並照顧同區廣大街坊',
-    mode: '主題換物日、數碼義診、維修技能工作坊',
+    mode: '每月換物市集（換物攤、維修攤、數碼義診攤）、線上換物',
     focus: '結合線下社交與舊物翻新',
     highlight: true,
   },
@@ -89,8 +89,8 @@ export const uxHighlights = [
     description: '大字體、高對比、大按鈕，符合長者視力與操作需要。',
   },
   {
-    title: '線下為主、數碼為輔',
-    description: '義工代登記為預設，電話／上門提示優先於 App 通知。',
+    title: '線上換物、現場交收',
+    description: '可先於 App 上架或預約物品；義工審核定分，實物於換物市集現場交收。',
   },
   {
     title: '低壓力漸進釋出',
@@ -117,6 +117,8 @@ export interface MarketplaceItem {
   story: string
   owner: string
   emoji: string
+  points: number
+  status: '可預約' | '已預約'
 }
 
 export const marketplaceItems: MarketplaceItem[] = [
@@ -128,6 +130,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '孫仔長大了，想送給鄰家小朋友繼續玩。',
     owner: '李婆婆',
     emoji: '🚗',
+    points: 3,
+    status: '可預約',
   },
   {
     id: 'm3',
@@ -137,15 +141,19 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '只穿過幾次，尺碼不合但質地很好。',
     owner: '王姨',
     emoji: '🧥',
+    points: 2,
+    status: '可預約',
   },
   {
     id: 'm4',
     title: '舊式電風扇',
     category: '家電',
-    condition: '可升級改造',
-    story: '風力仍勁，但外殼有點舊，適合藝術重組。',
+    condition: '待修繕',
+    story: '風力仍勁，外殼有啲舊；可帶去換物市集維修攤檢查。',
     owner: '張叔',
     emoji: '🌀',
+    points: 4,
+    status: '已預約',
   },
   {
     id: 'm5',
@@ -155,6 +163,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '一套六隻，剩三隻，圖案好靚。',
     owner: '黃婆婆',
     emoji: '🍽️',
+    points: 2,
+    status: '可預約',
   },
   {
     id: 'm6',
@@ -164,6 +174,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '收藏了八十年代嘅報紙，想搵同年代嘅街坊一齊睇。',
     owner: '何伯',
     emoji: '📰',
+    points: 1,
+    status: '可預約',
   },
   {
     id: 'm7',
@@ -173,6 +185,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '女兒結婚買嚟出席，之後少著，一直掛喺衣櫃。',
     owner: '周叔',
     emoji: '👔',
+    points: 2,
+    status: '可預約',
   },
   {
     id: 'm8',
@@ -182,6 +196,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '祖父留低嘅棋，棋子齊全，想搵同屋邨棋友一齊玩。',
     owner: '林伯',
     emoji: '♟️',
+    points: 3,
+    status: '可預約',
   },
   {
     id: 'm9',
@@ -191,6 +207,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '壺嘴有小裂紋，社區師傅話可以修復再用。',
     owner: '吳姨',
     emoji: '🫖',
+    points: 3,
+    status: '可預約',
   },
   {
     id: 'm10',
@@ -200,6 +218,8 @@ export const marketplaceItems: MarketplaceItem[] = [
     story: '年青時旅行收集，想同街坊分享舊日風景回憶。',
     owner: '鄭婆婆',
     emoji: '📮',
+    points: 2,
+    status: '可預約',
   },
 ]
 
@@ -214,23 +234,16 @@ export interface WorkshopOption {
 export const workshopOptions: WorkshopOption[] = [
   {
     id: 'w1',
-    title: '舊物藝術重組工作坊',
-    price: 0,
-    description: '材料由社區提供',
-    emoji: '🎨',
-  },
-  {
-    id: 'w2',
     title: '基礎家居修繕體驗',
     price: 50,
-    description: '象徵性材料費，師傅現場指導',
+    description: '換物市集維修攤象徵性材料費，師傅即場檢查',
     emoji: '🔩',
   },
   {
     id: 'w3',
     title: '舊物故事分享會',
     price: 0,
-    description: '附茶點',
+    description: '換物市集配套茶敘交流',
     emoji: '☕',
   },
 ]
@@ -239,7 +252,7 @@ export const initialComments = [
   {
     id: 'c1',
     name: '陳美玲',
-    message: '上次帶咗兩件舊衫去換物日，識咗隔離座嘅李婆婆，而家成日一齊飲茶！',
+    message: '上次帶咗兩件舊衫去換物市集，識咗隔離座嘅李婆婆，而家成日一齊飲茶！',
     time: '3 天前',
   },
   {

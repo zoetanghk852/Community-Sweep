@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "社區換物carousell，鼓勵長者交換閒置物品、預約修繕",
   openGraph: {
     title: "社區換物carousell",
-    description: "在社區舉辦換物市集、修繕工作坊與藝術重組，發掘舊物價值，重建街坊連結。",
+    description: "每月換物市集、線上換物與積分禮品，發掘舊物價值，重建街坊連結。",
     locale: "zh_HK",
     type: "website",
     images: [{ url: "/images/hero-community-barter.png", width: 1024, height: 572, alt: "社區換物市集插圖" }],

@@ -20,7 +20,7 @@ const initialForm: FormData = {
   name: '',
   phone: '',
   district: '',
-  interest: '主題換物日',
+  interest: '換物市集',
   message: '',
 }
 
@@ -175,10 +175,9 @@ export function RegistrationForm() {
             onChange={handleChange}
             className="w-full rounded-xl border-2 border-border-warm px-4 py-3 text-base transition-colors focus:border-sage focus:outline-none"
           >
-            <option>主題換物日</option>
-            <option>維修技能工作坊</option>
-            <option>舊物故事分享會</option>
-            <option>藝術重組體驗</option>
+            <option>換物市集</option>
+            <option>做義工</option>
+            <option>試水溫參觀</option>
             <option>想先了解，稍後再決定</option>
           </select>
         </div>

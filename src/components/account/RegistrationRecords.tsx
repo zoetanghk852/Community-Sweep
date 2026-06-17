@@ -17,7 +17,7 @@ export function RegistrationRecords() {
         </div>
         <p className="mt-4 text-lg font-semibold text-foreground">尚未報名任何活動</p>
         <p className="mx-auto mt-2 max-w-xs text-base leading-relaxed text-muted">
-          瀏覽本月換物日或修繕工作坊，選擇適合的場次後即可在此查看紀錄。
+          瀏覽本月換物市集，選擇適合的場次後即可在此查看紀錄。
         </p>
         <div className="mx-auto mt-6 max-w-xs">
           <LargeButton href="/explore" variant="primary" icon={Search} ariaLabel="探索活動">

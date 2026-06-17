@@ -9,7 +9,17 @@ import {
   type MarketplaceItem,
 } from '@/lib/landingData'
 
-function ItemCard({ item, className }: { item: MarketplaceItem; className?: string }) {
+function ItemCard({
+  item,
+  className,
+  onReserve,
+}: {
+  item: MarketplaceItem
+  className?: string
+  onReserve: (item: MarketplaceItem) => void
+}) {
+  const isAvailable = item.status === '可預約'
+
   return (
     <article
       className={[
@@ -36,11 +46,28 @@ function ItemCard({ item, className }: { item: MarketplaceItem; className?: stri
             <span className="rounded-md bg-wood-light/80 px-2 py-0.5 text-xs font-semibold text-foreground">
               {item.condition}
             </span>
+            <span className="rounded-md bg-terracotta/10 px-2 py-0.5 text-xs font-semibold text-terracotta">
+              {item.points} 積分
+            </span>
           </div>
         </div>
       </div>
       <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">{item.story}</p>
       <p className="mt-4 border-t border-border-warm/60 pt-3 text-sm text-muted">提供者：{item.owner}</p>
+      <button
+        type="button"
+        disabled={!isAvailable}
+        onClick={() => onReserve(item)}
+        className={[
+          'interactive mt-4 w-full rounded-xl py-3 text-sm font-semibold',
+          isAvailable
+            ? 'bg-sage text-white hover:bg-sage-dark'
+            : 'cursor-not-allowed bg-cream-dark text-muted',
+        ].join(' ')}
+      >
+        {isAvailable ? `以 ${item.points} 積分預約換取` : '已被預約'}
+      </button>
+      <p className="mt-2 text-center text-xs text-muted">實物於下次換物市集現場交收</p>
     </article>
   )
 }
@@ -50,6 +77,8 @@ export function CommunityItemFilter() {
   const [category, setCategory] = useState<string>('全部')
   const [condition, setCondition] = useState<string>('全部')
   const [showAllMobile, setShowAllMobile] = useState(false)
+  const [reservedIds, setReservedIds] = useState<Set<string>>(new Set())
+  const [notice, setNotice] = useState<string | null>(null)
 
   const MOBILE_INITIAL_COUNT = 3
 
@@ -57,8 +86,14 @@ export function CommunityItemFilter() {
     setShowAllMobile(false)
   }, [search, category, condition])
 
+  const items = useMemo(() => {
+    return marketplaceItems.map((item) =>
+      reservedIds.has(item.id) ? { ...item, status: '已預約' as const } : item,
+    )
+  }, [reservedIds])
+
   const filtered = useMemo(() => {
-    return marketplaceItems.filter((item) => {
+    return items.filter((item) => {
       const matchSearch =
         !search ||
         item.title.includes(search) ||
@@ -68,12 +103,25 @@ export function CommunityItemFilter() {
       const matchCondition = condition === '全部' || item.condition === condition
       return matchSearch && matchCategory && matchCondition
     })
-  }, [search, category, condition])
+  }, [items, search, category, condition])
 
   const hasMoreOnMobile = filtered.length > MOBILE_INITIAL_COUNT
 
+  function handleReserve(item: MarketplaceItem) {
+    setReservedIds((prev) => new Set(prev).add(item.id))
+    setNotice(`已預約「${item.title}」：請於下次換物市集現場交收（示範版）`)
+  }
+
   return (
     <div className="space-y-5">
+      {notice && (
+        <div
+          role="status"
+          className="rounded-xl border border-sage/30 bg-sage-light px-4 py-3 text-sm text-sage-dark"
+        >
+          {notice}
+        </div>
+      )}
       <div className="rounded-2xl bg-page p-5 sm:p-6">
         <div className="flex items-center gap-2 text-foreground">
           <Filter className="h-5 w-5 text-sage" />
@@ -146,6 +194,7 @@ export function CommunityItemFilter() {
             <ItemCard
               key={item.id}
               item={item}
+              onReserve={handleReserve}
               className={
                 index >= MOBILE_INITIAL_COUNT && !showAllMobile ? 'hidden sm:flex' : undefined
               }

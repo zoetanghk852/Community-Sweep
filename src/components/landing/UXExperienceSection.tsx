@@ -50,7 +50,7 @@ export function UXExperienceSection() {
                     <p className="text-3xl font-bold text-sage-dark">248</p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
-                    {['換物市集', '修繕預約', '積分兌換', '社區廣播'].map((label) => (
+                    {['線上換物', '換物市集', '積分兌換', '社區廣播'].map((label) => (
                       <div
                         key={label}
                         className="rounded-xl border border-border-warm py-3 text-center text-base font-medium"
@@ -61,12 +61,12 @@ export function UXExperienceSection() {
                   </div>
                   <div className="rounded-xl border border-border-warm p-3">
                     <p className="text-base text-muted">即將舉行</p>
-                    <p className="mt-1 text-base font-semibold">4月童玩與衣物交換市集</p>
+                    <p className="mt-1 text-base font-semibold">6月換物市集</p>
                   </div>
                 </div>
                 <div className="flex justify-around border-t border-border-light py-2 text-base text-muted">
                   <span className="font-semibold text-terracotta">主頁</span>
-                  <span>物品篩選</span>
+                  <span>線上換物</span>
                   <span>日程</span>
                   <span>帳戶</span>
                 </div>

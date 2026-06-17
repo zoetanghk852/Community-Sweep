@@ -1,4 +1,4 @@
-import { ServiceIntroSection, TargetAudienceSection } from '@/components/landing/IntroSections'
+import { ServiceIntroSection } from '@/components/landing/IntroSections'
 import { IdeaSection, CoreFeaturesSection } from '@/components/landing/IdeaAndFeatures'
 import { ComparisonSection } from '@/components/landing/ComparisonSection'
 import { AppPreviewSection } from '@/components/landing/AppPreviewSection'
@@ -13,7 +13,6 @@ export default function LandingPage() {
     <>
       <HeroSection />
       <ServiceIntroSection />
-      <TargetAudienceSection />
       <IdeaSection />
       <CoreFeaturesSection />
       <AppPreviewSection />

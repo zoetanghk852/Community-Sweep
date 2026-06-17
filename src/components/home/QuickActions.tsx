@@ -14,7 +14,7 @@ export function QuickActions() {
         <LargeButton href="/explore" icon={Wrench} variant="sage" ariaLabel="尋找修繕師傅">
           尋找修繕師傅
         </LargeButton>
-        <LargeButton href="/marketplace" icon={Upload} variant="secondary" ariaLabel="上傳閒置物品">
+        <LargeButton href="/marketplace/upload" icon={Upload} variant="secondary" ariaLabel="上傳閒置物品">
           上傳閒置物品
         </LargeButton>
       </div>

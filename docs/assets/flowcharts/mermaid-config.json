@@ -1,0 +1,10 @@
+{
+  "theme": "default",
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis"
+  },
+  "themeVariables": {
+    "fontFamily": "Microsoft JhengHei, Noto Sans TC, sans-serif"
+  }
+}

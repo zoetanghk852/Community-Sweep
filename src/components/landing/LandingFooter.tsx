@@ -4,7 +4,7 @@ import { Leaf } from 'lucide-react'
 const footerLinks = [
   { href: '#features', label: '核心功能' },
   { href: '#app-preview', label: 'App 預覽' },
-  { href: '#marketplace', label: '物品篩選' },
+  { href: '#marketplace', label: '線上換物' },
   { href: '#join', label: '加入我們' },
   { href: '/hall', label: '示範 App', isRoute: true },
 ] as const
@@ -20,7 +20,7 @@ export function LandingFooter() {
               <span className="font-display text-lg font-bold">社區換物carousell</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-              以換物市集、修繕工作坊與藝術重組，協助有囤積習慣的長者發掘舊物價值，重建社區連結。
+              以每月換物市集（換物攤、維修攤、數碼義診攤），協助有囤積習慣的長者發掘舊物價值，重建社區連結。
             </p>
           </div>
 

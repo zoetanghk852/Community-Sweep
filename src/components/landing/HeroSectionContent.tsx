@@ -53,7 +53,7 @@ export function HeroSectionContent() {
         x={16}
       >
         <div className="absolute -left-6 top-8 z-10 hidden max-w-[11rem] rounded-2xl glass-panel p-4 lg:block">
-          <p className="text-xs font-medium text-muted">本月換物日</p>
+          <p className="text-xs font-medium text-muted">本月換物市集</p>
           <p className="mt-1 font-display text-base font-semibold text-foreground">屯門東邨社區會堂</p>
           <p className="mt-0.5 text-sm text-sage-dark">5月18日 下午2時</p>
         </div>

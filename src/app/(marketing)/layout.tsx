@@ -5,7 +5,7 @@ import { LandingFooter } from '@/components/landing/LandingFooter'
 export const metadata: Metadata = {
   title: '社區換物carousell，鼓勵交換閒置物品、預約修繕',
   description:
-    '針對有囤積習慣的長者，在社區舉辦換物市集、修繕工作坊與藝術重組，發掘舊物價值，重建街坊連結。',
+    '針對有囤積習慣的長者，每月舉辦換物市集並提供線上換物，發掘舊物價值，重建街坊連結。',
 }
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
