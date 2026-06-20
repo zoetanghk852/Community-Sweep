@@ -1,0 +1,15 @@
+Clone the design language of this landing page and build a fresh equivalent.
+Visual feel: material-you. Tone: friendly · Headings: Sentence case · CTA verbs: [object Object], [object Object], [object Object], [object Object], [object Object], [object Object]
+Primary palette: #831672, #003da2, #00530d, #000000, #00ffe6.
+Typography: [object Object], [object Object], [object Object].
+Corner radius vocabulary: 6, 23, 36, 44, 50, 57.
+Shadow vocabulary: rgb(0, 0, 0) 0px 2px 20px -3px.
+Page structure:
+- testimonial — heading: "WE NEED TO ACT
+WHILE WE
+STILL CAN"
+- cta — heading: "Take action with AMPLIFY"
+- testimonial
+- testimonial — heading: "Our work"
+- testimonial — heading: "In the news"
+- footer

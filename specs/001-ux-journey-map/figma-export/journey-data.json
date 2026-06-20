@@ -1,0 +1,362 @@
+{
+  "meta": {
+    "title": "用戶體驗地圖 — 社區換物 Carousell",
+    "version": "1.0",
+    "date": "2026-06-20",
+    "source": "../ux-journey-map.md"
+  },
+  "brand": {
+    "primary": "#4D7A64",
+    "secondary": "#A85538",
+    "accent": "#F5F1EA",
+    "text": "#5A4E3C",
+    "textMuted": "#8B7E6A",
+    "positive": "#4D7A64",
+    "neutral": "#9CA3AF",
+    "negative": "#C2410C",
+    "background": "#FFFFFF",
+    "laneAlt": "#FAF8F5"
+  },
+  "stages": [
+    { "order": 1, "nameZh": "認知", "nameEn": "Awareness" },
+    { "order": 2, "nameZh": "考量", "nameEn": "Consideration" },
+    { "order": 3, "nameZh": "準備", "nameEn": "Preparation" },
+    { "order": 4, "nameZh": "線上參與", "nameEn": "Online" },
+    { "order": 5, "nameZh": "線下市集", "nameEn": "Offline Market" },
+    { "order": 6, "nameZh": "持續", "nameEn": "Retention" },
+    { "order": 7, "nameZh": "倡導", "nameEn": "Advocacy" }
+  ],
+  "personas": [
+    {
+      "id": "P1",
+      "name": "長者陳姨",
+      "priority": "P1",
+      "color": "#4D7A64",
+      "description": "行動不便、居家囤積、需義工全程協助",
+      "emotionCurve": [5, 4, 3, 4, 8, 7, 8],
+      "lowPoint": "準備（不知如何整理）",
+      "highPoint": "線下市集（有人幫手、交到朋友）",
+      "turningPoint": "義工代操作消除 App 障礙"
+    },
+    {
+      "id": "P2",
+      "name": "街坊阿明",
+      "priority": "P1",
+      "color": "#A85538",
+      "description": "首次聽聞、觀望中、可先試水溫參觀",
+      "emotionCurve": [6, 5, 5, 6, 7, 6, 7],
+      "lowPoint": "考量（怕尷尬、怕帶錯物品）",
+      "highPoint": "線下市集（試水溫獲歡迎積分）",
+      "turningPoint": "試水溫參觀降低承諾"
+    },
+    {
+      "id": "P3",
+      "name": "換取方李姐",
+      "priority": "P2",
+      "color": "#5B7FA6",
+      "description": "熟悉 App、積極預約、定期參與換物",
+      "emotionCurve": [5, 6, 6, 7, 8, 8, 7],
+      "lowPoint": "認知（不知有這服務）",
+      "highPoint": "持續參與（積分循環、定期換物）",
+      "turningPoint": "預約成功 → 現場交收閉環"
+    },
+    {
+      "id": "P4",
+      "name": "義工阿珍",
+      "priority": "P2",
+      "color": "#7C6B9E",
+      "description": "現場登記、審核定分、撮合同場交換",
+      "emotionCurve": [5, 5, 5, 5, 8, 7, 8],
+      "lowPoint": "準備（示範版無義工後台）",
+      "highPoint": "線下市集（配對成功）",
+      "turningPoint": "紙本登記備援"
+    },
+    {
+      "id": "P5",
+      "name": "訪客何太",
+      "priority": "P3",
+      "color": "#8B7E6A",
+      "description": "僅看過落地頁、尚未決定是否參與",
+      "emotionCurve": [4, 3, 0, 0, 0, 0, 0],
+      "lowPoint": "考量（資訊太多）",
+      "highPoint": "—（尚未進入後段）",
+      "turningPoint": "落地頁 CTA 與 FAQ"
+    }
+  ],
+  "journeys": {
+    "P1": [
+      {
+        "actions": "經過屋邨大堂見到宣傳；聽鄰居提起換物市集",
+        "touchpoints": "🏘 屋邨宣傳海報 · 👥 鄰居口碑",
+        "thoughts": "「又有社區活動？我屋企啲舊嘢點算好？」",
+        "emotion": "neutral",
+        "painPoints": "唔知啱唔啱自己；驚體力頂唔順",
+        "opportunities": "海報強調「義工幫手」"
+      },
+      {
+        "actions": "請家人幫忙了解詳情；致電社區中心查詢",
+        "touchpoints": "📱 /hall（家人代開）· 🌐 / · ☎️ 社區中心",
+        "thoughts": "「使唔使帶嘢？我行路唔方便，點算？」",
+        "emotion": "negative",
+        "painPoints": "行動不便；唔想累住家人",
+        "opportunities": "義工電話熱線"
+      },
+      {
+        "actions": "整理 1–3 件物品；家人協助上架或報名",
+        "touchpoints": "📱 /marketplace/upload · /explore · 🤝 家人代操作",
+        "thoughts": "「呢件衫放咗好多年，唔知有冇人要」",
+        "emotion": "neutral",
+        "painPoints": "不知哪些物品適合；表單欄位多",
+        "opportunities": "電話熱線諮詢"
+      },
+      {
+        "actions": "查看報名紀錄；日程確認；家人代預約",
+        "touchpoints": "📱 /schedule · /registrations · /wallet",
+        "thoughts": "「下星期六係咪有換物市集？」",
+        "emotion": "neutral",
+        "painPoints": "無法獨立操作 App",
+        "opportunities": "在場義工協助"
+      },
+      {
+        "actions": "換物攤交換；維修攤留件；數碼義診",
+        "touchpoints": "🏪 換物攤 · 維修攤 · 數碼義診攤 · 🤝 義工",
+        "thoughts": "「原來我啲舊衫都有人鍾意！」",
+        "emotion": "positive",
+        "painPoints": "排隊體力不支；留件進度不明",
+        "opportunities": "座椅休息區；留件追蹤（未來）"
+      },
+      {
+        "actions": "查看積分；兌換環保袋；關注下次市集",
+        "touchpoints": "📱 /wallet · /schedule · /hall",
+        "thoughts": "「積分可以換環保袋；下個月再帶嘢」",
+        "emotion": "positive",
+        "painPoints": "不知積分怎麼賺",
+        "opportunities": "獲發紙本印花卡"
+      },
+      {
+        "actions": "告訴鄰居「唔使識 App 都有人教」",
+        "touchpoints": "👥 鄰居口碑 · 🏪 故事角",
+        "thoughts": "「想叫隔離屋婆婆一齊」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": ""
+      }
+    ],
+    "P2": [
+      {
+        "actions": "聽朋友講試水溫參觀；見海報寫「不帶物也可參觀」",
+        "touchpoints": "👥 朋友口碑 · 🏘 屋邨宣傳海報",
+        "thoughts": "「試水溫參觀？唔使帶嘢都得？」",
+        "emotion": "positive",
+        "painPoints": "以為一定要帶物品先可以參加",
+        "opportunities": "試水溫參觀"
+      },
+      {
+        "actions": "查閱落地頁試水溫說明；比較參觀同正式參與的分別",
+        "touchpoints": "🌐 / #faq · 📱 /explore",
+        "thoughts": "「不如先試水溫，下次再帶嘢換都唔遲」",
+        "emotion": "neutral",
+        "painPoints": "唔清楚試水溫可以獲幾多積分",
+        "opportunities": "試水溫參觀 CTA 置頂"
+      },
+      {
+        "actions": "App 選擇試水溫參觀並報名；記低換物市集日期",
+        "touchpoints": "📱 /explore/[id] · /account/registrations",
+        "thoughts": "「報咗試水溫，到時去睇流程就得」",
+        "emotion": "positive",
+        "painPoints": "唔熟 App 報名操作",
+        "opportunities": "報名成功 modal 說明試水溫選項"
+      },
+      {
+        "actions": "查看日程；瀏覽換物物品",
+        "touchpoints": "📱 /schedule · /marketplace · /hall",
+        "thoughts": "「原來有咁多嘢可以換」",
+        "emotion": "positive",
+        "painPoints": "篩選選項多",
+        "opportunities": "大廳快捷入口「探索換物」"
+      },
+      {
+        "actions": "試水溫參觀；獲歡迎積分；旁觀交換",
+        "touchpoints": "🏪 換物攤 · 試水溫登記處",
+        "thoughts": "「唔使帶嘢都有分，幾好」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "試水溫參觀徽章／歡迎卡"
+      },
+      {
+        "actions": "升級為帶物參與；查看日程",
+        "touchpoints": "📱 /hall · /explore · /marketplace/upload",
+        "thoughts": "「下次帶件玩具去換」",
+        "emotion": "positive",
+        "painPoints": "忘記下次市集日期",
+        "opportunities": "大廳倒數＋一鍵加入日程"
+      },
+      {
+        "actions": "推薦朋友試水溫參觀",
+        "touchpoints": "👥 朋友口碑 · 🌐 / #join",
+        "thoughts": "「其實唔難，叫佢去睇先」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "推薦獎勵積分（未來）"
+      }
+    ],
+    "P3": [
+      {
+        "actions": "社區中心通告得知",
+        "touchpoints": "🏘 社區中心通告",
+        "thoughts": "「終於有個唔使畀錢買嘢嘅地方」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": ""
+      },
+      {
+        "actions": "瀏覽線上換物清單",
+        "touchpoints": "📱 /marketplace · 🌐 /",
+        "thoughts": "「有幾件嘢幾啱我，要幾多積分？」",
+        "emotion": "positive",
+        "painPoints": "積分規則理解成本",
+        "opportunities": "類別分值表在換物頁可見"
+      },
+      {
+        "actions": "上傳物品；報名；預約他人物品",
+        "touchpoints": "📱 /upload · /marketplace · /explore",
+        "thoughts": "「上傳等審核，順便預約嗰個花瓶」",
+        "emotion": "positive",
+        "painPoints": "審核等待不確定",
+        "opportunities": "「等候審核」狀態清晰"
+      },
+      {
+        "actions": "篩選類別；以積分預約；管理錢包",
+        "touchpoints": "📱 /marketplace · /wallet",
+        "thoughts": "「積分夠唔夠預約嗰個鍾？」",
+        "emotion": "positive",
+        "painPoints": "已被預約物品撲空",
+        "opportunities": "「已被預約」狀態即時顯示"
+      },
+      {
+        "actions": "交收預約花瓶；帶物現場登記",
+        "touchpoints": "🏪 換物攤 · 維修攤",
+        "thoughts": "「同網上睇到嘅一樣，交收好順」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "預約 QR 快速核對"
+      },
+      {
+        "actions": "持續上架／預約；兌換社區禮品",
+        "touchpoints": "📱 /wallet · /marketplace",
+        "thoughts": "「已經變成每月習慣」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "參與里程碑（未來）"
+      },
+      {
+        "actions": "社區群組分享換物經驗",
+        "touchpoints": "👥 社區群組",
+        "thoughts": "「比 Carousell 有人情味」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "街坊大使計畫"
+      }
+    ],
+    "P4": [
+      {
+        "actions": "社區中心招募；朋友介紹成為義工",
+        "touchpoints": "👥 口碑 · 🏘 社區中心 · 📋 招募海報",
+        "thoughts": "「幫長者換物，應該幾有意義」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "義工招募故事在落地頁"
+      },
+      {
+        "actions": "了解服務流程；參加簡介會",
+        "touchpoints": "📋 內部培訓 · 🌐 落地頁 FAQ",
+        "thoughts": "「要記住類別分值表同現場流程」",
+        "emotion": "neutral",
+        "painPoints": "培訓材料分散",
+        "opportunities": "義工 onboarding 懶人包"
+      },
+      {
+        "actions": "熟悉類別分值表；準備現場登記表格",
+        "touchpoints": "📋 內部培訓 · 📱 義工版（未來）",
+        "thoughts": "「今次 Walk-in 人數要預留彈性」",
+        "emotion": "neutral",
+        "painPoints": "示範版無義工後台",
+        "opportunities": "現場紙本登記備援"
+      },
+      {
+        "actions": "檢視報名人數；準備現場動線",
+        "touchpoints": "📋 內部統計 · 📱 /explore 報名（參考）",
+        "thoughts": "「預約多過 Walk-in，排隊要預早劃分」",
+        "emotion": "neutral",
+        "painPoints": "無即時後台儀表板",
+        "opportunities": "報名名單匯出（未來）"
+      },
+      {
+        "actions": "換物攤核對預約；現場定分；撮合同場交換",
+        "touchpoints": "🏪 換物攤 · 📋 類別分值表 · 🤝 引導街坊",
+        "thoughts": "「今日配對率幾高；長者笑得好開心」",
+        "emotion": "positive",
+        "painPoints": "尖峰時段人手不足",
+        "opportunities": "尖峰預排班；預約 QR 快速核對"
+      },
+      {
+        "actions": "整理現場紀錄；回饋營運改善點",
+        "touchpoints": "📋 現場紀錄表 · 👥 義工 debrief",
+        "thoughts": "「下次要加多一條長者休息動線」",
+        "emotion": "positive",
+        "painPoints": "",
+        "opportunities": "義工回饋表數位化（未來）"
+      },
+      {
+        "actions": "成為資深義工；培訓新人",
+        "touchpoints": "🏪 換物市集 · 📋 義工培訓",
+        "thoughts": "「見到長者笑好有滿足感」",
+        "emotion": "positive",
+        "painPoints": "義工培訓資源有限",
+        "opportunities": "義工感謝狀；推薦新義工"
+      }
+    ],
+    "P5": [
+      {
+        "actions": "搜尋「社區換物」找到落地頁",
+        "touchpoints": "🌐 落地頁 /",
+        "thoughts": "「同 Carousell 有咩分別？」",
+        "emotion": "neutral",
+        "painPoints": "與商業平台混淆",
+        "opportunities": "落地頁競品對照區塊"
+      },
+      {
+        "actions": "閱讀核心理念、App 預覽、FAQ",
+        "touchpoints": "🌐 / · #faq · #app-preview",
+        "thoughts": "「積分係咩？可唔可以換錢？」",
+        "emotion": "negative",
+        "painPoints": "積分 vs 港元混淆；資訊焦慮",
+        "opportunities": "「積分不可兌現金」醒目提示"
+      },
+      { "actions": "—", "touchpoints": "—", "thoughts": "—", "emotion": "neutral", "painPoints": "", "opportunities": "" },
+      { "actions": "—", "touchpoints": "—", "thoughts": "—", "emotion": "neutral", "painPoints": "", "opportunities": "" },
+      { "actions": "—", "touchpoints": "—", "thoughts": "—", "emotion": "neutral", "painPoints": "", "opportunities": "" },
+      { "actions": "—", "touchpoints": "—", "thoughts": "—", "emotion": "neutral", "painPoints": "", "opportunities": "" },
+      { "actions": "—", "touchpoints": "—", "thoughts": "—", "emotion": "neutral", "painPoints": "", "opportunities": "" }
+    ]
+  },
+  "serviceBlueprint": [
+    { "stage": "認知", "online": "落地頁", "offline": "屋邨宣傳", "volunteer": "—", "handoff": "海報 QR → 落地頁" },
+    { "stage": "考量", "online": "FAQ、探索", "offline": "—", "volunteer": "社區中心解答", "handoff": "家人代開 App" },
+    { "stage": "準備", "online": "上架、報名", "offline": "—", "volunteer": "代上架、家訪", "handoff": "上架 → 審核 → 公開" },
+    { "stage": "線上", "online": "預約、錢包", "offline": "—", "volunteer": "—", "handoff": "預約 → 現場交收" },
+    { "stage": "市集", "online": "掃碼報到", "offline": "三攤體驗", "volunteer": "全程引導", "handoff": "交收閉環 ★" },
+    { "stage": "持續", "online": "錢包、日程", "offline": "—", "volunteer": "—", "handoff": "積分結算" },
+    { "stage": "倡導", "online": "加入意向表", "offline": "故事分享", "volunteer": "義工推薦", "handoff": "口碑循環" }
+  ],
+  "painOpportunities": [
+    { "priority": "P0", "pain": "不熟悉 App 操作", "opportunity": "義工代操作路徑可見", "personas": "P1, P2" },
+    { "priority": "P0", "pain": "行動不便難以搬運", "opportunity": "上門收物 FAQ 強化", "personas": "P1" },
+    { "priority": "P0", "pain": "積分規則不理解", "opportunity": "錢包圖文教學", "personas": "P2, P5" },
+    { "priority": "P1", "pain": "審核等待不確定", "opportunity": "等候審核狀態＋預計時間", "personas": "P3" },
+    { "priority": "P1", "pain": "維修／數碼攤排隊久", "opportunity": "已報名優先可視化", "personas": "P1, P3" },
+    { "priority": "P1", "pain": "留件進度不透明", "opportunity": "留件追蹤查詢（未來）", "personas": "P1" },
+    { "priority": "P2", "pain": "忘記下次市集", "opportunity": "大廳倒數＋一鍵加入日程", "personas": "全部" },
+    { "priority": "P2", "pain": "與商業平台混淆", "opportunity": "競品對照更突出", "personas": "P5" }
+  ]
+}

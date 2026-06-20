@@ -1,0 +1,50 @@
+{
+  "openGraph": {
+    "title": "社區換物carousell",
+    "description": "每月換物市集、線上換物與積分禮品，發掘舊物價值，重建街坊連結。",
+    "locale": "zh_HK",
+    "image": "https://community-sweep.vercel.app/images/hero-community-barter.png",
+    "image:width": "1024",
+    "image:height": "572",
+    "image:alt": "社區換物市集插圖",
+    "type": "website"
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "社區換物carousell",
+    "description": "每月換物市集、線上換物與積分禮品，發掘舊物價值，重建街坊連結。",
+    "image": "https://community-sweep.vercel.app/images/hero-community-barter.png",
+    "image:alt": "社區換物市集插圖",
+    "image:width": "1024",
+    "image:height": "572"
+  },
+  "description": "針對有囤積習慣的長者，每月舉辦換物市集並提供線上換物，發掘舊物價值，重建街坊連結。",
+  "canonical": null,
+  "themeColor": "#5b8a72",
+  "viewport": "width=device-width, initial-scale=1, maximum-scale=5",
+  "favicons": [
+    {
+      "rel": "icon",
+      "href": "https://community-sweep.vercel.app/favicon.ico?favicon.0x3dzn~oxb6tn.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "https://community-sweep.vercel.app/icon?b4a3e8b1517c380d",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "manifest": null,
+  "structuredData": [],
+  "score": {
+    "hasOg": true,
+    "hasTwitter": true,
+    "hasDescription": true,
+    "hasCanonical": false,
+    "hasStructuredData": false,
+    "hasFavicon": true,
+    "hasThemeColor": true
+  }
+}

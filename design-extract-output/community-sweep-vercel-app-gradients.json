@@ -1,0 +1,96 @@
+{
+  "$schema": "https://designlang.app/schemas/gradients.json",
+  "source": "https://community-sweep.vercel.app/",
+  "generated": "2026-06-19T01:53:06.586Z",
+  "count": 5,
+  "gradients": [
+    {
+      "raw": "radial-gradient(80% 60% at 20% 0px, rgba(77, 122, 100, 0.14), rgba(0, 0, 0, 0) 55%)",
+      "type": "radial",
+      "direction": null,
+      "stops": [
+        {
+          "color": "80% 60% at 20%",
+          "position": "0px"
+        },
+        {
+          "color": "rgba(77, 122, 100, 0.14)",
+          "position": null
+        },
+        {
+          "color": "rgba(0, 0, 0, 0)",
+          "position": "55%"
+        }
+      ],
+      "classification": "bold"
+    },
+    {
+      "raw": "linear-gradient(oklab(0.979547 0.000585675 0.00570798 / 0.4) 0%, rgba(0, 0, 0, 0) 50%, rgb(245, 241, 234) 100%)",
+      "type": "linear",
+      "direction": null,
+      "stops": [
+        {
+          "color": "oklab(0.979547 0.000585675 0.00570798 / 0.4)",
+          "position": "0%"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0)",
+          "position": "50%"
+        },
+        {
+          "color": "rgb(245, 241, 234)",
+          "position": "100%"
+        }
+      ],
+      "classification": "bold"
+    },
+    {
+      "raw": "linear-gradient(rgb(245, 241, 234) 0%, oklab(0.937899 -0.0110451 0.0036127 / 0.25) 100%)",
+      "type": "linear",
+      "direction": null,
+      "stops": [
+        {
+          "color": "rgb(245, 241, 234)",
+          "position": "0%"
+        },
+        {
+          "color": "oklab(0.937899 -0.0110451 0.0036127 / 0.25)",
+          "position": "100%"
+        }
+      ],
+      "classification": "brand"
+    },
+    {
+      "raw": "radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0) 50%)",
+      "type": "radial",
+      "direction": "circle at 80% 20%",
+      "stops": [
+        {
+          "color": "rgba(255, 255, 255, 0.08)",
+          "position": null
+        },
+        {
+          "color": "rgba(0, 0, 0, 0)",
+          "position": "50%"
+        }
+      ],
+      "classification": "brand"
+    },
+    {
+      "raw": "linear-gradient(to right bottom in oklab, rgb(168, 85, 56) 0%, rgb(135, 68, 40) 100%)",
+      "type": "linear",
+      "direction": "to right bottom in oklab",
+      "stops": [
+        {
+          "color": "rgb(168, 85, 56)",
+          "position": "0%"
+        },
+        {
+          "color": "rgb(135, 68, 40)",
+          "position": "100%"
+        }
+      ],
+      "classification": "brand"
+    }
+  ]
+}

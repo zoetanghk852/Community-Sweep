@@ -1,0 +1,18 @@
+{
+  "Brand": {
+    "color/primary": { "value": "#4D7A64", "type": "color" },
+    "color/secondary": { "value": "#A85538", "type": "color" },
+    "color/accent": { "value": "#F5F1EA", "type": "color" },
+    "color/text": { "value": "#5A4E3C", "type": "color" },
+    "color/text-muted": { "value": "#8B7E6A", "type": "color" },
+    "color/positive": { "value": "#4D7A64", "type": "color" },
+    "color/neutral": { "value": "#9CA3AF", "type": "color" },
+    "color/negative": { "value": "#C2410C", "type": "color" },
+    "color/lane-alt": { "value": "#FAF8F5", "type": "color" },
+    "color/persona-p1": { "value": "#4D7A64", "type": "color" },
+    "color/persona-p2": { "value": "#A85538", "type": "color" },
+    "color/persona-p3": { "value": "#5B7FA6", "type": "color" },
+    "color/persona-p4": { "value": "#7C6B9E", "type": "color" },
+    "color/persona-p5": { "value": "#8B7E6A", "type": "color" }
+  }
+}

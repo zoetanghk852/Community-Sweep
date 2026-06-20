@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用戶體驗地圖 — 社區換物 Carousell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --primary: #4D7A64;
+  --secondary: #A85538;
+  --accent: #F5F1EA;
+  --text: #5A4E3C;
+  --text-muted: #8B7E6A;
+  --positive: #4D7A64;
+  --neutral: #9CA3AF;
+  --negative: #C2410C;
+  --bg: #FFFFFF;
+  --lane-alt: #FAF8F5;
+  --border: #e5e0d8;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  background: #f0ebe3;
+}
+a { color: var(--primary); }
+.page-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+}
+.page-header h1 { margin: 0 0 .25rem; font-size: 1.5rem; }
+.page-header p { margin: 0; opacity: .9; font-size: .95rem; }
+.toc {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+  padding: 1rem 1.5rem;
+  background: var(--accent);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 4.5rem; z-index: 99;
+}
+.toc a {
+  text-decoration: none;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  font-size: .85rem;
+  border: 1px solid var(--border);
+}
+.toc a:hover { border-color: var(--primary); color: var(--primary); }
+main { max-width: 100%; padding: 1.5rem; }
+.frame {
+  background: var(--bg);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(90,78,60,.08);
+  border: 1px solid var(--border);
+}
+.frame-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+}
+.frame-header h2 { margin: 0 0 .25rem; font-size: 1.35rem; }
+.frame-header p { margin: 0; opacity: .88; font-size: .95rem; }
+.frame-body { padding: 1.5rem; }
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.principle {
+  background: var(--accent);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  font-size: .95rem;
+}
+.stage-timeline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  margin-bottom: 1.5rem;
+}
+.stage-chip {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: .6rem .9rem;
+  min-width: 120px;
+}
+.stage-chip strong { display: block; font-size: .95rem; }
+.stage-chip span { font-size: .75rem; opacity: .85; }
+.stage-arrow { color: var(--secondary); font-weight: bold; font-size: 1.2rem; }
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.persona-card {
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--persona-color);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--lane-alt);
+}
+.persona-head { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; flex-wrap: wrap; }
+.persona-id { font-weight: 700; color: var(--persona-color); }
+.persona-name { font-weight: 700; }
+.persona-priority {
+  font-size: .75rem; background: var(--accent);
+  padding: .15rem .5rem; border-radius: 999px;
+}
+.persona-card p { margin: 0; font-size: .95rem; }
+.line-chart-wrap {
+  overflow-x: auto;
+  padding: .5rem;
+  background: var(--lane-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.line-chart { display: block; max-width: 100%; height: auto; }
+.line-chart-compact { display: block; width: 100%; height: auto; }
+.chart-grid { stroke: #e5e0d8; stroke-width: 1; }
+.chart-axis { stroke: var(--text-muted); stroke-width: 1.5; }
+.chart-axis-y, .chart-axis-x { fill: var(--text-muted); font-size: 11px; font-family: inherit; }
+.chart-line { vector-effect: non-scaling-stroke; }
+.chart-dot { cursor: help; }
+.chart-legend {
+  display: flex; flex-wrap: wrap; gap: 1rem 1.5rem;
+  margin: 1rem 0;
+  font-size: .9rem;
+}
+.chart-legend-item { display: inline-flex; align-items: center; gap: .5rem; }
+.chart-legend-line {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+}
+.emotion-insights-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  margin-top: .5rem;
+}
+.emotion-insights-table th, .emotion-insights-table td {
+  border: 1px solid var(--border);
+  padding: .6rem .75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.emotion-insights-table thead th {
+  background: var(--accent);
+  font-weight: 700;
+}
+.emotion-insights-table tbody tr:nth-child(even) { background: var(--lane-alt); }
+.journey-scroll, .blueprint-scroll { overflow-x: auto; }
+.journey-table, .blueprint-table, .pain-table {
+  width: 100%; border-collapse: collapse; font-size: .9rem;
+}
+.journey-table { min-width: 1200px; }
+.blueprint-table { min-width: 900px; }
+.journey-table th, .journey-table td,
+.blueprint-table th, .blueprint-table td,
+.pain-table th, .pain-table td {
+  border: 1px solid var(--border);
+  padding: .65rem .75rem;
+  vertical-align: top;
+  text-align: left;
+}
+.journey-table thead th, .blueprint-table thead th, .pain-table thead th {
+  background: var(--primary);
+  color: #fff;
+}
+.row-label {
+  background: var(--accent) !important;
+  font-weight: 700;
+  white-space: nowrap;
+  width: 80px;
+}
+.stage-num {
+  display: inline-block;
+  background: rgba(255,255,255,.25);
+  border-radius: 4px;
+  padding: 0 .35rem;
+  margin-right: .35rem;
+  font-size: .8rem;
+}
+.journey-table tbody tr:nth-child(even) td { background: var(--lane-alt); }
+.emotion-positive { color: var(--positive); font-weight: 600; }
+.emotion-neutral { color: var(--neutral); font-weight: 600; }
+.emotion-negative { color: var(--negative); font-weight: 600; }
+.highlight { font-weight: 700; color: var(--secondary); }
+.pain-table .priority {
+  display: inline-block;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: .8rem;
+}
+.priority-p0 { background: #fee2e2; color: #c2410c; }
+.priority-p1 { background: #fef3c7; color: #b45309; }
+.priority-p2 { background: #ecfdf5; color: #047857; }
+.unified-scroll { overflow-x: auto; margin: 0 -0.25rem; }
+.unified-map {
+  width: 100%;
+  min-width: 1400px;
+  border-collapse: collapse;
+  font-size: .82rem;
+}
+.unified-map th, .unified-map td {
+  border: 1px solid var(--border);
+  vertical-align: top;
+  text-align: left;
+}
+.corner-cell, .stage-head {
+  background: var(--primary);
+  color: #fff;
+  padding: .75rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.corner-cell {
+  left: 0;
+  z-index: 3;
+  min-width: 140px;
+}
+.stage-head { min-width: 180px; text-align: center; }
+.stage-order {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.stage-name { display: block; font-weight: 700; }
+.stage-en { display: block; font-size: .7rem; opacity: .85; font-weight: 400; }
+.persona-label {
+  background: var(--accent);
+  padding: .75rem;
+  min-width: 140px;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-left: 5px solid var(--persona-color);
+}
+.persona-label-id {
+  display: block;
+  font-weight: 700;
+  color: var(--persona-color);
+  font-size: 1rem;
+}
+.persona-label-name { display: block; font-weight: 700; font-size: .95rem; }
+.persona-label-pri {
+  display: inline-block;
+  font-size: .7rem;
+  background: #fff;
+  padding: .1rem .4rem;
+  border-radius: 999px;
+  margin: .25rem 0;
+}
+.sparkline-wrap {
+  margin-top: .5rem;
+  width: 100%;
+  max-width: 120px;
+}
+.unified-map-dual { min-width: 1100px; }
+.journey-cell {
+  padding: .5rem .6rem;
+  background: var(--bg);
+  min-width: 200px;
+  vertical-align: top;
+}
+.cell-line {
+  display: block;
+  font-size: .78rem;
+  line-height: 1.55;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: .15rem;
+}
+.cell-line:last-child { margin-bottom: 0; }
+.cell-lbl {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-right: .35rem;
+}
+.cell-lbl::after { content: "："; }
+.cell-val { color: var(--text); }
+.persona-row:nth-child(even) .journey-cell { background: var(--lane-alt); }
+.cell-empty { text-align: center; color: var(--text-muted); }
+.cell-na { font-size: 1.2rem; }
+.page-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: .85rem;
+}
+@media print {
+  .toc, .page-header { position: static; }
+  .frame { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>用戶體驗地圖 — 社區換物 Carousell</h1>
+    <p>1.0 · 2026-06-20 · P1 長者陳姨 · P2 街坊阿明</p>
+  </header>
+  <nav class="toc" aria-label="章節導覽">
+    <a href="#emotion">情緒折線圖</a>
+    <a href="#journey-form">P1 · P2 旅程地圖</a>
+  </nav>
+  <main>
+<section class="frame" id="emotion">
+  <header class="frame-header">
+    <h2>情緒折線圖</h2>
+    <p>P1 長者陳姨 · P2 街坊阿明 · 端到端情緒對照</p>
+  </header>
+  <div class="frame-body"><div class="line-chart-wrap"><svg class="line-chart" viewBox="0 0 960 380" width="960" height="380" role="img" aria-label="情緒曲線折線圖">
+    <line x1="44" y1="324" x2="936" y2="324" class="chart-grid"/><text x="36" y="328" class="chart-axis-y" text-anchor="end">0</text><line x1="44" y1="264" x2="936" y2="264" class="chart-grid"/><text x="36" y="268" class="chart-axis-y" text-anchor="end">2</text><line x1="44" y1="204" x2="936" y2="204" class="chart-grid"/><text x="36" y="208" class="chart-axis-y" text-anchor="end">4</text><line x1="44" y1="144" x2="936" y2="144" class="chart-grid"/><text x="36" y="148" class="chart-axis-y" text-anchor="end">6</text><line x1="44" y1="83.99999999999999" x2="936" y2="83.99999999999999" class="chart-grid"/><text x="36" y="87.99999999999999" class="chart-axis-y" text-anchor="end">8</text><line x1="44" y1="24" x2="936" y2="24" class="chart-grid"/><text x="36" y="28" class="chart-axis-y" text-anchor="end">10</text>
+    <line x1="44" y1="324" x2="936" y2="324" class="chart-axis"/>
+    <text x="44" y="366" class="chart-axis-x" text-anchor="middle">認知</text><text x="192.66666666666666" y="366" class="chart-axis-x" text-anchor="middle">考量</text><text x="341.3333333333333" y="366" class="chart-axis-x" text-anchor="middle">準備</text><text x="490" y="366" class="chart-axis-x" text-anchor="middle">線上參與</text><text x="638.6666666666666" y="366" class="chart-axis-x" text-anchor="middle">線下市集</text><text x="787.3333333333334" y="366" class="chart-axis-x" text-anchor="middle">持續</text><text x="936" y="366" class="chart-axis-x" text-anchor="middle">倡導</text>
+    <path d="M 44.0 174.0 L 192.7 204.0 L 341.3 234.0 L 490.0 204.0 L 638.7 84.0 L 787.3 114.0 L 936.0 84.0" fill="none" stroke="#4D7A64" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" class="chart-line"/>
+        <circle cx="44.0" cy="174.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 認知: 5</title>
+            </circle><circle cx="192.7" cy="204.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 考量: 4</title>
+            </circle><circle cx="341.3" cy="234.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 準備: 3</title>
+            </circle><circle cx="490.0" cy="204.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 線上參與: 4</title>
+            </circle><circle cx="638.7" cy="84.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 線下市集: 8</title>
+            </circle><circle cx="787.3" cy="114.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 持續: 7</title>
+            </circle><circle cx="936.0" cy="84.0" r="5" fill="#4D7A64" class="chart-dot">
+              <title>P1 · 倡導: 8</title>
+            </circle><path d="M 44.0 144.0 L 192.7 174.0 L 341.3 174.0 L 490.0 144.0 L 638.7 114.0 L 787.3 144.0 L 936.0 114.0" fill="none" stroke="#A85538" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" class="chart-line"/>
+        <circle cx="44.0" cy="144.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 認知: 6</title>
+            </circle><circle cx="192.7" cy="174.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 考量: 5</title>
+            </circle><circle cx="341.3" cy="174.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 準備: 5</title>
+            </circle><circle cx="490.0" cy="144.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 線上參與: 6</title>
+            </circle><circle cx="638.7" cy="114.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 線下市集: 7</title>
+            </circle><circle cx="787.3" cy="144.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 持續: 6</title>
+            </circle><circle cx="936.0" cy="114.0" r="5" fill="#A85538" class="chart-dot">
+              <title>P2 · 倡導: 7</title>
+            </circle>
+  </svg></div>
+<div class="chart-legend"><span class="chart-legend-item"><span class="chart-legend-line" style="background:#4D7A64"></span>P1 長者陳姨</span><span class="chart-legend-item"><span class="chart-legend-line" style="background:#A85538"></span>P2 街坊阿明</span></div>
+<table class="emotion-insights-table">
+  <thead><tr><th>角色</th><th>情緒最低點</th><th>情緒最高點</th><th>關鍵轉折</th></tr></thead>
+  <tbody><tr>
+      <th scope="row" style="color:#4D7A64">P1 長者陳姨</th>
+      <td>準備（不知如何整理）</td>
+      <td>線下市集（有人幫手、交到朋友）</td>
+      <td>義工代操作消除 App 障礙</td>
+    </tr><tr>
+      <th scope="row" style="color:#A85538">P2 街坊阿明</th>
+      <td>考量（怕尷尬、怕帶錯物品）</td>
+      <td>線下市集（試水溫獲歡迎積分）</td>
+      <td>試水溫參觀降低承諾</td>
+    </tr></tbody>
+</table>  </div>
+</section>
+<section class="frame" id="journey-form">
+  <header class="frame-header">
+    <h2>用戶旅程地圖</h2>
+    <p>P1 長者陳姨 · P2 街坊阿明 · 7 階段 · 每項資訊單行顯示</p>
+  </header>
+  <div class="frame-body"><div class="unified-scroll">
+  <table class="unified-map unified-map-dual">
+    <thead>
+      <tr>
+        <th class="corner-cell">角色 ＼ 階段</th>
+        <th class="stage-head">
+            <span class="stage-order">1</span>
+            <span class="stage-name">認知</span>
+            <span class="stage-en">Awareness</span>
+          </th><th class="stage-head">
+            <span class="stage-order">2</span>
+            <span class="stage-name">考量</span>
+            <span class="stage-en">Consideration</span>
+          </th><th class="stage-head">
+            <span class="stage-order">3</span>
+            <span class="stage-name">準備</span>
+            <span class="stage-en">Preparation</span>
+          </th><th class="stage-head">
+            <span class="stage-order">4</span>
+            <span class="stage-name">線上參與</span>
+            <span class="stage-en">Online</span>
+          </th><th class="stage-head">
+            <span class="stage-order">5</span>
+            <span class="stage-name">線下市集</span>
+            <span class="stage-en">Offline Market</span>
+          </th><th class="stage-head">
+            <span class="stage-order">6</span>
+            <span class="stage-name">持續</span>
+            <span class="stage-en">Retention</span>
+          </th><th class="stage-head">
+            <span class="stage-order">7</span>
+            <span class="stage-name">倡導</span>
+            <span class="stage-en">Advocacy</span>
+          </th>
+      </tr>
+    </thead>
+    <tbody><tr class="persona-row" style="--persona-color:#4D7A64">
+        <th class="persona-label" scope="row">
+          <span class="persona-label-id">P1</span>
+          <span class="persona-label-name">長者陳姨</span>
+        </th>
+        <td class="journey-cell">
+    <div class="cell-line" title="行動：經過屋邨大堂見到宣傳；聽鄰居提起換物市集"><span class="cell-lbl">行動</span><span class="cell-val">經過屋邨大堂見到宣傳；聽鄰居提起換物市集</span></div>
+    <div class="cell-line" title="觸點：🏘 屋邨宣傳海報 · 👥 鄰居口碑"><span class="cell-lbl">觸點</span><span class="cell-val">🏘 屋邨宣傳海報 · 👥 鄰居口碑</span></div>
+    <div class="cell-line" title="想法：「又有社區活動？我屋企啲舊嘢點算好？」"><span class="cell-lbl">想法</span><span class="cell-val">「又有社區活動？我屋企啲舊嘢點算好？」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-neutral">😐 中性</span></div>
+    <div class="cell-line" title="痛點：唔知啱唔啱自己；驚體力頂唔順"><span class="cell-lbl">痛點</span><span class="cell-val">唔知啱唔啱自己；驚體力頂唔順</span></div>
+    <div class="cell-line" title="機會：海報強調「義工幫手」"><span class="cell-lbl">機會</span><span class="cell-val">海報強調「義工幫手」</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：請家人幫忙了解詳情；致電社區中心查詢"><span class="cell-lbl">行動</span><span class="cell-val">請家人幫忙了解詳情；致電社區中心查詢</span></div>
+    <div class="cell-line" title="觸點：📱 /hall（家人代開）· 🌐 / · ☎️ 社區中心"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /hall（家人代開）· 🌐 / · ☎️ 社區中心</span></div>
+    <div class="cell-line" title="想法：「使唔使帶嘢？我行路唔方便，點算？」"><span class="cell-lbl">想法</span><span class="cell-val">「使唔使帶嘢？我行路唔方便，點算？」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-negative">😟 負向</span></div>
+    <div class="cell-line" title="痛點：行動不便；唔想累住家人"><span class="cell-lbl">痛點</span><span class="cell-val">行動不便；唔想累住家人</span></div>
+    <div class="cell-line" title="機會：義工電話熱線"><span class="cell-lbl">機會</span><span class="cell-val">義工電話熱線</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：整理 1–3 件物品；家人協助上架或報名"><span class="cell-lbl">行動</span><span class="cell-val">整理 1–3 件物品；家人協助上架或報名</span></div>
+    <div class="cell-line" title="觸點：📱 /marketplace/upload · /explore · 🤝 家人代操作"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /marketplace/upload · /explore · 🤝 家人代操作</span></div>
+    <div class="cell-line" title="想法：「呢件衫放咗好多年，唔知有冇人要」"><span class="cell-lbl">想法</span><span class="cell-val">「呢件衫放咗好多年，唔知有冇人要」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-neutral">😐 中性</span></div>
+    <div class="cell-line" title="痛點：不知哪些物品適合；表單欄位多"><span class="cell-lbl">痛點</span><span class="cell-val">不知哪些物品適合；表單欄位多</span></div>
+    <div class="cell-line" title="機會：電話熱線諮詢"><span class="cell-lbl">機會</span><span class="cell-val">電話熱線諮詢</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：查看報名紀錄；日程確認；家人代預約"><span class="cell-lbl">行動</span><span class="cell-val">查看報名紀錄；日程確認；家人代預約</span></div>
+    <div class="cell-line" title="觸點：📱 /schedule · /registrations · /wallet"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /schedule · /registrations · /wallet</span></div>
+    <div class="cell-line" title="想法：「下星期六係咪有換物市集？」"><span class="cell-lbl">想法</span><span class="cell-val">「下星期六係咪有換物市集？」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-neutral">😐 中性</span></div>
+    <div class="cell-line" title="痛點：無法獨立操作 App"><span class="cell-lbl">痛點</span><span class="cell-val">無法獨立操作 App</span></div>
+    <div class="cell-line" title="機會：在場義工協助"><span class="cell-lbl">機會</span><span class="cell-val">在場義工協助</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：換物攤交換；維修攤留件；數碼義診"><span class="cell-lbl">行動</span><span class="cell-val">換物攤交換；維修攤留件；數碼義診</span></div>
+    <div class="cell-line" title="觸點：🏪 換物攤 · 維修攤 · 數碼義診攤 · 🤝 義工"><span class="cell-lbl">觸點</span><span class="cell-val">🏪 換物攤 · 維修攤 · 數碼義診攤 · 🤝 義工</span></div>
+    <div class="cell-line" title="想法：「原來我啲舊衫都有人鍾意！」"><span class="cell-lbl">想法</span><span class="cell-val">「原來我啲舊衫都有人鍾意！」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：排隊體力不支；留件進度不明"><span class="cell-lbl">痛點</span><span class="cell-val">排隊體力不支；留件進度不明</span></div>
+    <div class="cell-line" title="機會：座椅休息區；留件追蹤（未來）"><span class="cell-lbl">機會</span><span class="cell-val">座椅休息區；留件追蹤（未來）</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：查看積分；兌換環保袋；關注下次市集"><span class="cell-lbl">行動</span><span class="cell-val">查看積分；兌換環保袋；關注下次市集</span></div>
+    <div class="cell-line" title="觸點：📱 /wallet · /schedule · /hall"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /wallet · /schedule · /hall</span></div>
+    <div class="cell-line" title="想法：「積分可以換環保袋；下個月再帶嘢」"><span class="cell-lbl">想法</span><span class="cell-val">「積分可以換環保袋；下個月再帶嘢」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：不知積分怎麼賺"><span class="cell-lbl">痛點</span><span class="cell-val">不知積分怎麼賺</span></div>
+    <div class="cell-line" title="機會：獲發紙本印花卡"><span class="cell-lbl">機會</span><span class="cell-val">獲發紙本印花卡</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：告訴鄰居「唔使識 App 都有人教」"><span class="cell-lbl">行動</span><span class="cell-val">告訴鄰居「唔使識 App 都有人教」</span></div>
+    <div class="cell-line" title="觸點：👥 鄰居口碑 · 🏪 故事角"><span class="cell-lbl">觸點</span><span class="cell-val">👥 鄰居口碑 · 🏪 故事角</span></div>
+    <div class="cell-line" title="想法：「想叫隔離屋婆婆一齊」"><span class="cell-lbl">想法</span><span class="cell-val">「想叫隔離屋婆婆一齊」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    
+    
+  </td>
+      </tr><tr class="persona-row" style="--persona-color:#A85538">
+        <th class="persona-label" scope="row">
+          <span class="persona-label-id">P2</span>
+          <span class="persona-label-name">街坊阿明</span>
+        </th>
+        <td class="journey-cell">
+    <div class="cell-line" title="行動：聽朋友講試水溫參觀；見海報寫「不帶物也可參觀」"><span class="cell-lbl">行動</span><span class="cell-val">聽朋友講試水溫參觀；見海報寫「不帶物也可參觀」</span></div>
+    <div class="cell-line" title="觸點：👥 朋友口碑 · 🏘 屋邨宣傳海報"><span class="cell-lbl">觸點</span><span class="cell-val">👥 朋友口碑 · 🏘 屋邨宣傳海報</span></div>
+    <div class="cell-line" title="想法：「試水溫參觀？唔使帶嘢都得？」"><span class="cell-lbl">想法</span><span class="cell-val">「試水溫參觀？唔使帶嘢都得？」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：以為一定要帶物品先可以參加"><span class="cell-lbl">痛點</span><span class="cell-val">以為一定要帶物品先可以參加</span></div>
+    <div class="cell-line" title="機會：試水溫參觀"><span class="cell-lbl">機會</span><span class="cell-val">試水溫參觀</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：查閱落地頁試水溫說明；比較參觀同正式參與的分別"><span class="cell-lbl">行動</span><span class="cell-val">查閱落地頁試水溫說明；比較參觀同正式參與的分別</span></div>
+    <div class="cell-line" title="觸點：🌐 / #faq · 📱 /explore"><span class="cell-lbl">觸點</span><span class="cell-val">🌐 / #faq · 📱 /explore</span></div>
+    <div class="cell-line" title="想法：「不如先試水溫，下次再帶嘢換都唔遲」"><span class="cell-lbl">想法</span><span class="cell-val">「不如先試水溫，下次再帶嘢換都唔遲」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-neutral">😐 中性</span></div>
+    <div class="cell-line" title="痛點：唔清楚試水溫可以獲幾多積分"><span class="cell-lbl">痛點</span><span class="cell-val">唔清楚試水溫可以獲幾多積分</span></div>
+    <div class="cell-line" title="機會：試水溫參觀 CTA 置頂"><span class="cell-lbl">機會</span><span class="cell-val">試水溫參觀 CTA 置頂</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：App 選擇試水溫參觀並報名；記低換物市集日期"><span class="cell-lbl">行動</span><span class="cell-val">App 選擇試水溫參觀並報名；記低換物市集日期</span></div>
+    <div class="cell-line" title="觸點：📱 /explore/[id] · /account/registrations"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /explore/[id] · /account/registrations</span></div>
+    <div class="cell-line" title="想法：「報咗試水溫，到時去睇流程就得」"><span class="cell-lbl">想法</span><span class="cell-val">「報咗試水溫，到時去睇流程就得」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：唔熟 App 報名操作"><span class="cell-lbl">痛點</span><span class="cell-val">唔熟 App 報名操作</span></div>
+    <div class="cell-line" title="機會：報名成功 modal 說明試水溫選項"><span class="cell-lbl">機會</span><span class="cell-val">報名成功 modal 說明試水溫選項</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：查看日程；瀏覽換物物品"><span class="cell-lbl">行動</span><span class="cell-val">查看日程；瀏覽換物物品</span></div>
+    <div class="cell-line" title="觸點：📱 /schedule · /marketplace · /hall"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /schedule · /marketplace · /hall</span></div>
+    <div class="cell-line" title="想法：「原來有咁多嘢可以換」"><span class="cell-lbl">想法</span><span class="cell-val">「原來有咁多嘢可以換」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：篩選選項多"><span class="cell-lbl">痛點</span><span class="cell-val">篩選選項多</span></div>
+    <div class="cell-line" title="機會：大廳快捷入口「探索換物」"><span class="cell-lbl">機會</span><span class="cell-val">大廳快捷入口「探索換物」</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：試水溫參觀；獲歡迎積分；旁觀交換"><span class="cell-lbl">行動</span><span class="cell-val">試水溫參觀；獲歡迎積分；旁觀交換</span></div>
+    <div class="cell-line" title="觸點：🏪 換物攤 · 試水溫登記處"><span class="cell-lbl">觸點</span><span class="cell-val">🏪 換物攤 · 試水溫登記處</span></div>
+    <div class="cell-line" title="想法：「唔使帶嘢都有分，幾好」"><span class="cell-lbl">想法</span><span class="cell-val">「唔使帶嘢都有分，幾好」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    
+    <div class="cell-line" title="機會：試水溫參觀徽章／歡迎卡"><span class="cell-lbl">機會</span><span class="cell-val">試水溫參觀徽章／歡迎卡</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：升級為帶物參與；查看日程"><span class="cell-lbl">行動</span><span class="cell-val">升級為帶物參與；查看日程</span></div>
+    <div class="cell-line" title="觸點：📱 /hall · /explore · /marketplace/upload"><span class="cell-lbl">觸點</span><span class="cell-val">📱 /hall · /explore · /marketplace/upload</span></div>
+    <div class="cell-line" title="想法：「下次帶件玩具去換」"><span class="cell-lbl">想法</span><span class="cell-val">「下次帶件玩具去換」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    <div class="cell-line" title="痛點：忘記下次市集日期"><span class="cell-lbl">痛點</span><span class="cell-val">忘記下次市集日期</span></div>
+    <div class="cell-line" title="機會：大廳倒數＋一鍵加入日程"><span class="cell-lbl">機會</span><span class="cell-val">大廳倒數＋一鍵加入日程</span></div>
+  </td><td class="journey-cell">
+    <div class="cell-line" title="行動：推薦朋友試水溫參觀"><span class="cell-lbl">行動</span><span class="cell-val">推薦朋友試水溫參觀</span></div>
+    <div class="cell-line" title="觸點：👥 朋友口碑 · 🌐 / #join"><span class="cell-lbl">觸點</span><span class="cell-val">👥 朋友口碑 · 🌐 / #join</span></div>
+    <div class="cell-line" title="想法：「其實唔難，叫佢去睇先」"><span class="cell-lbl">想法</span><span class="cell-val">「其實唔難，叫佢去睇先」</span></div>
+    <div class="cell-line"><span class="cell-lbl">情緒</span><span class="cell-val emotion-positive">😊 正向</span></div>
+    
+    <div class="cell-line" title="機會：推薦獎勵積分（未來）"><span class="cell-lbl">機會</span><span class="cell-val">推薦獎勵積分（未來）</span></div>
+  </td>
+      </tr></tbody>
+  </table>
+</div>  </div>
+</section></main>
+  <footer class="page-footer">
+    產生自 journey-data.json · 對照 <code>ux-journey-map.md</code>
+  </footer>
+</body>
+</html>

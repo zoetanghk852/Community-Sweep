@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CreditCard, Lock, CheckCircle2 } from 'lucide-react'
+import { CheckCircle, CreditCard, Lock } from '@phosphor-icons/react'
 import { workshopOptions } from '@/lib/landingData'
 
 type PaymentStep = 'select' | 'details' | 'processing' | 'success'
@@ -192,7 +192,7 @@ export function MockPaymentGateway() {
 
               {step === 'success' && (
                 <div className="py-8 text-center">
-                  <CheckCircle2 className="mx-auto h-14 w-14 text-sage" />
+                  <CheckCircle className="mx-auto h-14 w-14 text-sage" weight="duotone" />
                   <h3 className="mt-4 text-xl font-bold text-foreground">報名成功</h3>
                   <p className="mt-2 text-base text-ink-muted">
                     已成功報名「{selected.title}」

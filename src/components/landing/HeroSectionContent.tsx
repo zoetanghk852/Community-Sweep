@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { HeroStatsStrip } from '@/components/landing/HeroStatsStrip'
 import { FadeUpOnMount } from '@/components/motion/Reveal'
 
@@ -29,7 +29,7 @@ export function HeroSectionContent() {
               className="interactive inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-2xl bg-terracotta px-7 py-4 text-lg font-semibold text-white shadow-warm-lg hover:bg-terracotta-dark hover:shadow-lift"
             >
               立即登記參加
-              <ArrowRight className="h-5 w-5" aria-hidden />
+              <ArrowRight className="h-5 w-5" weight="bold" aria-hidden />
             </a>
             <Link
               href="/hall"

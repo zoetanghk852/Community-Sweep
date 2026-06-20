@@ -1,0 +1,30 @@
+{
+  "flags": [
+    "forms"
+  ],
+  "forms": {
+    "count": 6,
+    "families": [
+      1,
+      2,
+      3
+    ]
+  },
+  "inputTypesSeen": {
+    "input": 7,
+    "textarea": 2,
+    "select": 1
+  },
+  "modals": [],
+  "toastLibraries": [],
+  "loading": {
+    "skeleton": 0,
+    "spinner": 0
+  },
+  "empty": {
+    "count": 0
+  },
+  "error": {
+    "count": 0
+  }
+}

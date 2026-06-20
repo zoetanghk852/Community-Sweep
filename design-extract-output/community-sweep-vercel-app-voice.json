@@ -1,0 +1,90 @@
+{
+  "tone": "playful",
+  "pronoun": "third-person",
+  "headingStyle": "all-lowercase",
+  "headingLengthClass": "tight",
+  "ctaVerbs": [
+    {
+      "value": "app",
+      "count": 1
+    }
+  ],
+  "buttonPatterns": [
+    {
+      "value": "以 2 積分預約換取",
+      "count": 4
+    },
+    {
+      "value": "以 3 積分預約換取",
+      "count": 3
+    },
+    {
+      "value": "全部",
+      "count": 2
+    },
+    {
+      "value": "體驗示範 app",
+      "count": 1
+    },
+    {
+      "value": "衣物",
+      "count": 1
+    },
+    {
+      "value": "玩具",
+      "count": 1
+    },
+    {
+      "value": "餐具",
+      "count": 1
+    },
+    {
+      "value": "書報",
+      "count": 1
+    },
+    {
+      "value": "家電",
+      "count": 1
+    },
+    {
+      "value": "其他",
+      "count": 1
+    },
+    {
+      "value": "良好",
+      "count": 1
+    },
+    {
+      "value": "待修繕",
+      "count": 1
+    },
+    {
+      "value": "可升級改造",
+      "count": 1
+    },
+    {
+      "value": "已被預約",
+      "count": 1
+    },
+    {
+      "value": "以 1 積分預約換取",
+      "count": 1
+    }
+  ],
+  "sampleHeadings": [
+    "社區換物carousell",
+    "社區換物carousell",
+    "活化社區閒置資源",
+    "改善心理與社交孤立",
+    "強化社區凝聚力",
+    "社區換物carousell",
+    "社區換物carousell",
+    "活化社區閒置資源",
+    "改善心理與社交孤立",
+    "強化社區凝聚力"
+  ],
+  "stats": {
+    "buttons": 25,
+    "headings": 32
+  }
+}

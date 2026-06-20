@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CheckCircle2, ClipboardList } from 'lucide-react'
+import { CheckCircle, ClipboardText } from '@phosphor-icons/react'
 
 interface FormData {
   name: string
@@ -68,7 +68,7 @@ export function RegistrationForm() {
   if (submitted) {
     return (
       <div className="rounded-2xl bg-sage-light/50 p-8 text-center shadow-warm">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-sage-dark" />
+        <CheckCircle className="mx-auto h-12 w-12 text-sage-dark" weight="duotone" />
         <h3 className="mt-4 text-xl font-bold text-foreground">登記成功</h3>
         <p className="mt-2 text-base text-ink-muted">
           多謝 {form.name}，我們會在 3 個工作天內以電話聯絡你，介紹最近的社區活動。
@@ -95,7 +95,7 @@ export function RegistrationForm() {
       className="rounded-2xl bg-card p-5 shadow-warm sm:p-7"
     >
       <div className="mb-5 flex items-center gap-2 text-sage-dark">
-        <ClipboardList className="h-5 w-5" />
+        <ClipboardText className="h-5 w-5" weight="duotone" />
         <span className="font-semibold">活動登記表</span>
       </div>
 

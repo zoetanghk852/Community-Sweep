@@ -1,0 +1,24 @@
+{
+  "$schema": "https://designlang.app/schemas/gradients.json",
+  "source": "https://www.amplifyaus.org/",
+  "generated": "2026-06-19T01:48:16.947Z",
+  "count": 1,
+  "gradients": [
+    {
+      "raw": "linear-gradient(90deg, rgb(131, 22, 114) calc(100% - 1px), rgba(0, 0, 0, 0))",
+      "type": "linear",
+      "direction": "90deg",
+      "stops": [
+        {
+          "color": "rgb(131, 22, 114) calc(100% - 1px)",
+          "position": null
+        },
+        {
+          "color": "rgba(0, 0, 0, 0)",
+          "position": null
+        }
+      ],
+      "classification": "brand"
+    }
+  ]
+}

@@ -1,15 +1,15 @@
-import { Gem, Users, Palette, BookOpen, Repeat, Wrench } from 'lucide-react'
+import { ArrowsClockwise, BookOpen, Diamond, Palette, Users, Wrench } from '@phosphor-icons/react/dist/ssr'
 import { Reveal } from '@/components/motion/Reveal'
 import { coreFeatures, ideaPillars } from '@/lib/landingData'
 
 const iconMap = {
-  gem: Gem,
+  gem: Diamond,
   users: Users,
   palette: Palette,
 } as const
 
 const featureIconMap = {
-  repeat: Repeat,
+  repeat: ArrowsClockwise,
   book: BookOpen,
   wrench: Wrench,
 } as const
@@ -41,7 +41,7 @@ export function IdeaSection() {
                 >
                   <div className="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sage-light transition-colors group-hover:bg-sage/15">
-                      <Icon className="h-7 w-7 text-sage-dark" strokeWidth={1.75} aria-hidden />
+                      <Icon className="h-7 w-7 text-sage-dark" weight="duotone" aria-hidden />
                     </div>
                   </div>
                   <div>
@@ -81,7 +81,7 @@ export function CoreFeaturesSection() {
             />
             <div className="relative flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-10">
               <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/15">
-                <FeaturedIcon className="h-8 w-8 text-white" strokeWidth={1.75} aria-hidden />
+                <FeaturedIcon className="h-8 w-8 text-white" weight="duotone" aria-hidden />
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold sm:text-3xl">{featured.title}</h3>
@@ -100,7 +100,7 @@ export function CoreFeaturesSection() {
               <Reveal key={title} delay={0.12 + index * 0.08}>
                 <article className="group flex h-full flex-col rounded-2xl border border-border-light bg-page p-7 transition-all hover:-translate-y-0.5 hover:shadow-warm-lg">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-sage-light">
-                    <Icon className="h-6 w-6 text-sage-dark" strokeWidth={2} aria-hidden />
+                    <Icon className="h-6 w-6 text-sage-dark" weight="duotone" aria-hidden />
                   </div>
                   <h3 className="mt-5 font-display text-xl font-bold text-foreground">{title}</h3>
                   <p className="mt-3 flex-1 text-base leading-relaxed text-ink-muted">{description}</p>

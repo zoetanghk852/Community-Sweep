@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { CaretDown } from '@phosphor-icons/react/dist/ssr'
 import { Reveal } from '@/components/motion/Reveal'
 import { faqItems } from '@/lib/landingData'
 
@@ -21,8 +21,9 @@ export function FaqSection() {
               <details className="group rounded-2xl border border-border-light bg-card shadow-warm open:border-sage/35 open:bg-sage-light/20">
                 <summary className="interactive flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-5 text-left text-lg font-semibold text-foreground marker:content-none sm:px-6 sm:py-6">
                   <span>{item.question}</span>
-                  <ChevronDown
+                  <CaretDown
                     className="h-5 w-5 shrink-0 text-sage-dark transition-transform duration-200 group-open:rotate-180"
+                    weight="bold"
                     aria-hidden
                   />
                 </summary>

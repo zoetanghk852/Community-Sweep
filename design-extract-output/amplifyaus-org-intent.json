@@ -1,0 +1,286 @@
+{
+  "pageIntent": {
+    "type": "landing",
+    "confidence": 0.31,
+    "path": "/",
+    "title": "AMPLIFY Australia | We Need To Act — While We Still Can",
+    "description": "AMPLIFY brings Australians together to confront hard truths, shape bold solutions, and advocate for change to rebuild the promise — while we still can.",
+    "signals": [
+      {
+        "kind": "dom",
+        "type": "blog-post",
+        "weight": 0.35,
+        "detail": "byline|min-read"
+      },
+      {
+        "kind": "url",
+        "type": "landing",
+        "weight": 0.45,
+        "detail": "root-path"
+      }
+    ],
+    "alternates": [
+      {
+        "type": "blog-post",
+        "score": 0.35
+      }
+    ],
+    "needsSmart": true
+  },
+  "sectionRoles": {
+    "sections": [
+      {
+        "index": 0,
+        "tag": "div",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": "Become a member",
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 136.671875
+        },
+        "buttonCount": 20,
+        "cardCount": 36,
+        "slots": {
+          "heading": "Become a member",
+          "subheadings": [
+            "Download our app"
+          ],
+          "ctaCount": 20
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 1,
+        "tag": "main",
+        "role": "testimonial",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": "WE NEED TO ACT\nWHILE WE\nSTILL CAN",
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 9631.09375
+        },
+        "buttonCount": 89,
+        "cardCount": 287,
+        "slots": {
+          "heading": "WE NEED TO ACT\nWHILE WE\nSTILL CAN",
+          "subheadings": [
+            "Reform for the housing crisis",
+            "AMPLIFY's Work",
+            "AMPLIFY Newsroom",
+            "Take action with AMPLIFY"
+          ],
+          "ctaCount": 89,
+          "lede": "WE NEED TO ACT\nWHILE WE\nSTILL CAN\nReform for the housing crisis\nAMPLIFY's Work\nAMPLIFY Newsroom"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 2,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 1600,
+          "w": 1280,
+          "h": 1400
+        },
+        "buttonCount": 0,
+        "cardCount": 0,
+        "slots": {
+          "lede": "71% OF AUSTRALIANS AGREE THAT THE AUSTRALIAN PROMISE HAS BEEN BROKEN."
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 3,
+        "tag": "section",
+        "role": "cta",
+        "subrole": null,
+        "confidence": 0.75,
+        "heading": "Take action with AMPLIFY",
+        "bounds": {
+          "x": 0,
+          "y": 3000,
+          "w": 1280,
+          "h": 586.40625
+        },
+        "buttonCount": 28,
+        "cardCount": 7,
+        "slots": {
+          "heading": "Take action with AMPLIFY",
+          "subheadings": [
+            "Join us",
+            "Support us",
+            "Contact us"
+          ],
+          "ctaCount": 28,
+          "lede": "Take action with AMPLIFY\nJoin us"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 4,
+        "tag": "section",
+        "role": "testimonial",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 3504.578125,
+          "w": 1280,
+          "h": 866.53125
+        },
+        "buttonCount": 0,
+        "cardCount": 9,
+        "slots": {
+          "lede": "Meet a few of our community members"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 5,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "How we work",
+        "bounds": {
+          "x": 0,
+          "y": 4371.109375,
+          "w": 1280,
+          "h": 1570.65625
+        },
+        "buttonCount": 9,
+        "cardCount": 0,
+        "slots": {
+          "heading": "How we work",
+          "subheadings": [
+            "Seek",
+            "Solve",
+            "Spark"
+          ],
+          "ctaCount": 9
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 6,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 5941.765625,
+          "w": 1280,
+          "h": 800
+        },
+        "buttonCount": 1,
+        "cardCount": 2,
+        "slots": {
+          "ctaCount": 1,
+          "lede": "Australia's first National AMPLIFICATION on Housing, February 2025"
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 7,
+        "tag": "section",
+        "role": "testimonial",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": "Our work",
+        "bounds": {
+          "x": 0,
+          "y": 6741.765625,
+          "w": 1280,
+          "h": 2287.34375
+        },
+        "buttonCount": 27,
+        "cardCount": 7,
+        "slots": {
+          "heading": "Our work",
+          "ctaCount": 27
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 8,
+        "tag": "section",
+        "role": "testimonial",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": "In the news",
+        "bounds": {
+          "x": 0,
+          "y": 9029.109375,
+          "w": 1280,
+          "h": 601.984375
+        },
+        "buttonCount": 0,
+        "cardCount": 256,
+        "slots": {
+          "heading": "In the news",
+          "subheadings": [
+            "AMPLIFY Unveiled - New Organisation Empowering People To Have Their Say",
+            "Busting out of the algorithm: Seek and Square Peg cofounder Paul Bassat launches Commbank-backed Amplify to reclaim public policy discourse – who’s who of business and politics joins board",
+            "Australians are ready for Home Truths",
+            "Housing red tape review must lead to more homes"
+          ]
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 9,
+        "tag": "footer",
+        "role": "footer",
+        "subrole": null,
+        "confidence": 0.95,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 9631.09375,
+          "w": 1280,
+          "h": 989.609375
+        },
+        "buttonCount": 0,
+        "cardCount": 0,
+        "slots": {
+          "lede": "Join the conversation"
+        },
+        "needsSmart": false
+      }
+    ],
+    "counts": {
+      "nav": 1,
+      "testimonial": 4,
+      "content": 3,
+      "cta": 1,
+      "footer": 1
+    },
+    "readingOrder": [
+      "nav",
+      "testimonial",
+      "content",
+      "cta",
+      "testimonial",
+      "content",
+      "content",
+      "testimonial",
+      "testimonial",
+      "footer"
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MessageSquare, Send } from 'lucide-react'
+import { ChatCircle, PaperPlaneTilt } from '@phosphor-icons/react'
 import { Reveal } from '@/components/motion/Reveal'
 import { initialComments } from '@/lib/landingData'
 
@@ -39,14 +39,14 @@ export function CommentBoard() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal>
-            <h2 className="section-title text-3xl text-foreground sm:text-4xl">真實的社區回饋</h2>
+            <h2 className="section-title text-3xl text-foreground sm:text-4xl">街坊心聲</h2>
             <p className="mt-5 max-w-prose text-lg text-ink-muted">
-              分享你對社區換物與修繕服務的想法，或閱讀其他街坊的經驗。
+              分享你對社區換物與修繕服務的想法，或閱讀其他街坊的參與經驗。
             </p>
 
             <form onSubmit={handleSubmit} className="mt-10 rounded-2xl bg-page p-5 sm:p-6">
               <div className="mb-4 flex items-center gap-2 text-sage-dark">
-                <MessageSquare className="h-5 w-5" />
+                <ChatCircle className="h-5 w-5" weight="duotone" />
                 <span className="font-semibold">留下你的留言</span>
               </div>
               <div className="space-y-3">
@@ -72,7 +72,7 @@ export function CommentBoard() {
                 disabled={!name.trim() || !message.trim()}
                 className="interactive mt-4 inline-flex min-h-[3rem] w-full items-center justify-center gap-2 rounded-xl bg-sage px-5 py-3 text-base font-semibold text-white hover:bg-sage-dark disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
               >
-                <Send className="h-5 w-5" />
+                <PaperPlaneTilt className="h-5 w-5" weight="bold" />
                 發表留言
               </button>
             </form>

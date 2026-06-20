@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import { PointsWalletCard } from '@/components/home/PointsWalletCard'
 import { QuickActions } from '@/components/home/QuickActions'
 import { mockWallet } from '@/lib/mockData'
@@ -24,7 +24,7 @@ export function AppHallPreview() {
         className="interactive mt-5 flex min-h-[3rem] w-full items-center justify-center gap-2 rounded-xl border border-sage/35 bg-sage-light/50 text-base font-semibold text-sage-dark hover:border-sage hover:bg-sage-light"
       >
         開啟完整示範
-        <ArrowRight className="h-4 w-4" aria-hidden />
+        <ArrowRight className="h-4 w-4" weight="bold" aria-hidden />
       </Link>
     </div>
   )

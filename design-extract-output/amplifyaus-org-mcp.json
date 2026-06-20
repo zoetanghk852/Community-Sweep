@@ -1,0 +1,1069 @@
+{
+  "colors": {
+    "all": [
+      {
+        "hex": "#831672",
+        "rgb": {
+          "r": 131,
+          "g": 22,
+          "b": 114,
+          "a": 1
+        },
+        "hsl": {
+          "h": 309,
+          "s": 71,
+          "l": 30
+        },
+        "count": 2071,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#003da2",
+        "rgb": {
+          "r": 0,
+          "g": 61,
+          "b": 162,
+          "a": 1
+        },
+        "hsl": {
+          "h": 217,
+          "s": 100,
+          "l": 32
+        },
+        "count": 777,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#00530d",
+        "rgb": {
+          "r": 0,
+          "g": 83,
+          "b": 13,
+          "a": 1
+        },
+        "hsl": {
+          "h": 129,
+          "s": 100,
+          "l": 16
+        },
+        "count": 336,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#000000",
+        "rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 0
+        },
+        "count": 272,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#00ffe6",
+        "rgb": {
+          "r": 0,
+          "g": 255,
+          "b": 230,
+          "a": 1
+        },
+        "hsl": {
+          "h": 174,
+          "s": 100,
+          "l": 50
+        },
+        "count": 226,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#ffc7ff",
+        "rgb": {
+          "r": 255,
+          "g": 199,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 300,
+          "s": 100,
+          "l": 89
+        },
+        "count": 120,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#ff8eff",
+        "rgb": {
+          "r": 255,
+          "g": 142,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 300,
+          "s": 100,
+          "l": 78
+        },
+        "count": 81,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 100
+        },
+        "count": 60,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#00fa7f",
+        "rgb": {
+          "r": 0,
+          "g": 250,
+          "b": 127,
+          "a": 1
+        },
+        "hsl": {
+          "h": 150,
+          "s": 100,
+          "l": 49
+        },
+        "count": 58,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#ff0580",
+        "rgb": {
+          "r": 255,
+          "g": 5,
+          "b": 128,
+          "a": 1
+        },
+        "hsl": {
+          "h": 330,
+          "s": 100,
+          "l": 51
+        },
+        "count": 25,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#005768",
+        "rgb": {
+          "r": 0,
+          "g": 87,
+          "b": 104,
+          "a": 1
+        },
+        "hsl": {
+          "h": 190,
+          "s": 100,
+          "l": 20
+        },
+        "count": 21,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#b42318",
+        "rgb": {
+          "r": 180,
+          "g": 35,
+          "b": 24,
+          "a": 1
+        },
+        "hsl": {
+          "h": 4,
+          "s": 76,
+          "l": 40
+        },
+        "count": 18,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ffe3ff",
+        "rgb": {
+          "r": 255,
+          "g": 227,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 300,
+          "s": 100,
+          "l": 95
+        },
+        "count": 13,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#fcdc4d",
+        "rgb": {
+          "r": 252,
+          "g": 220,
+          "b": 77,
+          "a": 1
+        },
+        "hsl": {
+          "h": 49,
+          "s": 97,
+          "l": 65
+        },
+        "count": 7,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#eeeeee",
+        "rgb": {
+          "r": 238,
+          "g": 238,
+          "b": 238,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 93
+        },
+        "count": 1,
+        "contexts": [
+          "background"
+        ]
+      }
+    ]
+  },
+  "regions": [
+    {
+      "role": "nav",
+      "tag": "div",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 136.671875
+      },
+      "heading": "Become a member",
+      "buttonCount": 20,
+      "cardCount": 36,
+      "className": "navbar-wrapper w-nav"
+    },
+    {
+      "role": "testimonials",
+      "tag": "main",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 9631.09375
+      },
+      "heading": "WE NEED TO ACT\nWHILE WE\nSTILL CAN",
+      "buttonCount": 89,
+      "cardCount": 287,
+      "className": "main-wrapper"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 1600,
+        "w": 1280,
+        "h": 1400
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 0,
+      "className": "section_text-intro"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 3000,
+        "w": 1280,
+        "h": 586.40625
+      },
+      "heading": "Take action with AMPLIFY",
+      "buttonCount": 28,
+      "cardCount": 7,
+      "className": "section_cta-trio"
+    },
+    {
+      "role": "testimonials",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 3504.578125,
+        "w": 1280,
+        "h": 866.53125
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 9,
+      "className": "section_meet-community"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 4371.109375,
+        "w": 1280,
+        "h": 1570.65625
+      },
+      "heading": "How we work",
+      "buttonCount": 9,
+      "cardCount": 0,
+      "className": "section_three-s w-variant-4233a962-8980-ca03-70a1-189fe682ce8b"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 5941.765625,
+        "w": 1280,
+        "h": 800
+      },
+      "heading": null,
+      "buttonCount": 1,
+      "cardCount": 2,
+      "className": "section_video"
+    },
+    {
+      "role": "features",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 6741.765625,
+        "w": 1280,
+        "h": 2287.34375
+      },
+      "heading": "Our work",
+      "buttonCount": 27,
+      "cardCount": 7,
+      "className": "section_work-feature"
+    },
+    {
+      "role": "testimonials",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 9029.109375,
+        "w": 1280,
+        "h": 601.984375
+      },
+      "heading": "In the news",
+      "buttonCount": 0,
+      "cardCount": 256,
+      "className": "section_news-feature"
+    },
+    {
+      "role": "footer",
+      "tag": "footer",
+      "bounds": {
+        "x": 0,
+        "y": 9631.09375,
+        "w": 1280,
+        "h": 989.609375
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 0,
+      "className": "section_footer"
+    }
+  ],
+  "componentClusters": [
+    {
+      "kind": "button",
+      "structuralHash": "div>button",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(131, 22, 114)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button>div",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(131, 22, 114)",
+            "color": "rgb(255, 227, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 227, 255)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button>span>span",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span>img",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(255, 255, 255)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "div>div",
+      "instanceCount": 18,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 18
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "div>span>div",
+      "instanceCount": 10,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "27.6px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 10
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "span",
+      "instanceCount": 20,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(0, 61, 162)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "27.6px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 14
+        },
+        {
+          "css": {
+            "background": "rgb(0, 83, 13)",
+            "color": "rgb(0, 83, 13)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 83, 13)",
+            "fontSize": "27.6px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 6
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "div>span",
+      "instanceCount": 10,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "27.6px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 10
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "div>p>div",
+      "instanceCount": 7,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "27.6px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 7
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "p>span",
+      "instanceCount": 7,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 61, 162)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 61, 162)",
+            "fontSize": "27.6px",
+            "fontWeight": "700"
+          },
+          "instanceCount": 7
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "div>a>div",
+      "instanceCount": 4,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 199, 255)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "1px solid rgba(0, 0, 0, 0)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 83, 13)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "1px solid rgba(0, 0, 0, 0)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 3
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "a",
+      "instanceCount": 4,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(131, 22, 114)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 4
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>div>div>div",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(131, 22, 114)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>div>div",
+      "instanceCount": 3,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(0, 250, 127)",
+            "color": "rgb(0, 83, 13)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(0, 83, 13)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        },
+        {
+          "css": {
+            "background": "rgb(255, 142, 255)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px none rgb(131, 22, 114)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "input",
+      "structuralHash": "input",
+      "instanceCount": 9,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 255, 255)",
+            "color": "rgb(131, 22, 114)",
+            "padding": "1px 7.936px 1px 7.936px",
+            "borderRadius": "320px",
+            "border": "0px none rgb(0, 0, 0)",
+            "fontSize": "16px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 9
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button",
+      "instanceCount": 2,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(131, 22, 114)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "8px 8px 8px 8px",
+            "borderRadius": "0px",
+            "border": "1px solid rgba(0, 0, 0, 0)",
+            "fontSize": "18.4px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 2
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "remediation": []
+  },
+  "cssHealth": {
+    "sheets": [
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 369,
+        "usedBytes": 369,
+        "unusedBytes": 0,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 86,
+        "usedBytes": 86,
+        "unusedBytes": 0,
+        "unusedPercent": 0
+      },
+      {
+        "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700%7CRoboto+Condensed:300,400,500,600,700",
+        "totalBytes": 39155,
+        "usedBytes": 0,
+        "unusedBytes": 39155,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/css/amplify-aus.webflow.shared.20af53cb0.min.css",
+        "totalBytes": 29796,
+        "usedBytes": 2491,
+        "unusedBytes": 27305,
+        "unusedPercent": 92
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/css/amplify-aus.webflow.68b89f4012e125bcdfe2c920.80b42258c.opt.min.css",
+        "totalBytes": 181634,
+        "usedBytes": 101854,
+        "unusedBytes": 79780,
+        "unusedPercent": 44
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 279,
+        "usedBytes": 39,
+        "unusedBytes": 240,
+        "unusedPercent": 86
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 100,
+        "usedBytes": 0,
+        "unusedBytes": 100,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 579,
+        "usedBytes": 575,
+        "unusedBytes": 4,
+        "unusedPercent": 1
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 45,
+        "usedBytes": 41,
+        "unusedBytes": 4,
+        "unusedPercent": 9
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 3361,
+        "usedBytes": 3138,
+        "unusedBytes": 223,
+        "unusedPercent": 7
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 206,
+        "usedBytes": 176,
+        "unusedBytes": 30,
+        "unusedPercent": 15
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 916,
+        "usedBytes": 203,
+        "unusedBytes": 713,
+        "unusedPercent": 78
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 4998,
+        "usedBytes": 0,
+        "unusedBytes": 4998,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 3283,
+        "usedBytes": 1682,
+        "unusedBytes": 1601,
+        "unusedPercent": 49
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 2764,
+        "usedBytes": 0,
+        "unusedBytes": 2764,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 490,
+        "usedBytes": 54,
+        "unusedBytes": 436,
+        "unusedPercent": 89
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 1249,
+        "usedBytes": 237,
+        "unusedBytes": 1012,
+        "unusedPercent": 81
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 174,
+        "usedBytes": 170,
+        "unusedBytes": 4,
+        "unusedPercent": 2
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 6496,
+        "usedBytes": 1530,
+        "unusedBytes": 4966,
+        "unusedPercent": 76
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 2152,
+        "usedBytes": 416,
+        "unusedBytes": 1736,
+        "unusedPercent": 81
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 4034,
+        "usedBytes": 725,
+        "unusedBytes": 3309,
+        "unusedPercent": 82
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 1202,
+        "usedBytes": 403,
+        "unusedBytes": 799,
+        "unusedPercent": 66
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 273,
+        "usedBytes": 126,
+        "unusedBytes": 147,
+        "unusedPercent": 54
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 877,
+        "usedBytes": 806,
+        "unusedBytes": 71,
+        "unusedPercent": 8
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 1733,
+        "usedBytes": 664,
+        "unusedBytes": 1069,
+        "unusedPercent": 62
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 480,
+        "usedBytes": 0,
+        "unusedBytes": 480,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 393,
+        "usedBytes": 0,
+        "unusedBytes": 393,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 393,
+        "usedBytes": 160,
+        "unusedBytes": 233,
+        "unusedPercent": 59
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 118,
+        "usedBytes": 0,
+        "unusedBytes": 118,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 879,
+        "usedBytes": 431,
+        "unusedBytes": 448,
+        "unusedPercent": 51
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 393,
+        "usedBytes": 0,
+        "unusedBytes": 393,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 375,
+        "usedBytes": 80,
+        "unusedBytes": 295,
+        "unusedPercent": 79
+      },
+      {
+        "url": "https://www.amplifyaus.org/",
+        "totalBytes": 220,
+        "usedBytes": 67,
+        "unusedBytes": 153,
+        "unusedPercent": 70
+      }
+    ],
+    "totalBytes": 289502,
+    "usedBytes": 116523,
+    "unusedBytes": 172979,
+    "unusedPercent": 60,
+    "importantCount": 92,
+    "duplicates": 3586,
+    "vendorPrefixes": {
+      "webkit": 125,
+      "moz": 6,
+      "ms": 2,
+      "o": 1
+    },
+    "keyframes": [
+      {
+        "name": "layer1",
+        "steps": 3
+      },
+      {
+        "name": "layer2",
+        "steps": 3
+      },
+      {
+        "name": "layer3",
+        "steps": 3
+      }
+    ],
+    "specificity": {
+      "max": [
+        1,
+        5,
+        15
+      ],
+      "average": [
+        0,
+        1.27,
+        0.45
+      ],
+      "count": 1547
+    },
+    "issues": [
+      "92 !important rules",
+      "3586 duplicate declarations",
+      "60% unused CSS"
+    ]
+  }
+}

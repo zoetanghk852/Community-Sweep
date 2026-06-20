@@ -1,0 +1,454 @@
+{
+  "pageIntent": {
+    "type": "landing",
+    "confidence": 0.45,
+    "path": "/",
+    "title": "社區換物carousell，鼓勵交換閒置物品、預約修繕",
+    "description": "針對有囤積習慣的長者，每月舉辦換物市集並提供線上換物，發掘舊物價值，重建街坊連結。",
+    "signals": [
+      {
+        "kind": "url",
+        "type": "landing",
+        "weight": 0.45,
+        "detail": "root-path"
+      }
+    ],
+    "alternates": [],
+    "needsSmart": true
+  },
+  "sectionRoles": {
+    "sections": [
+      {
+        "index": 0,
+        "tag": "header",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.4,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 83
+        },
+        "buttonCount": 1,
+        "cardCount": 4,
+        "slots": {
+          "ctaCount": 1,
+          "lede": "社區換物carousell"
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 1,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 550.71875,
+          "y": 19,
+          "w": 701.28125,
+          "h": 45
+        },
+        "buttonCount": 0,
+        "cardCount": 0,
+        "slots": {
+          "lede": "核心功能\nApp 預覽\n線上換物\n常見問題\n加入我們\n模擬付款\n體驗示範 App"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 2,
+        "tag": "main",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "社區換物carousell",
+        "bounds": {
+          "x": 0,
+          "y": 83,
+          "w": 1280,
+          "h": 10335.5
+        },
+        "buttonCount": 25,
+        "cardCount": 121,
+        "slots": {
+          "heading": "社區換物carousell",
+          "subheadings": [
+            "社區換物carousell",
+            "活化社區閒置資源",
+            "改善心理與社交孤立",
+            "強化社區凝聚力"
+          ],
+          "ctaCount": 25
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 3,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "社區換物carousell",
+        "bounds": {
+          "x": 0,
+          "y": 83,
+          "w": 1280,
+          "h": 800
+        },
+        "buttonCount": 0,
+        "cardCount": 4,
+        "slots": {
+          "heading": "社區換物carousell"
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 4,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "社區換物carousell",
+        "bounds": {
+          "x": 0,
+          "y": 883,
+          "w": 1280,
+          "h": 817.40625
+        },
+        "buttonCount": 0,
+        "cardCount": 6,
+        "slots": {
+          "heading": "社區換物carousell",
+          "subheadings": [
+            "活化社區閒置資源",
+            "改善心理與社交孤立",
+            "強化社區凝聚力"
+          ]
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 5,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "發掘價值 · 與人交流 · 藝術美學",
+        "bounds": {
+          "x": 0,
+          "y": 1700.40625,
+          "w": 1280,
+          "h": 964.71875
+        },
+        "buttonCount": 0,
+        "cardCount": 9,
+        "slots": {
+          "heading": "發掘價值 · 與人交流 · 藝術美學",
+          "subheadings": [
+            "賦予舊物第二次生命",
+            "與人交流",
+            "換物市集互動"
+          ]
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 6,
+        "tag": "section",
+        "role": "feature-grid",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": "三大社區服務支柱",
+        "bounds": {
+          "x": 0,
+          "y": 2665.125,
+          "w": 1280,
+          "h": 801.671875
+        },
+        "buttonCount": 0,
+        "cardCount": 7,
+        "slots": {
+          "heading": "三大社區服務支柱",
+          "subheadings": [
+            "換物市集",
+            "數碼義診攤",
+            "維修攤"
+          ],
+          "lede": "三大社區服務支柱\n換物市集"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 7,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "服務類別與平台比較",
+        "bounds": {
+          "x": 0,
+          "y": 3466.796875,
+          "w": 1280,
+          "h": 978.8125
+        },
+        "buttonCount": 0,
+        "cardCount": 5,
+        "slots": {
+          "heading": "服務類別與平台比較",
+          "subheadings": [
+            "社區換物carousell"
+          ]
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 8,
+        "tag": "section",
+        "role": "testimonial",
+        "subrole": null,
+        "confidence": 0.8,
+        "heading": "長者友善的App端設計",
+        "bounds": {
+          "x": 0,
+          "y": 4445.609375,
+          "w": 1280,
+          "h": 840
+        },
+        "buttonCount": 0,
+        "cardCount": 11,
+        "slots": {
+          "heading": "長者友善的App端設計",
+          "subheadings": [
+            "快捷功能"
+          ]
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 9,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": null,
+        "bounds": {
+          "x": 840,
+          "y": 4638.109375,
+          "w": 394,
+          "h": 350.5
+        },
+        "buttonCount": 0,
+        "cardCount": 3,
+        "slots": {
+          "lede": "我的儲分"
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 10,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "快捷功能",
+        "bounds": {
+          "x": 840,
+          "y": 5006.609375,
+          "w": 394,
+          "h": 283
+        },
+        "buttonCount": 0,
+        "cardCount": 3,
+        "slots": {
+          "heading": "快捷功能",
+          "lede": "快捷功能\n掃碼賺分\n尋找修繕師傅\n上傳閒置物品"
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 11,
+        "tag": "section",
+        "role": "content",
+        "subrole": null,
+        "confidence": 0.3,
+        "heading": "線上換物預覽",
+        "bounds": {
+          "x": 0,
+          "y": 5285.609375,
+          "w": 1280,
+          "h": 1813.578125
+        },
+        "buttonCount": 21,
+        "cardCount": 38,
+        "slots": {
+          "heading": "線上換物預覽",
+          "subheadings": [
+            "孫仔舊玩具車",
+            "藍色棉質外套",
+            "舊式電風扇",
+            "花鳥圖案碟"
+          ],
+          "ctaCount": 21
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 12,
+        "tag": "section",
+        "role": "hero",
+        "subrole": null,
+        "confidence": 0.4,
+        "heading": "真實的社區回饋",
+        "bounds": {
+          "x": 0,
+          "y": 7099.1875,
+          "w": 1280,
+          "h": 741.953125
+        },
+        "buttonCount": 1,
+        "cardCount": 11,
+        "slots": {
+          "heading": "真實的社區回饋",
+          "ctaCount": 1
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 13,
+        "tag": "section",
+        "role": "faq",
+        "subrole": null,
+        "confidence": 0.85,
+        "heading": "常見問題",
+        "bounds": {
+          "x": 0,
+          "y": 7841.140625,
+          "w": 1280,
+          "h": 853.265625
+        },
+        "buttonCount": 0,
+        "cardCount": 10,
+        "slots": {
+          "heading": "常見問題"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 14,
+        "tag": "section",
+        "role": "hero",
+        "subrole": null,
+        "confidence": 0.4,
+        "heading": "登記參加社區活動",
+        "bounds": {
+          "x": 0,
+          "y": 8694.40625,
+          "w": 1280,
+          "h": 833.84375
+        },
+        "buttonCount": 1,
+        "cardCount": 7,
+        "slots": {
+          "heading": "登記參加社區活動",
+          "ctaCount": 1
+        },
+        "needsSmart": true
+      },
+      {
+        "index": 15,
+        "tag": "section",
+        "role": "pricing-table",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": "工作坊報名付款（示範）",
+        "bounds": {
+          "x": 0,
+          "y": 9528.25,
+          "w": 1280,
+          "h": 890.25
+        },
+        "buttonCount": 2,
+        "cardCount": 7,
+        "slots": {
+          "heading": "工作坊報名付款（示範）",
+          "ctaCount": 2
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 16,
+        "tag": "footer",
+        "role": "footer",
+        "subrole": null,
+        "confidence": 0.95,
+        "heading": null,
+        "bounds": {
+          "x": 0,
+          "y": 10418.5,
+          "w": 1280,
+          "h": 372.671875
+        },
+        "buttonCount": 0,
+        "cardCount": 9,
+        "slots": {
+          "lede": "社區換物carousell"
+        },
+        "needsSmart": false
+      },
+      {
+        "index": 17,
+        "tag": "nav",
+        "role": "nav",
+        "subrole": null,
+        "confidence": 0.9,
+        "heading": null,
+        "bounds": {
+          "x": 736.625,
+          "y": 10482.5,
+          "w": 516.375,
+          "h": 22.5
+        },
+        "buttonCount": 0,
+        "cardCount": 6,
+        "slots": {
+          "lede": "核心功能\nApp 預覽\n線上換物\n常見問題\n加入我們\n示範 App"
+        },
+        "needsSmart": false
+      }
+    ],
+    "counts": {
+      "nav": 3,
+      "content": 8,
+      "feature-grid": 1,
+      "testimonial": 1,
+      "hero": 2,
+      "faq": 1,
+      "pricing-table": 1,
+      "footer": 1
+    },
+    "readingOrder": [
+      "nav",
+      "nav",
+      "content",
+      "content",
+      "content",
+      "content",
+      "feature-grid",
+      "content",
+      "testimonial",
+      "content",
+      "content",
+      "content",
+      "hero",
+      "faq",
+      "hero",
+      "pricing-table",
+      "footer",
+      "nav"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "tone": "friendly",
+  "pronoun": "we-only",
+  "headingStyle": "Sentence case",
+  "headingLengthClass": "balanced",
+  "ctaVerbs": [
+    {
+      "value": "learn",
+      "count": 12
+    },
+    {
+      "value": "sign",
+      "count": 4
+    },
+    {
+      "value": "donate",
+      "count": 4
+    },
+    {
+      "value": "connect",
+      "count": 4
+    },
+    {
+      "value": "explore",
+      "count": 3
+    },
+    {
+      "value": "submit",
+      "count": 2
+    }
+  ],
+  "buttonPatterns": [
+    {
+      "value": "learn more",
+      "count": 12
+    },
+    {
+      "value": "sign up",
+      "count": 4
+    },
+    {
+      "value": "donate",
+      "count": 4
+    },
+    {
+      "value": "connect",
+      "count": 4
+    },
+    {
+      "value": "explore",
+      "count": 3
+    },
+    {
+      "value": "submit",
+      "count": 2
+    }
+  ],
+  "sampleHeadings": [
+    "Become a member",
+    "Download our app",
+    "WE NEED TO ACT\nWHILE WE\nSTILL CAN",
+    "Reform for the housing crisis",
+    "AMPLIFY's Work",
+    "AMPLIFY Newsroom",
+    "Take action with AMPLIFY",
+    "Take action with AMPLIFY",
+    "Join us",
+    "Support us"
+  ],
+  "stats": {
+    "buttons": 29,
+    "headings": 21
+  }
+}

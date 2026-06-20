@@ -1,0 +1,209 @@
+:root {
+  /* Colors — Primary */
+  --color-primary: #4d7a64;
+  --color-secondary: #a85538;
+  --color-accent: #f5f1ea;
+
+  /* Colors — Neutrals */
+  --color-neutral-50: #ffffff;
+  --color-neutral-100: #5a4e3c;
+  --color-neutral-200: #000000;
+  --color-neutral-300: #736456;
+  --color-neutral-400: #e4ede8;
+  --color-neutral-500: #b8a48a;
+
+  /* Colors — Backgrounds */
+  --color-bg: #f5f1ea;
+  --color-bg-1: #faf8f4;
+  --color-bg-2: #fffcf8;
+  --color-bg-3: #133220;
+  --color-bg-4: #64170a;
+  --color-bg-5: #e9e0d2;
+  --color-bg-6: #fff8ef;
+  --color-bg-7: #355a47;
+  --color-bg-8: #c6d8ce;
+  --color-bg-9: #f0e8dc;
+
+  /* Colors — Text */
+  --color-text: #000000;
+  --color-text-1: #2a2318;
+  --color-text-2: #ffffff;
+  --color-text-3: #355a47;
+  --color-text-4: #736456;
+
+  /* Typography — Families */
+  --font-sans: 'Noto Sans TC', sans-serif;
+  --font-heading: 'Noto Serif TC', sans-serif;
+
+  /* Typography — Scale */
+  --font-size-67.5: 67.5px;
+  --font-size-54: 54px;
+  --font-size-40.5: 40.5px;
+  --font-size-33.75: 33.75px;
+  --font-size-27: 27px;
+  --font-size-22.5: 22.5px;
+  --font-size-20.25: 20.25px;
+  --font-size-18: 18px;
+  --font-size-15.75: 15.75px;
+  --font-size-13.5: 13.5px;
+
+  /* Spacing */
+  --spacing-2: 2px;
+  --spacing-54: 54px;
+  --spacing-63: 63px;
+  --spacing-72: 72px;
+  --spacing-90: 90px;
+  --spacing-99: 99px;
+  --spacing-108: 108px;
+  --spacing-136: 136px;
+  --spacing-181: 181px;
+  --spacing-208: 208px;
+  --spacing-325: 325px;
+
+  /* Border Radius */
+  --radius-md: 7px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 27px;
+  --radius-full: 32px;
+
+  /* Box Shadows */
+  --shadow-sm: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.86829 0.00544527 0.0242809 / 0.5) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --shadow-sm: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  --shadow-sm: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.544523 0.0902701 0.0748228 / 0.2) 0px 4px 6px -1px, oklab(0.544523 0.0902701 0.0748228 / 0.2) 0px 2px 4px -2px;
+  --shadow-sm: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.540078 -0.0578925 0.0185666 / 0.2) 0px 4px 6px -1px, oklab(0.540078 -0.0578925 0.0185666 / 0.2) 0px 2px 4px -2px;
+  --shadow-xs: rgba(255, 255, 255, 0.7) 0px 1px 0px 0px inset, rgba(53, 90, 71, 0.1) 0px 4px 24px -4px;
+  --shadow-lg: rgba(53, 90, 71, 0.1) 0px 4px 24px -4px;
+  --shadow-xl: rgba(53, 90, 71, 0.14) 0px 16px 48px -12px;
+
+  /* Original Site Variables */
+  /* — colors — */
+  --foreground: #2a2318;
+  --ink-muted: #5a4e3c;
+  --border-warm: #ddd2c2;
+  --card: #fffcf8;
+  --muted: #736456;
+  --border-light: #ebe3d6;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --color-zinc-200: lab(90.6853% .399232 -1.45452);
+  --color-zinc-900: lab(8.30603% .618205 -2.16572);
+  --tw-inset-ring-shadow: 0 0 #0000;
+  --color-amber-500: lab(72.7183% 31.8672 97.9407);
+  --color-gray-900: lab(8.11897% .811279 -12.254);
+  --tw-ring-offset-color: #fff;
+  --color-white: #fff;
+  --color-gray-600: lab(35.6337% -1.58697 -10.8425);
+  --tw-border-style: solid;
+  --color-zinc-950: lab(2.51107% .242703 -.886115);
+  --color-gray-100: lab(96.1596% -.0823438 -1.13575);
+  --tw-ring-offset-width: 0px;
+  --color-amber-50: lab(98.6252% -.635922 8.42309);
+  /* — spacing — */
+  --spacing: .25rem;
+  --tw-space-y-reverse: 0;
+  /* — typography — */
+  --text-2xl: 1.5rem;
+  --leading-relaxed: 1.625;
+  --leading-snug: 1.375;
+  --tracking-tighter: -.05em;
+  --text-7xl: 4.5rem;
+  --text-lg: 1.125rem;
+  --text-5xl--line-height: 1;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-base--line-height: calc(1.5 / 1);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --tracking-wider: .05em;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --font-weight-semibold: 600;
+  --text-sm: .875rem;
+  --font-noto-serif-tc: "Noto Serif TC", "Noto Serif TC Fallback";
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --leading-tight: 1.25;
+  --font-sans: "Noto Sans TC", "Noto Sans TC Fallback", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --text-4xl: 2.25rem;
+  --font-weight-bold: 700;
+  --font-noto-sans-tc: "Noto Sans TC", "Noto Sans TC Fallback";
+  --text-sm--line-height: calc(1.25 / .875);
+  --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-3xl: 1.875rem;
+  --text-xs: .75rem;
+  --text-xs--line-height: calc(1 / .75);
+  --default-font-family: "Noto Sans TC", "Noto Sans TC Fallback", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-weight-medium: 500;
+  --font-display: "Noto Serif TC", "Noto Serif TC Fallback", "Songti TC", "PMingLiU", serif;
+  --text-7xl--line-height: 1;
+  --text-6xl--line-height: 1;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-xl: 1.25rem;
+  --text-base: 1rem;
+  --default-mono-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --tracking-tight: -.025em;
+  /* — shadows — */
+  --shadow-warm: 0 4px 24px -4px #355a471a;
+  --shadow-warm-lg: 0 16px 48px -12px #355a4724;
+  --shadow-lift: 0 24px 64px -16px #2a23181f;
+  --tw-inset-shadow-alpha: 100%;
+  --tw-drop-shadow-alpha: 100%;
+  --tw-inset-shadow: 0 0 #0000;
+  --tw-shadow-alpha: 100%;
+  --tw-shadow: 0 0 #0000;
+  /* — radii — */
+  --radius-3xl: 1.5rem;
+  --radius-xl: .75rem;
+  --radius-2xl: 1rem;
+  --radius-md: .375rem;
+  --radius-lg: .5rem;
+  /* — other — */
+  --background: #faf8f4;
+  --cream: #faf8f4;
+  --cream-dark: #f0e8dc;
+  --terracotta: #a85538;
+  --terracotta-dark: #874428;
+  --wood: #b8986a;
+  --wood-light: #e5d9c6;
+  --sage: #4d7a64;
+  --sage-light: #e4ede8;
+  --sage-dark: #355a47;
+  --page: #f5f1ea;
+  --z-nav: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --container-md: 28rem;
+  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  --tw-outline-style: solid;
+  --container-5xl: 64rem;
+  --tw-translate-z: 0;
+  --tw-gradient-via: rgba(0, 0, 0, 0);
+  --tw-scale-y: 1;
+  --container-6xl: 72rem;
+  --container-3xl: 48rem;
+  --tw-translate-y: 0;
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --animate-spin: spin 1s linear infinite;
+  --tw-gradient-from: rgba(0, 0, 0, 0);
+  --tw-gradient-to: rgba(0, 0, 0, 0);
+  --blur-3xl: 64px;
+  --tw-divide-y-reverse: 0;
+  --tw-scale-z: 1;
+  --container-2xl: 42rem;
+  --container-sm: 24rem;
+  --tw-translate-x: 0;
+  --tw-gradient-via-position: 50%;
+  --container-lg: 32rem;
+  --tw-scale-x: 1;
+  --tw-gradient-to-position: 100%;
+  --default-transition-duration: .15s;
+  --container-xl: 36rem;
+  --container-xs: 20rem;
+  --container-7xl: 80rem;
+  --tw-gradient-from-position: 0%;
+  /* — semantic — */
+  success: [object Object];
+  warning: [object Object];
+  error: [object Object];
+  info: [object Object];
+
+}

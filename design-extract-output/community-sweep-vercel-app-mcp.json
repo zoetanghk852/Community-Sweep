@@ -1,0 +1,937 @@
+{
+  "colors": {
+    "all": [
+      {
+        "hex": "#2a2318",
+        "rgb": {
+          "r": 42,
+          "g": 35,
+          "b": 24,
+          "a": 1
+        },
+        "hsl": {
+          "h": 37,
+          "s": 27,
+          "l": 13
+        },
+        "count": 688,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ffffff",
+        "rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 100
+        },
+        "count": 214,
+        "contexts": [
+          "text",
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#355a47",
+        "rgb": {
+          "r": 53,
+          "g": 90,
+          "b": 71,
+          "a": 1
+        },
+        "hsl": {
+          "h": 149,
+          "s": 26,
+          "l": 28
+        },
+        "count": 179,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#5a4e3c",
+        "rgb": {
+          "r": 90,
+          "g": 78,
+          "b": 60,
+          "a": 1
+        },
+        "hsl": {
+          "h": 36,
+          "s": 20,
+          "l": 29
+        },
+        "count": 172,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#000000",
+        "rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 1
+        },
+        "hsl": {
+          "h": 0,
+          "s": 0,
+          "l": 0
+        },
+        "count": 90,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#736456",
+        "rgb": {
+          "r": 115,
+          "g": 100,
+          "b": 86,
+          "a": 1
+        },
+        "hsl": {
+          "h": 29,
+          "s": 14,
+          "l": 39
+        },
+        "count": 74,
+        "contexts": [
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#f5f1ea",
+        "rgb": {
+          "r": 245,
+          "g": 241,
+          "b": 234,
+          "a": 1
+        },
+        "hsl": {
+          "h": 38,
+          "s": 35,
+          "l": 94
+        },
+        "count": 33,
+        "contexts": [
+          "background"
+        ]
+      },
+      {
+        "hex": "#e4ede8",
+        "rgb": {
+          "r": 228,
+          "g": 237,
+          "b": 232,
+          "a": 1
+        },
+        "hsl": {
+          "h": 147,
+          "s": 20,
+          "l": 91
+        },
+        "count": 27,
+        "contexts": [
+          "background"
+        ]
+      },
+      {
+        "hex": "#a85538",
+        "rgb": {
+          "r": 168,
+          "g": 85,
+          "b": 56,
+          "a": 1
+        },
+        "hsl": {
+          "h": 16,
+          "s": 50,
+          "l": 44
+        },
+        "count": 25,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#4d7a64",
+        "rgb": {
+          "r": 77,
+          "g": 122,
+          "b": 100,
+          "a": 1
+        },
+        "hsl": {
+          "h": 151,
+          "s": 23,
+          "l": 39
+        },
+        "count": 21,
+        "contexts": [
+          "background",
+          "text",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ebe3d6",
+        "rgb": {
+          "r": 235,
+          "g": 227,
+          "b": 214,
+          "a": 1
+        },
+        "hsl": {
+          "h": 37,
+          "s": 34,
+          "l": 88
+        },
+        "count": 18,
+        "contexts": [
+          "background",
+          "border"
+        ]
+      },
+      {
+        "hex": "#ddd2c2",
+        "rgb": {
+          "r": 221,
+          "g": 210,
+          "b": 194,
+          "a": 1
+        },
+        "hsl": {
+          "h": 36,
+          "s": 28,
+          "l": 81
+        },
+        "count": 17,
+        "contexts": [
+          "border",
+          "background"
+        ]
+      },
+      {
+        "hex": "#64170a",
+        "rgb": {
+          "r": 100,
+          "g": 23,
+          "b": 10,
+          "a": 0.06
+        },
+        "hsl": {
+          "h": 9,
+          "s": 82,
+          "l": 22
+        },
+        "count": 11,
+        "contexts": [
+          "background",
+          "border"
+        ]
+      },
+      {
+        "hex": "#b8a48a",
+        "rgb": {
+          "r": 184,
+          "g": 164,
+          "b": 138,
+          "a": 0.6
+        },
+        "hsl": {
+          "h": 34,
+          "s": 24,
+          "l": 63
+        },
+        "count": 10,
+        "contexts": [
+          "border"
+        ]
+      },
+      {
+        "hex": "#c8b190",
+        "rgb": {
+          "r": 200,
+          "g": 177,
+          "b": 144,
+          "a": 0.8
+        },
+        "hsl": {
+          "h": 35,
+          "s": 34,
+          "l": 67
+        },
+        "count": 9,
+        "contexts": [
+          "background"
+        ]
+      },
+      {
+        "hex": "#133220",
+        "rgb": {
+          "r": 19,
+          "g": 50,
+          "b": 32,
+          "a": 0.08
+        },
+        "hsl": {
+          "h": 145,
+          "s": 45,
+          "l": 14
+        },
+        "count": 7,
+        "contexts": [
+          "background",
+          "border"
+        ]
+      },
+      {
+        "hex": "#d4c4ab",
+        "rgb": {
+          "r": 212,
+          "g": 196,
+          "b": 171,
+          "a": 0.8
+        },
+        "hsl": {
+          "h": 37,
+          "s": 32,
+          "l": 75
+        },
+        "count": 5,
+        "contexts": [
+          "border"
+        ]
+      },
+      {
+        "hex": "#c6d8ce",
+        "rgb": {
+          "r": 198,
+          "g": 216,
+          "b": 206,
+          "a": 0.45
+        },
+        "hsl": {
+          "h": 147,
+          "s": 19,
+          "l": 81
+        },
+        "count": 4,
+        "contexts": [
+          "background"
+        ]
+      }
+    ]
+  },
+  "regions": [
+    {
+      "role": "nav",
+      "tag": "header",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 83
+      },
+      "heading": null,
+      "buttonCount": 1,
+      "cardCount": 4,
+      "className": "sticky top-0 z-50 border-b border-border-warm/50 glass-panel"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 550.71875,
+        "y": 19,
+        "w": 701.28125,
+        "h": 45
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 0,
+      "className": "hidden items-center gap-0.5 lg:flex"
+    },
+    {
+      "role": "content",
+      "tag": "main",
+      "bounds": {
+        "x": 0,
+        "y": 83,
+        "w": 1280,
+        "h": 10335.5
+      },
+      "heading": "社區換物carousell",
+      "buttonCount": 25,
+      "cardCount": 121,
+      "className": null
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 83,
+        "w": 1280,
+        "h": 800
+      },
+      "heading": "社區換物carousell",
+      "buttonCount": 0,
+      "cardCount": 4,
+      "className": "relative overflow-hidden bg-page"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 883,
+        "w": 1280,
+        "h": 817.40625
+      },
+      "heading": "社區換物carousell",
+      "buttonCount": 0,
+      "cardCount": 6,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 1700.40625,
+        "w": 1280,
+        "h": 964.71875
+      },
+      "heading": "發掘價值 · 與人交流 · 藝術美學",
+      "buttonCount": 0,
+      "cardCount": 9,
+      "className": "section-padding scroll-mt-20 bg-gradient-to-b from-page to-sage-light/25"
+    },
+    {
+      "role": "features",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 2665.125,
+        "w": 1280,
+        "h": 801.671875
+      },
+      "heading": "三大社區服務支柱",
+      "buttonCount": 0,
+      "cardCount": 7,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 3466.796875,
+        "w": 1280,
+        "h": 978.8125
+      },
+      "heading": "服務類別與平台比較",
+      "buttonCount": 0,
+      "cardCount": 5,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "testimonials",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 4445.609375,
+        "w": 1280,
+        "h": 840
+      },
+      "heading": "長者友善的App端設計",
+      "buttonCount": 0,
+      "cardCount": 11,
+      "className": "section-padding scroll-mt-20 overflow-hidden bg-page"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 840,
+        "y": 4638.109375,
+        "w": 394,
+        "h": 350.5
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 3,
+      "className": "relative overflow-hidden rounded-3xl border-2 border-terracotta/30 bg-gradient-to-br from-terracotta to-terracotta-dark p-6 text-white shadow-lg"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 840,
+        "y": 5006.609375,
+        "w": 394,
+        "h": 283
+      },
+      "heading": "快捷功能",
+      "buttonCount": 0,
+      "cardCount": 3,
+      "className": null
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 5285.609375,
+        "w": 1280,
+        "h": 1813.578125
+      },
+      "heading": "線上換物預覽",
+      "buttonCount": 21,
+      "cardCount": 38,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "hero",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 7099.1875,
+        "w": 1280,
+        "h": 741.953125
+      },
+      "heading": "真實的社區回饋",
+      "buttonCount": 1,
+      "cardCount": 11,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "content",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 7841.140625,
+        "w": 1280,
+        "h": 853.265625
+      },
+      "heading": "常見問題",
+      "buttonCount": 0,
+      "cardCount": 10,
+      "className": "section-padding scroll-mt-20 bg-page"
+    },
+    {
+      "role": "hero",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 8694.40625,
+        "w": 1280,
+        "h": 833.84375
+      },
+      "heading": "登記參加社區活動",
+      "buttonCount": 1,
+      "cardCount": 7,
+      "className": "section-padding scroll-mt-20 bg-page"
+    },
+    {
+      "role": "pricing",
+      "tag": "section",
+      "bounds": {
+        "x": 0,
+        "y": 9528.25,
+        "w": 1280,
+        "h": 890.25
+      },
+      "heading": "工作坊報名付款（示範）",
+      "buttonCount": 2,
+      "cardCount": 7,
+      "className": "section-padding scroll-mt-20 bg-card"
+    },
+    {
+      "role": "footer",
+      "tag": "footer",
+      "bounds": {
+        "x": 0,
+        "y": 10418.5,
+        "w": 1280,
+        "h": 372.671875
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 9,
+      "className": "border-t border-border-warm bg-cream-dark"
+    },
+    {
+      "role": "nav",
+      "tag": "nav",
+      "bounds": {
+        "x": 736.625,
+        "y": 10482.5,
+        "w": 516.375,
+        "h": 22.5
+      },
+      "heading": null,
+      "buttonCount": 0,
+      "cardCount": 6,
+      "className": null
+    }
+  ],
+  "componentClusters": [
+    {
+      "kind": "link",
+      "structuralHash": "a",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "oklab(0.992252 0.00160345 0.00600511 / 0.9)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "18px 31.5px 18px 31.5px",
+            "borderRadius": "13.5px",
+            "border": "1px solid rgb(221, 210, 194)",
+            "fontSize": "20.25px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "section>div",
+      "instanceCount": 6,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "99px 0px 108px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(42, 35, 24)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 6
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "article>div>div",
+      "instanceCount": 3,
+      "variants": [
+        {
+          "css": {
+            "background": "oklab(0.992252 0.00160345 0.00600511 / 0.7)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "36px 36px 36px 36px",
+            "borderRadius": "18px",
+            "border": "0px solid rgb(42, 35, 24)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 3
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "13.5px 18px 13.5px 18px",
+            "borderRadius": "0px",
+            "border": "0px 0px 1px solid rgb(235, 227, 214)",
+            "fontSize": "15.75px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "input",
+      "structuralHash": "input",
+      "instanceCount": 4,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "13.5px 18px 13.5px 45px",
+            "borderRadius": "13.5px",
+            "border": "1px solid rgb(221, 210, 194)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 2
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "13.5px 18px 13.5px 18px",
+            "borderRadius": "13.5px",
+            "border": "2px solid rgb(221, 210, 194)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 2
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button",
+      "instanceCount": 23,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(77, 122, 100)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "9px 15.75px 9px 15.75px",
+            "borderRadius": "9px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "fontSize": "15.75px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 12
+        },
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(90, 78, 60)",
+            "padding": "9px 15.75px 9px 15.75px",
+            "borderRadius": "9px",
+            "border": "0px solid rgb(90, 78, 60)",
+            "fontSize": "15.75px",
+            "fontWeight": "500"
+          },
+          "instanceCount": 10
+        },
+        {
+          "css": {
+            "background": "oklab(0.992252 0.00160345 0.00600511 / 0.9)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "15.75px 0px 15.75px 0px",
+            "borderRadius": "13.5px",
+            "border": "1px solid rgb(221, 210, 194)",
+            "fontSize": "18px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "input",
+      "structuralHash": "textarea",
+      "instanceCount": 2,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "13.5px 18px 13.5px 18px",
+            "borderRadius": "13.5px",
+            "border": "1px solid rgb(221, 210, 194)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        },
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "13.5px 18px 13.5px 18px",
+            "borderRadius": "13.5px",
+            "border": "2px solid rgb(221, 210, 194)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "button",
+      "structuralHash": "button>svg",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(77, 122, 100)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "13.5px 22.5px 13.5px 22.5px",
+            "borderRadius": "13.5px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "fontSize": "18px",
+            "fontWeight": "600"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "details>summary>div",
+      "instanceCount": 5,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "18px",
+            "border": "1px solid rgb(235, 227, 214)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 5
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "form>div>div>div>button>p",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "31.5px 31.5px 31.5px 31.5px",
+            "borderRadius": "18px",
+            "border": "0px solid rgb(42, 35, 24)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "card",
+      "structuralHash": "div>div>div",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgb(255, 252, 248)",
+            "color": "rgb(42, 35, 24)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "18px",
+            "border": "0px solid rgb(42, 35, 24)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    },
+    {
+      "kind": "other",
+      "structuralHash": "svg>rect>line",
+      "instanceCount": 1,
+      "variants": [
+        {
+          "css": {
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "padding": "0px 0px 0px 0px",
+            "borderRadius": "0px",
+            "border": "0px solid rgb(255, 255, 255)",
+            "fontSize": "18px",
+            "fontWeight": "400"
+          },
+          "instanceCount": 1
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "remediation": []
+  },
+  "cssHealth": {
+    "sheets": [
+      {
+        "url": "https://community-sweep.vercel.app/_next/static/chunks/0wlyfr91j4_bc.css",
+        "totalBytes": 397964,
+        "usedBytes": 108,
+        "unusedBytes": 397856,
+        "unusedPercent": 100
+      },
+      {
+        "url": "https://community-sweep.vercel.app/_next/static/chunks/0h8tmwl81dahm.css",
+        "totalBytes": 59749,
+        "usedBytes": 51861,
+        "unusedBytes": 7888,
+        "unusedPercent": 13
+      },
+      {
+        "url": "https://community-sweep.vercel.app/_next/static/chunks/10x5fvvbf3.fn.css",
+        "totalBytes": 206347,
+        "usedBytes": 112,
+        "unusedBytes": 206235,
+        "unusedPercent": 100
+      }
+    ],
+    "totalBytes": 664060,
+    "usedBytes": 52081,
+    "unusedBytes": 611979,
+    "unusedPercent": 92,
+    "importantCount": 4,
+    "duplicates": 3835,
+    "vendorPrefixes": {
+      "webkit": 35,
+      "moz": 4,
+      "ms": 0,
+      "o": 0
+    },
+    "keyframes": [],
+    "specificity": {
+      "max": [
+        0,
+        5,
+        2
+      ],
+      "average": [
+        0,
+        1.12,
+        0.19
+      ],
+      "count": 800
+    },
+    "issues": [
+      "4 !important rules",
+      "3835 duplicate declarations",
+      "92% unused CSS"
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#00530d",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "#831672",
+          "name": "Secondary"
+        },
+        {
+          "slug": "accent",
+          "color": "#ff8eff",
+          "name": "Accent"
+        },
+        {
+          "slug": "neutral-1",
+          "color": "#000000",
+          "name": "Neutral 1"
+        },
+        {
+          "slug": "neutral-2",
+          "color": "#ffffff",
+          "name": "Neutral 2"
+        },
+        {
+          "slug": "neutral-3",
+          "color": "#ffe3ff",
+          "name": "Neutral 3"
+        },
+        {
+          "slug": "neutral-4",
+          "color": "#eeeeee",
+          "name": "Neutral 4"
+        },
+        {
+          "slug": "bg-ffffff",
+          "color": "#ffffff",
+          "name": "Background #ffffff"
+        },
+        {
+          "slug": "bg-000000",
+          "color": "#000000",
+          "name": "Background #000000"
+        },
+        {
+          "slug": "bg-00ffe6",
+          "color": "#00ffe6",
+          "name": "Background #00ffe6"
+        }
+      ],
+      "gradients": [
+        {
+          "slug": "gradient-1",
+          "gradient": "linear-gradient(90deg, rgb(131, 22, 114) calc(100% - 1px), rgba(0, 0, 0, 0))",
+          "name": "Gradient 1"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Roboto",
+          "slug": "roboto",
+          "name": "Roboto"
+        },
+        {
+          "fontFamily": "Roboto Condensed",
+          "slug": "roboto-condensed",
+          "name": "Roboto Condensed"
+        },
+        {
+          "fontFamily": "Times New Roman",
+          "slug": "times-new-roman",
+          "name": "Times New Roman"
+        }
+      ],
+      "fontSizes": [
+        {
+          "size": "168px",
+          "slug": "size-168",
+          "name": "168px"
+        },
+        {
+          "size": "159.6px",
+          "slug": "size-159.6",
+          "name": "159.6px"
+        },
+        {
+          "size": "112.674px",
+          "slug": "size-112.674",
+          "name": "112.674px"
+        },
+        {
+          "size": "104.16px",
+          "slug": "size-104.16",
+          "name": "104.16px"
+        },
+        {
+          "size": "86.4331px",
+          "slug": "size-86.4331",
+          "name": "86.4331px"
+        },
+        {
+          "size": "73.0519px",
+          "slug": "size-73.0519",
+          "name": "73.0519px"
+        },
+        {
+          "size": "66.43px",
+          "slug": "size-66.43",
+          "name": "66.43px"
+        },
+        {
+          "size": "51.1591px",
+          "slug": "size-51.1591",
+          "name": "51.1591px"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingSizes": [
+        {
+          "size": "1px",
+          "slug": "spacing-1",
+          "name": "1px"
+        },
+        {
+          "size": "37px",
+          "slug": "spacing-37",
+          "name": "37px"
+        },
+        {
+          "size": "44px",
+          "slug": "spacing-44",
+          "name": "44px"
+        },
+        {
+          "size": "56px",
+          "slug": "spacing-56",
+          "name": "56px"
+        },
+        {
+          "size": "64px",
+          "slug": "spacing-64",
+          "name": "64px"
+        },
+        {
+          "size": "70px",
+          "slug": "spacing-70",
+          "name": "70px"
+        },
+        {
+          "size": "80px",
+          "slug": "spacing-80",
+          "name": "80px"
+        },
+        {
+          "size": "93px",
+          "slug": "spacing-93",
+          "name": "93px"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "100%",
+      "wideSize": "1400px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#ffffff",
+      "text": "#000000"
+    },
+    "typography": {
+      "fontSize": "44.8px",
+      "lineHeight": "49.28px",
+      "fontFamily": "Roboto"
+    },
+    "spacing": {}
+  }
+}

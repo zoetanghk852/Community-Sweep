@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 
 import { AppHallPreview } from '@/components/landing/AppHallPreview'
 
@@ -84,7 +84,7 @@ export function AppPreviewSection() {
 
                 體驗示範 App
 
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5" weight="bold" />
 
               </Link>
 

@@ -1,0 +1,32 @@
+Build a landing page with this exact visual language.
+COLORS:
+  #831672
+  #003da2
+  #00530d
+  #000000
+  #00ffe6
+  #ffc7ff
+  #ff8eff
+  #ffffff
+  #00fa7f
+  #ff0580
+  #005768
+  #b42318
+  #ffe3ff
+  #fcdc4d
+FONTS: [object Object], [object Object], [object Object]
+SPACING: 1, 37, 44, 56, 64, 70, 80, 93
+RADIUS: 6, 23, 36, 44, 50, 57
+SHADOWS: rgb(0, 0, 0) 0px 2px 20px -3px
+MATERIAL LANGUAGE: material-you
+VOICE: Tone: friendly · Headings: Sentence case · CTA verbs: [object Object], [object Object], [object Object], [object Object], [object Object], [object Object]
+SECTIONS (in order):
+- testimonial — heading: "WE NEED TO ACT
+WHILE WE
+STILL CAN"
+- cta — heading: "Take action with AMPLIFY"
+- testimonial
+- testimonial — heading: "Our work"
+- testimonial — heading: "In the news"
+- footer
+Use Tailwind. Match these tokens exactly. Keep the material language consistent.

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <title>Overview</title>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  
+  <g id="header">
+    <rect x="0" y="0" width="1920" height="88" rx="0" fill="#4D7A64"/>
+    <text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">
+  <tspan x="48" dy="0">用戶體驗地圖 — 社區換物 Carousell</tspan>
+</text>
+    <text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="14" font-weight="400" fill="#E8F0EC">
+  <tspan x="48" dy="0">1.0 · 2026-06-20 · Community-Sweep UX Journey Map</tspan>
+</text>
+  </g><g id="principles"><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="16" font-weight="700" fill="#5A4E3C">
+  <tspan x="80" dy="0">體驗設計原則</tspan>
+</text></g><rect x="80" y="148" width="440" height="44" rx="6" fill="#F5F1EA" stroke="#4D7A64" stroke-width="1.5"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="96" dy="0">線上媒合、現場交收（ADR-0001）</tspan>
+</text><rect x="540" y="148" width="440" height="44" rx="6" fill="#F5F1EA" stroke="#4D7A64" stroke-width="1.5"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="556" dy="0">實體為主：唔識用 App 亦有義工幫手</tspan>
+</text><rect x="1000" y="148" width="440" height="44" rx="6" fill="#F5F1EA" stroke="#4D7A64" stroke-width="1.5"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="1016" dy="0">低門檻：Walk-in、試水溫參觀均可</tspan>
+</text><rect x="1460" y="148" width="440" height="44" rx="6" fill="#F5F1EA" stroke="#4D7A64" stroke-width="1.5"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="1476" dy="0">長者友善：大字、暖色、大觸控區</tspan>
+</text><g id="stages-timeline"><rect x="80" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="92" dy="0">1. 認知</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="92" dy="0">Awareness</tspan>
+</text><path d="M 304 248 L 312 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="316" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="328" dy="0">2. 考量</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="328" dy="0">Consideration</tspan>
+</text><path d="M 540 248 L 548 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="552" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="564" dy="0">3. 準備</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="564" dy="0">Preparation</tspan>
+</text><path d="M 776 248 L 784 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="788" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="800" dy="0">4. 線上參與</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="800" dy="0">Online</tspan>
+</text><path d="M 1012 248 L 1020 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="1024" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="1036" dy="0">5. 線下市集</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="1036" dy="0">Offline Market</tspan>
+</text><path d="M 1248 248 L 1256 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="1260" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="1272" dy="0">6. 持續</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="1272" dy="0">Retention</tspan>
+</text><path d="M 1484 248 L 1492 248" stroke="#A85538" stroke-width="2" marker-end="url(#arrow)"/><rect x="1496" y="220" width="220" height="56" rx="8" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="15" font-weight="700" fill="#FFF">
+  <tspan x="1508" dy="0">7. 倡導</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="11" font-weight="400" fill="#D4E4DC">
+  <tspan x="1508" dy="0">Advocacy</tspan>
+</text><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#A85538"/></marker></defs></g><g id="personas"><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="80" dy="0">角色一覽</tspan>
+</text><rect x="80" y="340" width="560" height="100" rx="10" fill="#FFF" stroke="#4D7A64" stroke-width="1.5"/><rect x="80" y="340" width="8" height="100" rx="10" fill="#4D7A64"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="104" dy="0">P1 · 長者陳姨</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="12" font-weight="400" fill="#8B7E6A">
+  <tspan x="104" dy="0">優先級 P1</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="104" dy="0">行動不便、居家囤積、需義工全程協助</tspan>
+</text><rect x="660" y="340" width="560" height="100" rx="10" fill="#FAF8F5" stroke="#A85538" stroke-width="1.5"/><rect x="660" y="340" width="8" height="100" rx="10" fill="#A85538"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="684" dy="0">P2 · 街坊阿明</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="12" font-weight="400" fill="#8B7E6A">
+  <tspan x="684" dy="0">優先級 P1</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="684" dy="0">首次聽聞、觀望中、可先試水溫參觀</tspan>
+</text><rect x="1240" y="340" width="560" height="100" rx="10" fill="#FFF" stroke="#5B7FA6" stroke-width="1.5"/><rect x="1240" y="340" width="8" height="100" rx="10" fill="#5B7FA6"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="1264" dy="0">P3 · 換取方李姐</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="12" font-weight="400" fill="#8B7E6A">
+  <tspan x="1264" dy="0">優先級 P2</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="1264" dy="0">熟悉 App、積極預約、定期參與換物</tspan>
+</text><rect x="80" y="460" width="560" height="100" rx="10" fill="#FAF8F5" stroke="#7C6B9E" stroke-width="1.5"/><rect x="80" y="460" width="8" height="100" rx="10" fill="#7C6B9E"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="104" dy="0">P4 · 義工阿珍</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="12" font-weight="400" fill="#8B7E6A">
+  <tspan x="104" dy="0">優先級 P2</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="104" dy="0">現場登記、審核定分、撮合同場交換</tspan>
+</text><rect x="660" y="460" width="560" height="100" rx="10" fill="#FFF" stroke="#8B7E6A" stroke-width="1.5"/><rect x="660" y="460" width="8" height="100" rx="10" fill="#8B7E6A"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="18" font-weight="700" fill="#5A4E3C">
+  <tspan x="684" dy="0">P5 · 訪客何太</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="12" font-weight="400" fill="#8B7E6A">
+  <tspan x="684" dy="0">優先級 P3</tspan>
+</text><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="684" dy="0">僅看過落地頁、尚未決定是否參與</tspan>
+</text></g><g id="footer"><rect x="80" y="980" width="1760" height="60" rx="8" fill="#F5F1EA" stroke="#4D7A64" stroke-width="1.5"/><text font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif" font-size="13" font-weight="400" fill="#5A4E3C">
+  <tspan x="96" dy="0">匯入 Figma：File → Import → 選擇 svg/ 資料夾內所有檔案 · 詳見 figma-import-guide.md</tspan>
+</text></g>
+</svg>

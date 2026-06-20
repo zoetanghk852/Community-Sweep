@@ -1,0 +1,18 @@
+{
+  "newFile": [
+    "新增設計檔案",
+    "新增設計文件",
+    "新建设计文件",
+    "new design file"
+  ],
+  "importPlugin": [
+    "從資訊清單匯入外掛",
+    "從資訊清單匯入外掛程式",
+    "从 manifest 导入插件",
+    "import plugin from manifest"
+  ],
+  "runPlugin": [
+    "Community-Sweep UX Journey Map",
+    "Community-Sweep"
+  ]
+}

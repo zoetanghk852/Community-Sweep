@@ -1,0 +1,43 @@
+{
+  "openGraph": {
+    "title": "AMPLIFY Australia | We Need To Act — While We Still Can",
+    "description": "AMPLIFY brings Australians together to confront hard truths, shape bold solutions, and advocate for change to rebuild the promise — while we still can.",
+    "image": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/68fb08bfa54c50a5d4c7d8c9_open%20graph%20image%20(1).png",
+    "type": "website"
+  },
+  "twitter": {
+    "title": "AMPLIFY Australia | We Need To Act — While We Still Can",
+    "description": "AMPLIFY brings Australians together to confront hard truths, shape bold solutions, and advocate for change to rebuild the promise — while we still can.",
+    "image": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/68fb08bfa54c50a5d4c7d8c9_open%20graph%20image%20(1).png",
+    "card": "summary_large_image"
+  },
+  "description": "AMPLIFY brings Australians together to confront hard truths, shape bold solutions, and advocate for change to rebuild the promise — while we still can.",
+  "canonical": null,
+  "themeColor": "var(--_color---core-purple)",
+  "viewport": "width=device-width, initial-scale=1",
+  "favicons": [
+    {
+      "rel": "shortcut icon",
+      "href": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/68f03b559113e7993b4a5a40_amplify-favicon.png",
+      "sizes": "",
+      "type": "image/x-icon"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://cdn.prod.website-files.com/68b89f4012e125bcdfe2c948/68f03b5cb0be142f58a31b99_amplify-webclip.png",
+      "sizes": "",
+      "type": ""
+    }
+  ],
+  "manifest": null,
+  "structuredData": [],
+  "score": {
+    "hasOg": true,
+    "hasTwitter": true,
+    "hasDescription": true,
+    "hasCanonical": false,
+    "hasStructuredData": false,
+    "hasFavicon": true,
+    "hasThemeColor": true
+  }
+}

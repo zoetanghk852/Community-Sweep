@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Noto_Sans_TC, Noto_Serif_TC } from "next/font/google";
 import { ActivityRegistrationsProvider } from "@/context/ActivityRegistrationsContext";
 import { PointsProvider } from "@/context/PointsContext";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const notoSansTc = Noto_Sans_TC({
@@ -20,14 +21,21 @@ const notoSerifTc = Noto_Serif_TC({
 });
 
 export const metadata: Metadata = {
-  title: "社區換物carousell",
-  description: "社區換物carousell，鼓勵長者交換閒置物品、預約修繕",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: "社區換物carousell",
+    title: SITE_NAME,
     description: "每月換物市集、線上換物與積分禮品，發掘舊物價值，重建街坊連結。",
     locale: "zh_HK",
     type: "website",
     images: [{ url: "/images/hero-community-barter.png", width: 1024, height: 572, alt: "社區換物市集插圖" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: "每月換物市集、線上換物與積分禮品，發掘舊物價值，重建街坊連結。",
+    images: ["/images/hero-community-barter.png"],
   },
 };
 
