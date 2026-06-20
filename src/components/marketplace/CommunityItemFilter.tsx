@@ -23,7 +23,7 @@ function ItemCard({
   return (
     <article
       className={[
-        'group flex h-full flex-col rounded-2xl bg-page p-5 transition-all hover:-translate-y-0.5 hover:shadow-warm-lg',
+        'group flex h-full min-w-0 flex-col rounded-2xl bg-page p-5 transition-all hover:-translate-y-0.5 hover:shadow-warm-lg',
         className,
       ]
         .filter(Boolean)
@@ -72,7 +72,7 @@ function ItemCard({
   )
 }
 
-export function CommunityItemFilter() {
+export function CommunityItemFilter({ variant = 'app' }: { variant?: 'app' | 'landing' }) {
   const [search, setSearch] = useState('')
   const [category, setCategory] = useState<string>('全部')
   const [condition, setCondition] = useState<string>('全部')
@@ -111,6 +111,14 @@ export function CommunityItemFilter() {
     setReservedIds((prev) => new Set(prev).add(item.id))
     setNotice(`已預約「${item.title}」：請於下次換物市集現場交收（示範版）`)
   }
+
+  const isLanding = variant === 'landing'
+  const collapsedClass = isLanding
+    ? 'hidden min-[48rem]:block'
+    : 'hidden @3xl/marketplace:block'
+  const showMoreClass = isLanding
+    ? 'min-[48rem]:hidden'
+    : '@3xl/marketplace:hidden'
 
   return (
     <div className="space-y-5">
@@ -204,7 +212,14 @@ export function CommunityItemFilter() {
         共找到 <strong className="tabular-nums text-foreground">{filtered.length}</strong> 件物品
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className={[
+          'marketplace-item-grid',
+          isLanding ? 'marketplace-item-grid--landing' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
+      >
         {filtered.length > 0 ? (
           filtered.map((item, index) => (
             <ItemCard
@@ -212,7 +227,7 @@ export function CommunityItemFilter() {
               item={item}
               onReserve={handleReserve}
               className={
-                index >= MOBILE_INITIAL_COUNT && !showAllMobile ? 'hidden sm:flex' : undefined
+                index >= MOBILE_INITIAL_COUNT && !showAllMobile ? collapsedClass : undefined
               }
             />
           ))
@@ -228,7 +243,10 @@ export function CommunityItemFilter() {
         <button
           type="button"
           onClick={() => setShowAllMobile(true)}
-          className="interactive w-full rounded-xl border border-border-warm bg-page py-3.5 text-base font-semibold text-sage-dark hover:border-sage hover:bg-sage-light sm:hidden"
+          className={[
+            'interactive w-full rounded-xl border border-border-warm bg-page py-3.5 text-base font-semibold text-sage-dark hover:border-sage hover:bg-sage-light',
+            showMoreClass,
+          ].join(' ')}
         >
           顯示更多…
         </button>

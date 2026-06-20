@@ -239,6 +239,36 @@ body {
   z-index: var(--z-modal);
 }
 
+.marketplace-item-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@container marketplace (width >= 48rem) {
+  .marketplace-item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container marketplace (width >= 72rem) {
+  .marketplace-item-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 48rem) {
+  .marketplace-item-grid--landing {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .marketplace-item-grid--landing {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .empty-state {
   border-radius: 1rem;
   border: 1px dashed var(--border-warm);

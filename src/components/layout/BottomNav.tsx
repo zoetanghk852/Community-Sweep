@@ -27,7 +27,7 @@ export function BottomNav() {
       className="fixed bottom-0 left-0 right-0 z-40 border-t border-border-light glass-panel"
       aria-label="主要導覽"
     >
-      <div className="mx-auto flex max-w-lg items-stretch justify-around px-1 py-2">
+      <div className="mx-auto flex max-w-lg items-stretch justify-around px-1 py-2 md:max-w-3xl lg:max-w-6xl">
         {links.map(({ href, label, icon: Icon }) => {
           const active = activePath === href || activePath.startsWith(`${href}/`)
           return (

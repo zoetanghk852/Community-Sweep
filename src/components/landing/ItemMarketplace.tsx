@@ -12,7 +12,7 @@ export function ItemMarketplace() {
         </div>
 
         <div className="mt-12">
-          <CommunityItemFilter />
+          <CommunityItemFilter variant="landing" />
         </div>
       </div>
     </section>
